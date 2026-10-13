@@ -174,12 +174,12 @@ class WindowsCalculator(tk.Tk):
                 return str(int(num))
             formatted = f"{num:.10g}"
             return formatted
-        except Exception:
+        except (ValueError, OverflowError, Exception):
             return "Error"
 
     def _update_display(self):
         # Truncate text size visually if string is very long
-        text = self.current_input
+        text = str(self.current_input)
         if len(text) > 13:
             self.lbl_main.config(font=("Segoe UI Variable Display", 22, "bold"))
         elif len(text) > 9:
@@ -191,19 +191,23 @@ class WindowsCalculator(tk.Tk):
         self.lbl_expr.config(text=self.expression_text)
 
     def btn_digit(self, digit):
-        if self.reset_on_next_input:
+        # Only allow valid single digit characters 0-9
+        if not isinstance(digit, str) or digit not in "0123456789":
+            return
+        if self.reset_on_next_input or self.current_input in ("Error", "No se puede dividir entre cero", "Entrada no válida", "Desbordamiento"):
             self.current_input = digit
             self.reset_on_next_input = False
         else:
             if self.current_input == "0":
                 self.current_input = digit
             else:
+                # Limit input to prevent memory exhaustion or arbitrary string injection
                 if len(self.current_input.replace("-", "").replace(".", "")) < 16:
                     self.current_input += digit
         self._update_display()
 
     def btn_comma(self):
-        if self.reset_on_next_input:
+        if self.reset_on_next_input or self.current_input in ("Error", "No se puede dividir entre cero", "Entrada no válida", "Desbordamiento"):
             self.current_input = "0."
             self.reset_on_next_input = False
         elif "." not in self.current_input:
@@ -211,7 +215,7 @@ class WindowsCalculator(tk.Tk):
         self._update_display()
 
     def btn_negate(self):
-        if self.current_input != "0" and self.current_input != "Error":
+        if self.current_input not in ("0", "Error", "No se puede dividir entre cero", "Entrada no válida", "Desbordamiento"):
             if self.current_input.startswith("-"):
                 self.current_input = self.current_input[1:]
             else:
@@ -219,7 +223,10 @@ class WindowsCalculator(tk.Tk):
             self._update_display()
 
     def btn_backspace(self):
-        if self.reset_on_next_input:
+        if self.reset_on_next_input or self.current_input in ("Error", "No se puede dividir entre cero", "Entrada no válida", "Desbordamiento"):
+            self.current_input = "0"
+            self.reset_on_next_input = False
+            self._update_display()
             return
         if len(self.current_input) > 1:
             self.current_input = self.current_input[:-1]
@@ -242,28 +249,50 @@ class WindowsCalculator(tk.Tk):
         self._update_display()
 
     def _execute_op(self, a, op, b):
-        if op == "+":
-            return a + b
-        elif op == "-":
-            return a - b
-        elif op == "×":
-            return a * b
-        elif op == "÷":
-            if b == 0:
-                return "Error"
-            return a / b
-        return b
+        try:
+            if op == "+":
+                res = a + b
+            elif op == "-":
+                res = a - b
+            elif op == "×":
+                res = a * b
+            elif op == "÷":
+                if b == 0:
+                    return "ZeroDivision"
+                res = a / b
+            else:
+                return b
+            if math.isinf(res) or math.isnan(res):
+                return "Overflow"
+            return res
+        except OverflowError:
+            return "Overflow"
+        except ZeroDivisionError:
+            return "ZeroDivision"
+        except Exception:
+            return "Error"
 
     def btn_operator(self, op):
+        if op not in ("+", "-", "×", "÷"):
+            return
+
         try:
             val = float(self.current_input)
-        except ValueError:
+        except (ValueError, OverflowError):
             return
 
         if self.stored_value is not None and not self.reset_on_next_input:
             res = self._execute_op(self.stored_value, self.pending_op, val)
-            if res == "Error":
+            if res == "ZeroDivision":
                 self.current_input = "No se puede dividir entre cero"
+                self.stored_value = None
+                self.pending_op = None
+                self.expression_text = ""
+                self.reset_on_next_input = True
+                self._update_display()
+                return
+            elif res in ("Overflow", "Error"):
+                self.current_input = "Desbordamiento" if res == "Overflow" else "Error"
                 self.stored_value = None
                 self.pending_op = None
                 self.expression_text = ""
@@ -286,13 +315,19 @@ class WindowsCalculator(tk.Tk):
 
         try:
             val = float(self.current_input)
-        except ValueError:
+        except (ValueError, OverflowError):
             return
 
         res = self._execute_op(self.stored_value, self.pending_op, val)
-        if res == "Error":
+        if res == "ZeroDivision":
             self.expression_text = f"{self._format_number(self.stored_value)} {self.pending_op} {self._format_number(val)} ="
             self.current_input = "No se puede dividir entre cero"
+        elif res == "Overflow":
+            self.expression_text = f"{self._format_number(self.stored_value)} {self.pending_op} {self._format_number(val)} ="
+            self.current_input = "Desbordamiento"
+        elif res == "Error":
+            self.expression_text = ""
+            self.current_input = "Error"
         else:
             self.expression_text = f"{self._format_number(self.stored_value)} {self.pending_op} {self._format_number(val)} ="
             self.current_input = self._format_number(res)
@@ -308,14 +343,17 @@ class WindowsCalculator(tk.Tk):
         try:
             val = float(self.current_input)
             if self.stored_value is not None:
-                # Percentage of base value
                 val = (self.stored_value * val) / 100.0
             else:
-                val = 0
-            self.current_input = self._format_number(val)
+                val = 0.0
+            if math.isinf(val) or math.isnan(val):
+                self.current_input = "Desbordamiento"
+            else:
+                self.current_input = self._format_number(val)
             self._update_display()
-        except Exception:
-            pass
+        except (OverflowError, Exception):
+            self.current_input = "Error"
+            self._update_display()
 
     def btn_reciprocal(self):
         try:
@@ -324,23 +362,41 @@ class WindowsCalculator(tk.Tk):
                 self.current_input = "No se puede dividir entre cero"
             else:
                 res = 1 / val
-                self.expression_text = f"1/({self._format_number(val)})"
-                self.current_input = self._format_number(res)
+                if math.isinf(res) or math.isnan(res):
+                    self.current_input = "Desbordamiento"
+                else:
+                    self.expression_text = f"1/({self._format_number(val)})"
+                    self.current_input = self._format_number(res)
+            self.reset_on_next_input = True
+            self._update_display()
+        except OverflowError:
+            self.current_input = "Desbordamiento"
             self.reset_on_next_input = True
             self._update_display()
         except Exception:
-            pass
+            self.current_input = "Error"
+            self.reset_on_next_input = True
+            self._update_display()
 
     def btn_square(self):
         try:
             val = float(self.current_input)
             res = val ** 2
-            self.expression_text = f"sqr({self._format_number(val)})"
-            self.current_input = self._format_number(res)
+            if math.isinf(res) or math.isnan(res):
+                self.current_input = "Desbordamiento"
+            else:
+                self.expression_text = f"sqr({self._format_number(val)})"
+                self.current_input = self._format_number(res)
+            self.reset_on_next_input = True
+            self._update_display()
+        except OverflowError:
+            self.current_input = "Desbordamiento"
             self.reset_on_next_input = True
             self._update_display()
         except Exception:
-            pass
+            self.current_input = "Error"
+            self.reset_on_next_input = True
+            self._update_display()
 
     def btn_sqrt(self):
         try:
@@ -353,8 +409,14 @@ class WindowsCalculator(tk.Tk):
                 self.current_input = self._format_number(res)
             self.reset_on_next_input = True
             self._update_display()
+        except (OverflowError, ValueError):
+            self.current_input = "Entrada no válida"
+            self.reset_on_next_input = True
+            self._update_display()
         except Exception:
-            pass
+            self.current_input = "Error"
+            self.reset_on_next_input = True
+            self._update_display()
 
 
 if __name__ == "__main__":
