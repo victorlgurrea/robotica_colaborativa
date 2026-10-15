@@ -1,0 +1,31 @@
+# ==============================================================================
+# Configuración del servidor Apache para Presentación HTML5 / Streaming de Vídeo
+# ==============================================================================
+
+# Charset predeterminado UTF-8
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .css .js .json .xml
+
+# Tipos MIME requeridos para reproducción de vídeo y visualización de documentos
+<IfModule mod_mime.c>
+    AddType video/mp4 .mp4
+    AddType application/pdf .pdf
+    AddType image/png .png
+    AddType image/jpeg .jpg .jpeg
+    AddType text/css .css
+    AddType application/javascript .js
+</IfModule>
+
+# Habilitar soporte de peticiones por rangos (Range requests) para permitir
+# avance rápido (seeking/scrubbing) y streaming fluido en vídeos HTML5
+<IfModule mod_headers.c>
+    Header set Accept-Ranges bytes
+</IfModule>
+
+# Compresión Gzip para archivos de texto (mejora tiempo de carga en servidor)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Archivo de inicio predeterminado
+DirectoryIndex index.html presentacion.html

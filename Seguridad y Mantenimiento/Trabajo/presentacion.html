@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prevención y Seguridad en la Automatización Industrial</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="assets/images/image1.png">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <div class="sidebar-header-titles">
+          <span class="sidebar-title">Seguridad Industrial</span>
+          <span class="sidebar-subtitle">Hitos &amp; Normativa</span>
+        </div>
+      </div>
+      <nav class="sidebar-nav" id="sidebar-nav" aria-label="Navegación de diapositivas"></nav>
+    </aside>
+    <main class="main-layout">
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <button type="button" id="btn-toggle-sidebar" class="btn-icon" title="Ocultar / Mostrar menú lateral (S)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div class="current-slide-heading">
+            <span>Tema:</span>
+            <span class="current-title-badge" id="top-current-title">Portada principal</span>
+          </div>
+        </div>
+        <div class="top-bar-right">
+          <button type="button" id="btn-fullscreen" class="btn-icon" title="Pantalla completa (F)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+            </svg>
+          </button>
+        </div>
+      </header>
+      <section class="stage">
+        <div class="slides-viewport">
+          <div class="slide-mount-container" id="slide-mount">
+<article class="slide slide-cover" id="slide-1" data-index="0">
+  <div class="cover-wrapper">
+    <img src="assets/images/image1.png" alt="Portada de la presentación" class="cover-bg-image">
+    <div class="cover-overlay-content">
+      <h1 class="cover-title">PREVENCIÓN Y SEGURIDAD EN LA AUTOMATIZACIÓN INDUSTRIAL</h1>
+      <p class="cover-subtitle">De los orígenes de la robótica a la normativa moderna de prevención de riesgos.</p>
+      <div class="cover-actions">
+        <button type="button" class="btn-cover-start">
+          <span>Comenzar Presentación</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+        </button>
+        <button type="button" class="btn-cover-secondary btn-jump" data-target-slide="2">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+          </svg>
+          <span>Cronograma</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+<article class="slide" id="slide-2" data-index="1">
+  <header class="slide-header">
+    <h2 class="slide-title">
+      <span class="year-tag">1769 – 1974</span>
+      <span class="title-text">Hitos Históricos: Resumen Cronológico</span>
+    </h2>
+  </header>
+  <div class="timeline-table-card">
+    <table class="timeline-table">
+      <thead>
+        <tr>
+          <th style="width: 16%;">Año</th>
+          <th style="width: 32%;">Hito</th>
+          <th style="width: 52%;">Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="clickable-row" data-target-slide="4" title="Ir a la máquina de vapor de Watt">
+          <td><span class="year-badge">1769</span></td>
+          <td class="hito-title">Máquina de Vapor de Watt</td>
+          <td>Patente de James Watt, mejora con condensador separado y regulador centrífugo, inicio de la mecanización.</td>
+        </tr>
+        <tr class="clickable-row" data-target-slide="5" title="Ir a la cadena de montaje Ford">
+          <td><span class="year-badge">1913</span></td>
+          <td class="hito-title">Cadena de Montaje Móvil</td>
+          <td>Implementada por Henry Ford para la fabricación de automóviles, estableciendo el flujo continuo.</td>
+        </tr>
+        <tr class="clickable-row" data-target-slide="6" title="Ir al control numérico del MIT">
+          <td><span class="year-badge">1952 – 1959</span></td>
+          <td class="hito-title">Control Numérico (NC) y APT</td>
+          <td>Desarrollo de la fresadora de control numérico y el sistema de programación automática en el MIT.</td>
+        </tr>
+        <tr class="clickable-row" data-target-slide="7" title="Ir a Unimate / Kawasaki">
+          <td><span class="year-badge">1961</span></td>
+          <td class="hito-title">Primer Robot Industrial (Unimate)</td>
+          <td>George Devol y Unimation instalan el primer manipulador programable en General Motors.</td>
+        </tr>
+        <tr class="clickable-row" data-target-slide="7" title="Ir a Kawasaki-Unimate">
+          <td><span class="year-badge">1967 – 1969</span></td>
+          <td class="hito-title">Expansión Japonesa</td>
+          <td>Acuerdo entre Kawasaki y Unimation para la producción masiva del robot Kawasaki-Unimate 2000.</td>
+        </tr>
+        <tr class="clickable-row" data-target-slide="8" title="Ir a KUKA Famulus">
+          <td><span class="year-badge">1973</span></td>
+          <td class="hito-title">KUKA FAMULUS (6 Ejes)</td>
+          <td>Primer robot industrial eléctrico de seis ejes presentado en Alemania.</td>
+        </tr>
+        <tr class="clickable-row" data-target-slide="9" title="Ir a ASEA IRB 6 y SEAT">
+          <td><span class="year-badge">1974</span></td>
+          <td class="hito-title">ASEA IRB 6 y SEAT España</td>
+          <td>Presentación del robot eléctrico IRB 6 (Suecia) e incorporación de los primeros robots en SEAT Barcelona.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</article>
+
+
+<article class="slide" id="slide-3" data-index="2">
+  <header class="slide-header">
+    <h2 class="slide-title">
+      <span class="year-tag">1769</span>
+      <span class="title-text">Patente de James Watt (nº 913)</span>
+    </h2>
+  </header>
+  <div class="slide-split">
+    <div class="media-card">
+      <div class="patent-docs-wrapper">
+        <div class="patent-sheets-grid">
+          <div class="patent-sheet-card" onclick="openLightbox('assets/images/image4.png')" title="Clic para ampliar página 1">
+            <img src="assets/images/image4.png" alt="Patente de James Watt página 1" class="patent-sheet-img">
+          </div>
+          <div class="patent-sheet-card" onclick="openLightbox('assets/images/image5.png')" title="Clic para ampliar página 2">
+            <img src="assets/images/image5.png" alt="Patente de James Watt página 2" class="patent-sheet-img">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <h3 class="card-tag">PATENTE DE JAMES WATT</h3>
+      <div class="card-points">
+        <p class="card-point-item">Método para reducir el consumo de vapor y combustible en las máquinas de fuego.</p>
+        <p class="card-point-item">Idea clave: un condensador separado del cilindro, que se mantiene siempre caliente.</p>
+        <p class="card-point-item">Inicio de la mecanización.</p>
+        <p class="card-point-item">El PDF completo del documento está en la diapositiva de la máquina de vapor.</p>
+      </div>
+      <button type="button" class="btn-patent btn-jump" data-target-slide="4">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+        <span>Ver máquina de vapor y PDF</span>
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<article class="slide" id="slide-4" data-index="3">
+  <header class="slide-header">
+    <h2 class="slide-title">
+      <span class="year-tag">1769</span>
+      <span class="title-text">La máquina de vapor de Watt</span>
+    </h2>
+  </header>
+  <div class="slide-split">
+    <div class="media-card">
+      <div class="video-player-wrapper">
+        <video class="slide-video" controls preload="metadata" poster="assets/images/image6.jpg">
+          <source src="assets/videos/maquinavapor-jameswatt.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de video HTML5.
+        </video>
+      </div>
+      <div class="patent-actions-bar">
+        <button type="button" class="btn-patent" onclick="openPdfModal('assets/docs/James_Watt_Patent_1769_No_913.pdf')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+          <span>Ver contrato / patente de James Watt (PDF 1769)</span>
+        </button>
+        <a href="assets/docs/James_Watt_Patent_1769_No_913.pdf" download class="btn-icon" title="Descargar PDF original">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="info-card">
+      <h3 class="card-tag">MÁQUINA DE VAPOR DE WATT</h3>
+      <div class="card-points">
+        <p class="card-point-item">Mejora con condensador separado y regulador centrífugo.</p>
+        <p class="card-point-item">El regulador es un precedente del control con realimentación.</p>
+        <p class="card-point-item">Documento oficial: patente A.D. 1769, nº 913 (PDF).</p>
+      </div>
+      <div class="card-source-caption">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+        <span>Vídeo: funcionamiento de la máquina de vapor de Watt</span>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+<article class="slide" id="slide-5" data-index="4">
+  <header class="slide-header">
+    <h2 class="slide-title">
+      <span class="year-tag">1913</span>
+      <span class="title-text">Cadena de montaje móvil</span>
+    </h2>
+  </header>
+  <div class="slide-split">
+    <div class="media-card">
+      <div class="video-player-wrapper">
+        <video class="slide-video" controls preload="metadata" poster="assets/images/image7.jpg">
+          <source src="assets/videos/ford-model-t-1919.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de video HTML5.
+        </video>
+      </div>
+    </div>
+    <div class="info-card">
+      <h3 class="card-tag">HENRY FORD</h3>
+      <div class="card-points">
+        <p class="card-point-item">Implementada por Henry Ford para la fabricación de automóviles.</p>
+        <p class="card-point-item">Establece el flujo continuo de producción.</p>
+      </div>
+      <div class="card-source-caption">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+        <span>Vídeo: línea de montaje del Ford T (1919)</span>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+<article class="slide" id="slide-6" data-index="5">
+  <header class="slide-header">
+    <h2 class="slide-title">
+      <span class="year-tag">1952 – 1959</span>
+      <span class="title-text">Control numérico (NC) y APT</span>
+    </h2>
+  </header>
+  <div class="slide-split">
+    <div class="media-card">
+      <div class="video-player-wrapper">
+        <video class="slide-video" controls preload="metadata" poster="assets/images/image8.jpg">
+          <source src="assets/videos/mit-apt-1959.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de video HTML5.
+        </video>
+      </div>
+    </div>
+    <div class="info-card">
+      <h3 class="card-tag">MIT</h3>
+      <div class="card-points">
+        <p class="card-point-item">Desarrollo de la fresadora de control numérico.</p>
+        <p class="card-point-item">Sistema de programación automática APT (Automatically Programmed Tools).</p>
+      </div>
+      <div class="card-source-caption">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+        <span>Vídeo: MIT Science Reporter, «Automatically Programmed Tools» (1959)</span>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+<article class="slide" id="slide-7" data-index="6">
+  <header class="slide-header">
+    <h2 class="slide-title">
+      <span class="year-tag">1967 – 1969</span>
+      <span class="title-text">Expansión japonesa: Kawasaki-Unimate</span>
+    </h2>
+  </header>
+  <div class="slide-split">
+    <div class="media-card">
+      <div class="video-player-wrapper">
+        <video class="slide-video" controls preload="metadata" poster="assets/images/image9.jpg">
+          <source src="assets/videos/kawasaki-unimate-1969.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de video HTML5.
+        </video>
+      </div>
+    </div>
+    <div class="info-card">
+      <h3 class="card-tag">KAWASAKI Y UNIMATION</h3>
+      <div class="card-points">
+        <p class="card-point-item">Acuerdo entre Kawasaki y Unimation para la producción masiva del robot Kawasaki-Unimate 2000.</p>
+      </div>
+      <div class="card-source-caption">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+        <span>Vídeo: Kawasaki-Unimate en Japón (1968–1969)</span>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+<article class="slide" id="slide-8" data-index="7">
+  <header class="slide-header">
+    <h2 class="slide-title">
+      <span class="year-tag">1973</span>
+      <span class="title-text">KUKA FAMULUS (6 ejes)</span>
+    </h2>
+  </header>
+  <div class="slide-split">
+    <div class="media-card">
+      <div class="video-player-wrapper">
+        <video class="slide-video" controls preload="metadata" poster="assets/images/image10.jpg">
+          <source src="assets/videos/kuka-famulus-1973.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de video HTML5.
+        </video>
+      </div>
+    </div>
+    <div class="info-card">
+      <h3 class="card-tag">KUKA, ALEMANIA</h3>
+      <div class="card-points">
+        <p class="card-point-item">Primer robot industrial eléctrico de seis ejes, presentado en Alemania.</p>
+      </div>
+      <div class="card-source-caption">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+        <span>Vídeo: KUKA FAMULUS (1973)</span>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+<article class="slide" id="slide-9" data-index="8">
+  <header class="slide-header">
+    <h2 class="slide-title">
+      <span class="year-tag">1974</span>
+      <span class="title-text">ASEA IRB 6 y SEAT España</span>
+    </h2>
+  </header>
+  <div class="slide-split">
+    <div class="media-card">
+      <div class="video-player-wrapper">
+        <video class="slide-video" controls preload="metadata" poster="assets/images/image11.jpg">
+          <source src="assets/videos/asea-irb6-1974.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de video HTML5.
+        </video>
+      </div>
+    </div>
+    <div class="info-card">
+      <h3 class="card-tag">ASEA, SUECIA</h3>
+      <div class="card-points">
+        <p class="card-point-item">Presentación del robot eléctrico IRB 6 (Suecia).</p>
+        <p class="card-point-item">Incorporación de los primeros robots en SEAT Barcelona.</p>
+      </div>
+      <div class="card-source-caption">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+        <span>Vídeo: ASEA IRB 6 (1974)</span>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+<article class="slide" id="slide-10" data-index="9">
+  <header class="slide-header">
+    <h2 class="slide-title">
+      <span class="year-tag">3</span>
+      <span class="title-text">Marco legal y normativa</span>
+    </h2>
+  </header>
+  <p class="normativa-intro">
+    La normativa de seguridad en automatización industrial busca disminuir los riesgos y la gravedad de los accidentes, estableciendo requisitos comunes para el diseño, uso y mantenimiento de robots y sistemas automatizados.
+  </p>
+  <div class="normativas-grid">
+    <div class="normativa-card">
+      <div class="normativa-stripe stripe-white"></div>
+      <div class="normativa-content">
+        <div class="normativa-icon-box">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </div>
+        <h3 class="normativa-name">Normativa Internacional</h3>
+        <div class="normativa-code">ISO 10218:1992</div>
+        <p class="normativa-desc">Norma pionera de ámbito internacional. Define e identifica los riesgos fundamentales asociados a los robots y establece el análisis de seguridad correspondiente. Sus indicaciones son de carácter general.</p>
+      </div>
+    </div>
+
+    <div class="normativa-card">
+      <div class="normativa-stripe stripe-orange"></div>
+      <div class="normativa-content">
+        <div class="normativa-icon-box">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 7l6-3 6 3 6-3v13l-6 3-6-3-6 3V7z"></path>
+            <line x1="9" y1="4" x2="9" y2="17"></line>
+            <line x1="15" y1="7" x2="15" y2="20"></line>
+          </svg>
+        </div>
+        <h3 class="normativa-name">Normativa Americana</h3>
+        <div class="normativa-code">ANSI/RIA R15.06-1992</div>
+        <p class="normativa-desc">Publicada originalmente en 1986 y revisada en 1992. Destaca por incluir estudios empíricos sobre la probabilidad y gravedad de los accidentes, vinculándolos directamente a la experiencia y formación del operador.</p>
+      </div>
+    </div>
+
+    <div class="normativa-card">
+      <div class="normativa-stripe stripe-yellow"></div>
+      <div class="normativa-content">
+        <div class="normativa-icon-box">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M12 3v3m0 12v3M3 12h3m12 0h3"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+        </div>
+        <h3 class="normativa-name">Normativa Europea y Española</h3>
+        <div class="normativa-code">EN 775 / UNE-EN 775</div>
+        <p class="normativa-desc">El Comité Europeo de Normalización (CEN) aprobó en 1992 la adaptación europea de la ISO 10218. Inmediatamente, AENOR adoptó este estándar para España bajo la denominación UNE-EN 775.</p>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+<article class="slide" id="slide-11" data-index="10">
+  <header class="slide-header">
+    <h2 class="slide-title">
+      <span class="year-tag">Estadística</span>
+      <span class="title-text">¿Dónde ocurren realmente los accidentes?</span>
+    </h2>
+  </header>
+  <div class="accidents-container">
+    <p class="accidents-subtitle">Datos del Instituto de Seguridad del Trabajador de Tokio revelan una estadística vital:</p>
+    <div class="accidents-split">
+      <div class="accident-card accident-card-major">
+        <div class="stat-header">
+          <div class="stat-number-giant">90%</div>
+          <div class="stat-icon stat-icon-yellow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+            </svg>
+          </div>
+        </div>
+        <h3 class="stat-title">Operaciones de mantenimiento, programación y ajustes.</h3>
+        <p class="stat-explanation">(El humano entra en el dominio de la máquina).</p>
+      </div>
+
+      <div class="accident-card accident-card-minor">
+        <div class="stat-header">
+          <div class="stat-number-minor">10%</div>
+          <div class="stat-icon stat-icon-cyan">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </div>
+        </div>
+        <h3 class="stat-title">Operaciones normales de producción.</h3>
+        <p class="stat-explanation">(El humano está fuera del perímetro activo).</p>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+<article class="slide" id="slide-12" data-index="11">
+  <header class="slide-header">
+    <h2 class="slide-title">
+      <span class="year-tag">Bibliografía</span>
+      <span class="title-text">Fuentes Oficiales y Documentación de Referencia</span>
+    </h2>
+  </header>
+  <div class="sources-card">
+    <ul class="sources-list">
+      <li class="source-item">
+        <strong>1. Science Museum Group (2019):</strong> James Watt and the separate condenser.
+        <br><a href="https://blog.sciencemuseum.org.uk/james-watt-and-the-separate-condenser/" target="_blank" rel="noopener">blog.sciencemuseum.org.uk</a>
+      </li>
+      <li class="source-item">
+        <strong>2. Virginia Tech Archives:</strong> Report on MIT Demonstration of Numerically Controlled Milling Machine (1952).
+        <br><a href="https://aspace.lib.vt.edu/repositories/2/archival_objects/190379" target="_blank" rel="noopener">aspace.lib.vt.edu</a>
+      </li>
+      <li class="source-item">
+        <strong>3. Computer History Museum (1961):</strong> Unimate: First programmable robot in GM.
+        <br><a href="https://www.computerhistory.org/timeline/1961/" target="_blank" rel="noopener">computerhistory.org</a>
+      </li>
+      <li class="source-item">
+        <strong>4. Kawasaki Heavy Industries:</strong> History of the robot business (1968–1969).
+        <br><a href="https://global.kawasaki.com/en/history/business/robot.html" target="_blank" rel="noopener">global.kawasaki.com</a>
+      </li>
+      <li class="source-item">
+        <strong>5. KUKA Robotics:</strong> Historia de la robótica industrial: robot FAMULUS (1973).
+        <br><a href="https://www.kuka.com/es-es/empresa/homeofrobotik" target="_blank" rel="noopener">kuka.com</a>
+      </li>
+      <li class="source-item">
+        <strong>6. ABB (2023):</strong> 140 years of ASEA: Presentación del IRB 6 (1974).
+        <br><a href="https://new.abb.com/news/detail/106125/140-years-of-asea" target="_blank" rel="noopener">new.abb.com</a>
+      </li>
+      <li class="source-item">
+        <strong>7. ISO (1992):</strong> ISO 10218:1992 — Manipulating industrial robots — Safety.
+        <br><a href="https://www.iso.org/standard/18252.html" target="_blank" rel="noopener">iso.org/standard/18252</a>
+      </li>
+      <li class="source-item">
+        <strong>8. ISO (2025):</strong> ISO 10218-1:2025 &amp; ISO 10218-2:2025 Robotics Safety.
+        <br><a href="https://www.iso.org/standard/73933.html" target="_blank" rel="noopener">iso.org/standard/73933</a>
+      </li>
+      <li class="source-item">
+        <strong>9. SEAT S.A.:</strong> Historia de los 70 años de SEAT: Robots en Zona Franca (1974).
+        <br><a href="https://www.seat.es/sobre-seat/noticias/corporativas/70-anos-historia" target="_blank" rel="noopener">seat.es</a>
+      </li>
+    </ul>
+  </div>
+</article>
+
+          </div>
+        </div>
+      </section>
+
+      <footer class="copyright-bar">
+        © 2026 Todos los derechos reservados — <strong>Victor Larrañaga</strong>, <strong>Nestor Crespo</strong> y <strong>Gonzalo</strong>
+      </footer>
+    </main>
+  </div>
+  <div class="pdf-modal-overlay" id="pdf-modal-overlay">
+    <div class="pdf-modal-content">
+      <div class="pdf-modal-header">
+        <h3 class="pdf-modal-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+          </svg>
+          <span>Documento: Patente / contrato de James Watt (A.D. 1769 Nº 913)</span>
+        </h3>
+        <div class="pdf-modal-actions">
+          <a href="assets/docs/James_Watt_Patent_1769_No_913.pdf" target="_blank" class="btn-text" title="Abrir en pestaña nueva">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+            <span>Pestaña Nueva</span>
+          </a>
+          <a href="assets/docs/James_Watt_Patent_1769_No_913.pdf" download class="btn-text" title="Descargar archivo PDF">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Descargar</span>
+          </a>
+          <button type="button" class="btn-close-modal" id="btn-close-pdf" title="Cerrar visor PDF (Esc)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="pdf-frame-wrapper">
+        <iframe id="pdf-viewer-frame" class="pdf-frame" src="" title="Visor PDF James Watt"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="lightbox-overlay" id="lightbox-overlay">
+    <button type="button" class="btn-close-lightbox" id="btn-close-lightbox" title="Cerrar (Esc)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <img id="lightbox-img" src="" alt="Imagen ampliada" class="lightbox-img">
+  </div>
+  <script src="js/presentation.js"></script>
+</body>
+</html>
