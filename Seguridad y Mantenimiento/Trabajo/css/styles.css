@@ -262,40 +262,6 @@ body::before {
   background: linear-gradient(90deg, rgba(79, 134, 214, 0.28), rgba(18, 46, 98, 0.4));
 }
 
-/* Sidebar Footer Actions */
-.sidebar-footer {
-  padding: 0.85rem 1rem;
-  border-top: 1px solid var(--border-blue-subtle);
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  background: rgba(18, 46, 98, 0.2);
-}
-
-.btn-sidebar-action {
-  width: 100%;
-  background: rgba(79, 134, 214, 0.15);
-  border: 1px solid var(--border-blue-subtle);
-  color: var(--text-white);
-  padding: 0.5rem 0.85rem;
-  border-radius: 6px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  cursor: pointer;
-  transition: var(--transition-fast);
-  text-decoration: none;
-}
-
-.btn-sidebar-action:hover {
-  background: var(--accent-yellow);
-  color: var(--bg-dark);
-  border-color: var(--accent-yellow);
-  box-shadow: 0 0 12px rgba(255, 212, 0, 0.35);
-}
-
 /* ==========================================================================
    MAIN CONTENT AREA (Right Side)
    ========================================================================== */
@@ -358,14 +324,6 @@ body::before {
   padding: 1.25rem;
   overflow: hidden;
   min-height: 0;
-}
-
-.bottom-bar {
-  display: none !important;
-}
-
-.sidebar-footer {
-  display: none !important;
 }
 
 .copyright-bar {
@@ -494,7 +452,7 @@ body::before {
   padding: 0.75rem;
 }
 
-.video-player-wrapper {
+.media-gif-wrapper {
   position: relative;
   width: 100%;
   flex: 1;
@@ -513,7 +471,7 @@ body::before {
   margin-top: 0.5rem;
 }
 
-.slide-video {
+.slide-gif {
   width: 100%;
   height: 100%;
   max-height: 100%;
@@ -972,6 +930,50 @@ body::before {
   line-height: 1.5;
   color: var(--text-body);
   text-align: left;
+  flex: 1;
+}
+
+.normativa-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.btn-doc-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.65rem;
+  border-radius: 5px;
+  border: 1px solid var(--border-blue);
+  background: rgba(79, 134, 214, 0.18);
+  color: var(--text-white);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn-doc-download:hover {
+  background: var(--accent-yellow);
+  color: var(--bg-dark);
+  border-color: var(--accent-yellow);
+}
+
+.btn-doc-missing {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.65rem;
+  border-radius: 5px;
+  border: 1px dashed rgba(127, 158, 194, 0.45);
+  color: var(--text-dim);
+  font-size: 0.72rem;
+  font-weight: 500;
 }
 
 /* ==========================================================================
@@ -1130,16 +1132,6 @@ body::before {
   color: #ffffff;
 }
 
-.sources-download-row {
-  margin-top: 1.25rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border-blue-subtle);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.25rem;
-}
-
 /* ==========================================================================
    COMMON CONTROLS & BUTTONS
    ========================================================================== */
@@ -1190,136 +1182,6 @@ body::before {
   background: rgba(79, 134, 214, 0.3);
   border-color: var(--border-blue);
   box-shadow: var(--shadow-glow);
-}
-
-/* Bottom controls bar */
-.bottom-bar {
-  height: 56px;
-  background: rgba(11, 22, 44, 0.94);
-  backdrop-filter: blur(12px);
-  border-top: 1px solid var(--border-blue-subtle);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1.5rem;
-  z-index: 20;
-}
-
-.slide-controls-left {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.slide-counter {
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--text-white);
-  padding: 4px 12px;
-  background: rgba(79, 134, 214, 0.15);
-  border: 1px solid var(--border-blue-subtle);
-  border-radius: 6px;
-}
-
-.slide-counter .current-num {
-  color: var(--accent-yellow);
-}
-
-.slide-controls-center {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-}
-
-.btn-nav {
-  background: rgba(18, 46, 98, 0.9);
-  border: 1.5px solid var(--border-blue);
-  color: var(--text-white);
-  width: 44px;
-  height: 36px;
-  border-radius: 6px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: var(--transition-fast);
-}
-
-.btn-nav:hover:not(:disabled) {
-  background: var(--accent-yellow);
-  color: var(--bg-dark);
-  border-color: var(--accent-yellow);
-  box-shadow: 0 0 15px rgba(255, 212, 0, 0.4);
-}
-
-.btn-nav:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-  border-color: rgba(79, 134, 214, 0.2);
-}
-
-.timeline-dots {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(79, 134, 214, 0.3);
-  border: 1px solid var(--border-blue-subtle);
-  cursor: pointer;
-  transition: var(--transition-fast);
-}
-
-.dot:hover {
-  background: var(--border-blue);
-  transform: scale(1.2);
-}
-
-.dot.active {
-  background: var(--accent-yellow);
-  border-color: var(--accent-yellow);
-  box-shadow: 0 0 8px rgba(255, 212, 0, 0.6);
-  transform: scale(1.25);
-}
-
-.slide-controls-right {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.progress-bar-track {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: rgba(79, 134, 214, 0.15);
-}
-
-.progress-bar-fill {
-  height: 100%;
-  width: 8.33%;
-  background: linear-gradient(to right, #4f86d6, #ffd400);
-  transition: width 0.3s ease;
-  box-shadow: 0 0 8px rgba(255, 212, 0, 0.6);
-}
-
-.key-hint-badge {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 4px;
-  padding: 1px 6px;
-  font-size: 0.75rem;
-  color: var(--accent-yellow);
-  font-weight: 700;
-  font-family: monospace;
 }
 
 /* ==========================================================================
@@ -1535,10 +1397,6 @@ body::before {
   .accidents-split {
     grid-template-columns: 1fr;
     overflow-y: auto;
-  }
-  
-  .timeline-dots {
-    display: none;
   }
   
   .sources-list {

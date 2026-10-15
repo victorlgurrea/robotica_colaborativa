@@ -6,12 +6,12 @@ const SLIDES = [
   { id: '1', title: 'Portada principal', tag: 'Intro', level: 1 },
   { id: '2', title: 'Resumen cronológico', tag: 'Hitos', level: 1 },
   { id: '2.1', title: '1769 Patente de James Watt', tag: 'Patente', level: 2 },
-  { id: '2.2', title: '1769 Máquina de vapor', tag: 'Vídeo', level: 2 },
-  { id: '2.3', title: '1913 Cadena de montaje Ford', tag: 'Vídeo', level: 2 },
-  { id: '2.4', title: '1952 Control numérico en el MIT', tag: 'Vídeo', level: 2 },
-  { id: '2.5', title: '1967 Kawasaki-Unimate', tag: 'Vídeo', level: 2 },
-  { id: '2.6', title: '1973 KUKA FAMULUS (6 ejes)', tag: 'Vídeo', level: 2 },
-  { id: '2.7', title: '1974 ASEA IRB 6 y SEAT', tag: 'Vídeo', level: 2 },
+  { id: '2.2', title: '1769 Máquina de vapor', tag: 'GIF', level: 2 },
+  { id: '2.3', title: '1913 Cadena de montaje Ford', tag: 'GIF', level: 2 },
+  { id: '2.4', title: '1952 Control numérico en el MIT', tag: 'GIF', level: 2 },
+  { id: '2.5', title: '1967 Kawasaki-Unimate', tag: 'GIF', level: 2 },
+  { id: '2.6', title: '1973 KUKA FAMULUS (6 ejes)', tag: 'GIF', level: 2 },
+  { id: '2.7', title: '1974 ASEA IRB 6 y SEAT', tag: 'GIF', level: 2 },
   { id: '3', title: 'Marco legal y normativa', tag: 'Normas', level: 1 },
   { id: '4', title: '¿Dónde ocurren los accidentes?', tag: 'Datos', level: 1 },
   { id: '5', title: 'Fuentes y bibliografía', tag: 'Fuentes', level: 1 }
@@ -68,18 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function pauseVideos() {
-    slideMount.querySelectorAll('video').forEach((v) => {
-      if (!v.paused) v.pause();
-    });
-  }
-
   function goToSlide(index) {
     if (index < 0) index = 0;
     if (index >= totalSlides) index = totalSlides - 1;
     if (index >= slideEls.length) index = slideEls.length - 1;
 
-    pauseVideos();
     currentIndex = index;
 
     slideEls.forEach((el, idx) => {
