@@ -1,0 +1,21 @@
+# Blueprint Render — sitio estático del trabajo de Seguridad
+# Dashboard: servicio "trabajo"
+# URL prevista: https://trabajo.onrender.com (o trabajo-xxxx.onrender.com)
+
+services:
+  - type: web
+    name: trabajo
+    runtime: static
+    plan: free
+    region: frankfurt
+    branch: main
+    buildCommand: "true"
+    staticPublishPath: ./Seguridad y Mantenimiento/Trabajo
+    autoDeployTrigger: commit
+    buildFilter:
+      paths:
+        - Seguridad y Mantenimiento/Trabajo/**
+      ignoredPaths:
+        - Seguridad y Mantenimiento/Trabajo/**/*.pptx
+        - Seguridad y Mantenimiento/Trabajo/**/*.docx
+        - Seguridad y Mantenimiento/Trabajo/**/*.mp4
