@@ -41,31 +41,112 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
+  /** Índices de diapositivas nivel 2 bajo el ítem "2" (Resumen cronológico). */
+  const SECTION_2_PARENT_INDEX = SLIDES.findIndex((s) => s.id === '2');
+  const SECTION_2_CHILD_INDEXES = SLIDES
+    .map((s, idx) => (s.level === 2 && String(s.id).startsWith('2.') ? idx : -1))
+    .filter((idx) => idx >= 0);
+
+  let section2Expanded = false;
+
+  function createNavButton(item, idx) {
+    const level = item.level || 1;
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'nav-item' + (level === 2 ? ' nav-level-2' : '');
+    btn.dataset.index = String(idx);
+    btn.innerHTML = `
+      <span class="nav-num">${item.id}</span>
+      <div class="nav-text-group">
+        <span class="nav-title">${item.title}</span>
+        <span class="nav-tag">${item.tag}</span>
+      </div>
+    `;
+    return btn;
+  }
+
+  function setSection2Expanded(expanded) {
+    section2Expanded = expanded;
+    const group = sidebarNav?.querySelector('.nav-group-2');
+    if (!group) return;
+    group.classList.toggle('is-expanded', expanded);
+    group.classList.toggle('is-collapsed', !expanded);
+    const parentBtn = group.querySelector('.nav-parent');
+    if (parentBtn) {
+      parentBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    }
+  }
+
+  function toggleSection2() {
+    setSection2Expanded(!section2Expanded);
+  }
+
   function buildSidebar() {
     if (!sidebarNav) return;
     sidebarNav.innerHTML = '';
 
-    SLIDES.forEach((item, idx) => {
-      const level = item.level || 1;
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'nav-item' +
-        (level === 2 ? ' nav-level-2' : '') +
-        (idx === 0 ? ' active' : '');
-      btn.dataset.index = String(idx);
-      btn.innerHTML = `
-        <span class="nav-num">${item.id}</span>
-        <div class="nav-text-group">
-          <span class="nav-title">${item.title}</span>
-          <span class="nav-tag">${item.tag}</span>
-        </div>
-      `;
+    let i = 0;
+    while (i < SLIDES.length) {
+      const item = SLIDES[i];
+
+      if (item.id === '2') {
+        const group = document.createElement('div');
+        group.className = 'nav-group nav-group-2 is-collapsed';
+
+        const parentBtn = createNavButton(item, i);
+        parentBtn.classList.add('nav-parent');
+        parentBtn.setAttribute('aria-expanded', 'false');
+        parentBtn.setAttribute('aria-controls', 'nav-children-2');
+        parentBtn.insertAdjacentHTML(
+          'beforeend',
+          `<span class="nav-chevron" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </span>`
+        );
+        parentBtn.addEventListener('click', () => {
+          toggleSection2();
+          goToSlide(SECTION_2_PARENT_INDEX);
+          if (window.innerWidth <= 768) sidebar?.classList.remove('mobile-open');
+        });
+        group.appendChild(parentBtn);
+
+        const children = document.createElement('div');
+        children.className = 'nav-children';
+        children.id = 'nav-children-2';
+        children.setAttribute('role', 'group');
+
+        let j = i + 1;
+        while (j < SLIDES.length && SLIDES[j].level === 2 && String(SLIDES[j].id).startsWith('2.')) {
+          const childIdx = j;
+          const childBtn = createNavButton(SLIDES[j], childIdx);
+          childBtn.addEventListener('click', () => {
+            setSection2Expanded(true);
+            goToSlide(childIdx);
+            if (window.innerWidth <= 768) sidebar?.classList.remove('mobile-open');
+          });
+          children.appendChild(childBtn);
+          j += 1;
+        }
+
+        group.appendChild(children);
+        sidebarNav.appendChild(group);
+        i = j;
+        continue;
+      }
+
+      const btn = createNavButton(item, i);
+      const idx = i;
       btn.addEventListener('click', () => {
         goToSlide(idx);
         if (window.innerWidth <= 768) sidebar?.classList.remove('mobile-open');
       });
       sidebarNav.appendChild(btn);
-    });
+      i += 1;
+    }
+
+    setSection2Expanded(section2Expanded);
   }
 
   function goToSlide(index) {
@@ -74,6 +155,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (index >= slideEls.length) index = slideEls.length - 1;
 
     currentIndex = index;
+
+    // Si entramos en un hito 2.x, desplegar el menú del ítem 2
+    if (SECTION_2_CHILD_INDEXES.includes(currentIndex)) {
+      setSection2Expanded(true);
+    }
 
     slideEls.forEach((el, idx) => {
       el.classList.toggle('active', idx === currentIndex);

@@ -262,6 +262,62 @@ body::before {
   background: linear-gradient(90deg, rgba(79, 134, 214, 0.28), rgba(18, 46, 98, 0.4));
 }
 
+/* Grupo desplegable: ítem 2 + subítems 2.1–2.7 */
+.nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.nav-item.nav-parent {
+  position: relative;
+  padding-right: 2rem;
+}
+
+.nav-chevron {
+  position: absolute;
+  right: 0.55rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  transition: transform 0.2s ease, color 0.2s ease;
+  pointer-events: none;
+}
+
+.nav-group.is-expanded .nav-chevron {
+  transform: translateY(-50%) rotate(180deg);
+  color: var(--accent-yellow);
+}
+
+.nav-item.nav-parent:hover .nav-chevron,
+.nav-item.nav-parent.active .nav-chevron {
+  color: var(--accent-yellow);
+}
+
+.nav-children {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.28s ease, opacity 0.2s ease;
+}
+
+.nav-group.is-expanded .nav-children {
+  max-height: 28rem;
+  opacity: 1;
+}
+
+.nav-group.is-collapsed .nav-children {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* ==========================================================================
    MAIN CONTENT AREA (Right Side)
    ========================================================================== */
