@@ -18,7 +18,7 @@
         </div>
         <div class="sidebar-header-titles">
           <span class="sidebar-title">Seguridad Industrial</span>
-          <span class="sidebar-subtitle">Hitos, Normativa y Seguridad</span>
+          <span class="sidebar-subtitle">Hitos, Seguridad y Sistemas</span>
         </div>
       </div>
       <nav class="sidebar-nav" id="sidebar-nav" aria-label="Navegación de diapositivas"></nav>
@@ -710,33 +710,35 @@
       </div>
     </div>
 
-    <div class="seguridad-zones-block">
-      <div class="media-card seguridad-zones-media">
-        <div class="media-gif-wrapper seguridad-cell-photo-wrap">
-          <img
-            src="assets/images/celula-zonas-interaccion.jpg"
-            alt="Diagrama de zonas de interacción: intercambio a distancia, movimientos condicionados y zonas de reparación"
-            class="slide-gif seguridad-cell-photo"
-            onclick="openLightbox(this.src)"
-            title="Ampliar diagrama de zonas"
-          >
+    <div class="seguridad-zones-block ssp-zones-combined-block">
+      <div class="media-card seguridad-zones-media ssp-zones-combined">
+        <div class="ssp-zones-inner">
+          <div class="media-gif-wrapper seguridad-cell-photo-wrap">
+            <img
+              src="assets/images/celula-zonas-interaccion.png"
+              alt="Diagrama de zonas de interacción: intercambio a distancia, movimientos condicionados y zonas de reparación"
+              class="slide-gif seguridad-cell-photo"
+              onclick="openLightbox(this.src)"
+              title="Ampliar diagrama de zonas"
+            >
+          </div>
+          <div class="seguridad-zones-legend">
+            <div class="seguridad-zone-card zone-green">
+              <h3>Intercambio a distancia</h3>
+              <p>Mesas giratorias para alimentar piezas sin entrar en el área de trabajo automática.</p>
+            </div>
+            <div class="seguridad-zone-card zone-yellow">
+              <h3>Movimientos condicionados</h3>
+              <p>Pausas absolutas programadas en el instante exacto en que el humano debe intervenir.</p>
+            </div>
+            <div class="seguridad-zone-card zone-red">
+              <h3>Zonas de reparación</h3>
+              <p>Áreas al alcance físico, excluidas por software/hardware del ciclo automático.</p>
+            </div>
+          </div>
         </div>
         <div class="card-source-caption">
           <span>Zonas de interacción humano–robot en la célula</span>
-        </div>
-      </div>
-      <div class="seguridad-zones-legend">
-        <div class="seguridad-zone-card zone-green">
-          <h3>Intercambio a distancia</h3>
-          <p>Mesas giratorias para alimentar piezas sin entrar en el área de trabajo automática.</p>
-        </div>
-        <div class="seguridad-zone-card zone-yellow">
-          <h3>Movimientos condicionados</h3>
-          <p>Pausas absolutas programadas en el instante exacto en que el humano debe intervenir.</p>
-        </div>
-        <div class="seguridad-zone-card zone-red">
-          <h3>Zonas de reparación</h3>
-          <p>Áreas al alcance físico, excluidas por software/hardware del ciclo automático.</p>
         </div>
       </div>
     </div>
@@ -902,7 +904,7 @@
     <div class="media-card seguridad-entorno-media">
       <div class="media-gif-wrapper seguridad-cell-photo-wrap">
         <img
-          src="assets/images/arquitectura-entorno-seguro.jpg"
+          src="assets/images/arquitectura-entorno-seguro.png"
           alt="Plano de entorno seguro: zona máxima de movimiento, rutas de escape y consola de control exterior"
           class="slide-gif seguridad-cell-photo"
           onclick="openLightbox(this.src)"
@@ -914,66 +916,425 @@
       </div>
     </div>
     <div class="seguridad-entorno-points">
-      <div class="seguridad-resp-card">
-        <h3 class="card-tag">
-          <span class="seguridad-inline-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="14" width="18" height="3" rx="0.5"></rect>
-              <path d="M5 14V9M19 14V9M7 9h10"></path>
-              <path d="M4 19h16"></path>
-            </svg>
-          </span>
-          Marcado de zonas
-        </h3>
-        <p class="seguridad-signal-text">Identificación clara de la zona máxima de movimiento con marcas en el suelo y señales. Controles ubicados estrictamente fuera de esta zona.</p>
+      <div class="seguridad-resp-card ssp-entorno-point">
+        <button type="button" class="seguridad-inline-icon ssp-entorno-icon" onclick="openLightbox('assets/images/marcado-zonas.png')" title="Ampliar marcado de zonas">
+          <img src="assets/images/marcado-zonas.png" alt="Marcado de zonas">
+        </button>
+        <div>
+          <h3 class="card-tag">Marcado de zonas</h3>
+          <p class="seguridad-signal-text">Identificación clara de la zona máxima de movimiento con marcas en el suelo y señales. Controles ubicados estrictamente fuera de esta zona.</p>
+        </div>
       </div>
-      <div class="seguridad-resp-card">
-        <h3 class="card-tag">
-          <span class="seguridad-inline-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 20h16M4 16h16M4 12h16"></path>
-              <path d="M8 8l2-3 2 3 2-3 2 3"></path>
-            </svg>
-          </span>
-          Entorno despejado
-        </h3>
-        <p class="seguridad-signal-text">Espacio suficiente para guiar el robot con seguridad y evitar atrapamientos. Suelo libre de aceite, agua o residuos.</p>
+      <div class="seguridad-resp-card ssp-entorno-point">
+        <button type="button" class="seguridad-inline-icon ssp-entorno-icon" onclick="openLightbox('assets/images/entorno-despejado.png')" title="Ampliar entorno despejado">
+          <img src="assets/images/entorno-despejado.png" alt="Entorno despejado">
+        </button>
+        <div>
+          <h3 class="card-tag">Entorno despejado</h3>
+          <p class="seguridad-signal-text">Espacio suficiente para guiar el robot con seguridad y evitar atrapamientos. Suelo libre de aceite, agua o residuos.</p>
+        </div>
       </div>
-      <div class="seguridad-resp-card">
-        <h3 class="card-tag">
-          <span class="seguridad-inline-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="4" y="5" width="10" height="10" rx="1"></rect>
-              <path d="M7 10h4M9 8v4"></path>
-              <path d="M15 14l5 5M15 19l5-5"></path>
-            </svg>
-          </span>
-          Rutas de escape
-        </h3>
-        <p class="seguridad-signal-text">Conocer y mantener siempre despejado el camino de salida de la célula ante movimientos anómalos.</p>
+      <div class="seguridad-resp-card ssp-entorno-point">
+        <button type="button" class="seguridad-inline-icon ssp-entorno-icon" onclick="openLightbox('assets/images/ruta-escape.png')" title="Ampliar ruta de escape">
+          <img src="assets/images/ruta-escape.png" alt="Ruta de escape">
+        </button>
+        <div>
+          <h3 class="card-tag">Rutas de escape</h3>
+          <p class="seguridad-signal-text">Conocer y mantener siempre despejado el camino de salida de la célula ante movimientos anómalos.</p>
+        </div>
       </div>
-      <div class="seguridad-resp-card">
-        <h3 class="card-tag">
-          <span class="seguridad-inline-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="9" y="11" width="6" height="5" rx="1"></rect>
-              <path d="M10.5 11V9a1.5 1.5 0 0 1 3 0v2"></path>
-              <path d="M4 10c1.5-2 3.5-3 5-3M20 10c-1.5-2-3.5-3-5-3"></path>
-              <path d="M16 14h3M5 14h3"></path>
-            </svg>
-          </span>
-          Aislamiento remoto
-        </h3>
-        <p class="seguridad-signal-text">Aislar al robot de señales de control remoto que puedan provocar un movimiento inesperado mientras hay personal a su alcance.</p>
+      <div class="seguridad-resp-card ssp-entorno-point">
+        <button type="button" class="seguridad-inline-icon ssp-entorno-icon" onclick="openLightbox('assets/images/aislamiento-remoto.png')" title="Ampliar aislamiento remoto">
+          <img src="assets/images/aislamiento-remoto.png" alt="Aislamiento remoto del robot">
+        </button>
+        <div>
+          <h3 class="card-tag">Aislamiento remoto</h3>
+          <p class="seguridad-signal-text">Aislar al robot de señales de control remoto que puedan provocar un movimiento inesperado mientras hay personal a su alcance.</p>
+        </div>
       </div>
     </div>
   </div>
 </article>
 
-<article class="slide" id="slide-12" data-index="16">
+<article class="slide" id="slide-18" data-index="16">
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">6</span>
+      <span class="title-text">Sistemas de seguridad</span>
+    </h2>
+  </header>
+  <p class="normativa-intro">
+    Los robots modernos operan a alta velocidad en instalaciones complejas: la integración multiplica los riesgos y exige medidas técnicas de seguridad, no solo prevención basada en el comportamiento.
+  </p>
+  <div class="seguridad-overview">
+    <div class="timeline-table-card seguridad-layers-card">
+      <table class="timeline-table">
+        <thead>
+          <tr>
+            <th style="width: 14%;">Apartado</th>
+            <th style="width: 32%;">Enfoque</th>
+            <th style="width: 54%;">Qué cubre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="clickable-row" data-target-slide="18" title="Ir a 6.1">
+            <td><span class="year-badge">6.1</span></td>
+            <td class="hito-title">Peligros inherentes</td>
+            <td>Solapamiento, energía, programación, EMC y factor humano; el dato &gt;50% fallos técnicos.</td>
+          </tr>
+          <tr class="clickable-row" data-target-slide="19" title="Ir a 6.2">
+            <td><span class="year-badge">6.2</span></td>
+            <td class="hito-title">Principios y SSP</td>
+            <td>Estados automático / intervención manual y arquitectura del Sistema de Seguridad Personal.</td>
+          </tr>
+          <tr class="clickable-row" data-target-slide="20" title="Ir a 6.3">
+            <td><span class="year-badge">6.3</span></td>
+            <td class="hito-title">Cerramiento y normativa</td>
+            <td>Resguardos (altura + distancia) y marco UNE EN 292, 294, 811 y 953.</td>
+          </tr>
+          <tr class="clickable-row" data-target-slide="21" title="Ir a 6.4">
+            <td><span class="year-badge">6.4</span></td>
+            <td class="hito-title">Microdiseño de distancias</td>
+            <td>Alcance hacia arriba, ecuación frontal, biomecánica, aberturas y acceso inferior.</td>
+          </tr>
+          <tr class="clickable-row" data-target-slide="22" title="Ir a 6.5">
+            <td><span class="year-badge">6.5</span></td>
+            <td class="hito-title">Célula unificada</td>
+            <td>Síntesis: perímetro, malla, hueco inferior y cerebro SSP en una sola célula.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="seguridad-quote">
+      La prevención basada en el comportamiento es insuficiente: los peligros por fallos del sistema exigen medidas técnicas de seguridad.
+    </p>
+  </div>
+</article>
+
+<article class="slide" id="slide-19" data-index="17">
+  <header class="slide-header">
+    <h2 class="slide-title">
+      <span class="year-tag">6.1</span>
+      <span class="title-text">Peligros inherentes y el dato técnico</span>
+    </h2>
+  </header>
+  <p class="normativa-intro">
+    Cinco familias de peligro caracterizan la automatización moderna. Más de la mitad de los accidentes se atribuyen a fallos técnicos de circuitos y control.
+  </p>
+  <div class="seguridad-cell-layout">
+    <div class="normativas-grid seguridad-cards-grid" style="flex: 1;">
+      <div class="normativa-card">
+        <div class="normativa-stripe stripe-orange"></div>
+        <div class="normativa-content">
+          <button type="button" class="normativa-icon-box normativa-icon-img" onclick="openLightbox('assets/images/ssp-solapamiento.png')" title="Ampliar solapamiento">
+            <img src="assets/images/ssp-solapamiento.png" alt="Solapamiento de radios de acción">
+          </button>
+          <h3 class="normativa-name">Solapamiento</h3>
+          <p class="normativa-desc">Alta velocidad en radios de acción cruzados entre robots o ejes.</p>
+        </div>
+      </div>
+      <div class="normativa-card">
+        <div class="normativa-stripe stripe-yellow"></div>
+        <div class="normativa-content">
+          <button type="button" class="normativa-icon-box normativa-icon-img" onclick="openLightbox('assets/images/ssp-liberacion-energia.png')" title="Ampliar liberación de energía">
+            <img src="assets/images/ssp-liberacion-energia.png" alt="Liberación de energía y proyecciones">
+          </button>
+          <h3 class="normativa-name">Liberación de energía</h3>
+          <p class="normativa-desc">Proyecciones de partículas, láseres o chorros de agua a presión.</p>
+        </div>
+      </div>
+      <div class="normativa-card">
+        <div class="normativa-stripe stripe-white"></div>
+        <div class="normativa-content">
+          <button type="button" class="normativa-icon-box normativa-icon-img" onclick="openLightbox('assets/images/ssp-libertad-programacion.png')" title="Ampliar libertad de programación">
+            <img src="assets/images/ssp-libertad-programacion.png" alt="Libertad de programación e imprevisibilidad">
+          </button>
+          <h3 class="normativa-name">Libertad de programación</h3>
+          <p class="normativa-desc">Imprevisibilidad de dirección y velocidad del trajeto.</p>
+        </div>
+      </div>
+      <div class="normativa-card">
+        <div class="normativa-stripe stripe-orange"></div>
+        <div class="normativa-content">
+          <button type="button" class="normativa-icon-box normativa-icon-img" onclick="openLightbox('assets/images/ssp-errores-emc.png')" title="Ampliar errores inducidos externos">
+            <img src="assets/images/ssp-errores-emc.png" alt="Errores inducidos externos EMC">
+          </button>
+          <h3 class="normativa-name">Errores inducidos externos</h3>
+          <p class="normativa-desc">Fallos por compatibilidad electromagnética (EMC).</p>
+        </div>
+      </div>
+      <div class="normativa-card">
+        <div class="normativa-stripe stripe-yellow"></div>
+        <div class="normativa-content">
+          <button type="button" class="normativa-icon-box normativa-icon-img" onclick="openLightbox('assets/images/ssp-factores-humanos.png')" title="Ampliar factores humanos">
+            <img src="assets/images/ssp-factores-humanos.png" alt="Factores humanos en operación">
+          </button>
+          <h3 class="normativa-name">Factores humanos</h3>
+          <p class="normativa-desc">Errores de operación, mantenimiento o uso del pendant.</p>
+        </div>
+      </div>
+      <div class="normativa-card">
+        <div class="normativa-stripe stripe-white"></div>
+        <div class="normativa-content">
+          <div class="stat-number-giant" style="font-size: clamp(2rem, 3.5vw, 2.8rem); color: var(--accent-yellow);">≥50%</div>
+          <h3 class="normativa-name">Fallos técnicos</h3>
+          <p class="normativa-desc">Accidentes atribuibles a circuitos electrónicos y sistemas de control (&lt;20% error humano).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<article class="slide" id="slide-20" data-index="18">
+  <header class="slide-header">
+    <h2 class="slide-title">
+      <span class="year-tag">6.2</span>
+      <span class="title-text">Principios operativos y Sistema SSP</span>
+    </h2>
+  </header>
+  <p class="normativa-intro">
+    Dos estados absolutos rigen la célula; el Sistema de Seguridad Personal (SSP) media entre el cerebro del robot y la frontera física.
+  </p>
+  <div class="seguridad-entorno-layout">
+    <div class="seguridad-entorno-points ssp-estados-points">
+      <div class="seguridad-resp-card seguridad-signal-card ssp-estado-card">
+        <h3 class="card-tag">Funcionamiento automático</h3>
+        <div class="seguridad-signal-card-body ssp-estado-body">
+          <button type="button" class="seguridad-signal-thumb ssp-estado-thumb" onclick="openLightbox('assets/images/ssp-funcionamiento-automatico.png')" title="Ampliar funcionamiento automático">
+            <img src="assets/images/ssp-funcionamiento-automatico.png" alt="Funcionamiento automático: perímetro cerrado sin personas">
+          </button>
+          <p class="seguridad-signal-text"><strong>Regla absoluta:</strong> ausencia total de personas en el espacio controlado. Perímetro cerrado y enclavado.</p>
+        </div>
+      </div>
+      <div class="seguridad-resp-card seguridad-signal-card ssp-estado-card">
+        <h3 class="card-tag">Intervención manual</h3>
+        <div class="seguridad-signal-card-body ssp-estado-body">
+          <button type="button" class="seguridad-signal-thumb ssp-estado-thumb" onclick="openLightbox('assets/images/ssp-intervencion-manual.png')" title="Ampliar intervención manual">
+            <img src="assets/images/ssp-intervencion-manual.png" alt="Intervención manual con parada segura y power off">
+          </button>
+          <p class="seguridad-signal-text"><strong>Regla absoluta:</strong> eliminación o reducción máxima del peligro mediante paradas forzosas (parada segura / power off).</p>
+        </div>
+      </div>
+    </div>
+    <div class="media-card seguridad-entorno-media">
+      <div class="media-gif-wrapper seguridad-cell-photo-wrap">
+        <img src="assets/images/ssp-arquitectura.png" alt="Arquitectura del Sistema de Seguridad Personal" class="slide-gif seguridad-cell-photo" onclick="openLightbox(this.src)" title="Ampliar SSP">
+      </div>
+      <div class="card-source-caption"><span>SSP: mediador del circuito de desconexión</span></div>
+    </div>
+  </div>
+</article>
+
+<article class="slide" id="slide-21" data-index="19">
+  <header class="slide-header">
+    <h2 class="slide-title">
+      <span class="year-tag">6.3</span>
+      <span class="title-text">Cerramiento físico y marco normativo</span>
+    </h2>
+  </header>
+  <h3 class="ssp-formula-heading">Eficiencia del Resguardo = Altura + Distancia</h3>
+  <p class="normativa-intro">
+    El objetivo principal es proteger al trabajador frente a disfunciones del sistema de control mediante guardas.
+  </p>
+  <div class="seguridad-entorno-layout">
+    <div class="media-card seguridad-entorno-media">
+      <div class="media-gif-wrapper seguridad-cell-photo-wrap">
+        <img
+          src="assets/images/ssp-cerramiento-fisico.png"
+          alt="Cerramiento físico: altura Y y distancia X del robot"
+          class="slide-gif seguridad-cell-photo"
+          onclick="openLightbox(this.src)"
+          title="Ampliar"
+        >
+      </div>
+      <div class="card-source-caption"><span>Altura (Y) y distancia del robot (X)</span></div>
+    </div>
+    <div class="seguridad-entorno-points">
+      <div class="seguridad-resp-card seguridad-signal-card">
+        <h3 class="card-tag">UNE EN 292 (1 y 2)</h3>
+        <div class="seguridad-signal-card-body">
+          <button type="button" class="seguridad-signal-thumb" onclick="openLightbox('assets/images/ssp-une-en-292.png')" title="Ampliar UNE EN 292">
+            <img src="assets/images/ssp-une-en-292.png" alt="Diseño general y conceptos básicos">
+          </button>
+          <p class="seguridad-signal-text">Diseño general y conceptos básicos de seguridad de máquinas.</p>
+        </div>
+      </div>
+      <div class="seguridad-resp-card seguridad-signal-card">
+        <h3 class="card-tag">UNE EN 294</h3>
+        <div class="seguridad-signal-card-body">
+          <button type="button" class="seguridad-signal-thumb" onclick="openLightbox('assets/images/ssp-une-en-294.png')" title="Ampliar UNE EN 294">
+            <img src="assets/images/ssp-une-en-294.png" alt="Alcance de miembros superiores">
+          </button>
+          <p class="seguridad-signal-text">Impedir el alcance de miembros superiores hacia la zona peligrosa.</p>
+        </div>
+      </div>
+      <div class="seguridad-resp-card seguridad-signal-card">
+        <h3 class="card-tag">UNE EN 811</h3>
+        <div class="seguridad-signal-card-body">
+          <button type="button" class="seguridad-signal-thumb" onclick="openLightbox('assets/images/ssp-une-en-811.png')" title="Ampliar UNE EN 811">
+            <img src="assets/images/ssp-une-en-811.png" alt="Alcance de miembros inferiores">
+          </button>
+          <p class="seguridad-signal-text">Impedir el alcance de miembros inferiores bajo resguardos.</p>
+        </div>
+      </div>
+      <div class="seguridad-resp-card seguridad-signal-card">
+        <h3 class="card-tag">UNE EN 953</h3>
+        <div class="seguridad-signal-card-body">
+          <button type="button" class="seguridad-signal-thumb" onclick="openLightbox('assets/images/ssp-une-en-953.png')" title="Ampliar UNE EN 953">
+            <img src="assets/images/ssp-une-en-953.png" alt="Diseño y construcción de resguardos">
+          </button>
+          <p class="seguridad-signal-text">Diseño y construcción de resguardos fijos y móviles.</p>
+        </div>
+      </div>
+      <div class="ssp-alert-banner" role="note">
+        <span class="ssp-alert-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.3 4.3L2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"></path>
+            <line x1="12" y1="10" x2="12" y2="14"></line>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+        </span>
+        <p>Si el perímetro es violado físicamente, el SSP entra en acción provocando la parada inmediata de la instalación.</p>
+      </div>
+    </div>
+  </div>
+</article>
+
+<article class="slide" id="slide-22" data-index="20">
+  <header class="slide-header">
+    <h2 class="slide-title">
+      <span class="year-tag">6.4</span>
+      <span class="title-text">Microdiseño de distancias de seguridad</span>
+    </h2>
+  </header>
+  <p class="normativa-intro">
+    El dimensionado de resguardos se basa en tablas normativas: si un valor cae entre dos tabulados, se elige siempre el de mayor seguridad (prohibido interpolar).
+  </p>
+  <div class="seguridad-cell-layout ssp-microdiseno-layout">
+    <div class="seguridad-zones-grid ssp-microdiseno-grid">
+      <div class="seguridad-zone-card zone-green ssp-elevacion-card">
+        <h3>Elevación (alcance arriba)</h3>
+        <div class="ssp-elevacion-bajo">
+          <button type="button" class="seguridad-signal-thumb ssp-fill-thumb" onclick="openLightbox('assets/images/ssp-elevacion-riesgo-bajo.png')" title="Ampliar riesgo bajo">
+            <img src="assets/images/ssp-elevacion-riesgo-bajo.png" alt="Riesgo bajo: alcance a 2,50 m">
+          </button>
+          <div class="ssp-elevacion-copy">
+            <p class="ssp-elevacion-label"><strong>Riesgo bajo:</strong> lesiones leves/reversibles</p>
+            <p>La zona peligrosa se considera protegida por distanciamiento si está por encima de 2,5 m.</p>
+          </div>
+        </div>
+        <div class="ssp-elevacion-bajo">
+          <button type="button" class="seguridad-signal-thumb ssp-fill-thumb" onclick="openLightbox('assets/images/ssp-elevacion-riesgo-alto.png')" title="Ampliar riesgo alto">
+            <img src="assets/images/ssp-elevacion-riesgo-alto.png" alt="Riesgo alto: alcance a 2,70 m">
+          </button>
+          <div class="ssp-elevacion-copy">
+            <p class="ssp-elevacion-label"><strong>Riesgo alto:</strong> lesiones graves/irreversibles</p>
+            <p>La zona peligrosa exige un alejamiento mayor situándose por encima de 2,7 m.</p>
+          </div>
+        </div>
+      </div>
+      <div class="seguridad-zone-card zone-yellow ssp-ecuacion-card">
+        <h3>Ecuación frontal (a, b, c)</h3>
+        <div class="ssp-ecuacion-body">
+          <button type="button" class="seguridad-signal-thumb ssp-fill-thumb ssp-ecuacion-fill" onclick="openLightbox('assets/images/ssp-ecuacion-frontal.png')" title="Ampliar ecuación frontal">
+            <img src="assets/images/ssp-ecuacion-frontal.png" alt="Ecuación frontal del resguardo: variables a, b y c">
+          </button>
+          <ul class="ssp-abc-list">
+            <li><strong>a</strong> = distancia del punto de peligro al suelo</li>
+            <li><strong>b</strong> = altura del borde superior de la barrera</li>
+            <li><strong>c</strong> = distancia horizontal desde el peligro al resguardo</li>
+          </ul>
+        </div>
+        <div class="ssp-alert-banner ssp-alert-banner-compact" role="note">
+          <span class="ssp-alert-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.3 4.3L2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"></path>
+              <line x1="12" y1="10" x2="12" y2="14"></line>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </span>
+          <p><strong>PROHIBIDO INTERPOLAR.</strong> Al consultar las tablas normativas para dimensionar a, b y c, si el cálculo cae entre dos valores tabulados, <strong>se elegirá obligatoriamente el valor que entrañe el mayor nivel de seguridad</strong>.</p>
+        </div>
+      </div>
+      <div class="seguridad-zone-card zone-red ssp-alcance-card">
+        <h3>Alcance alrededor</h3>
+        <p class="ssp-alcance-subtitle">Distancia de seguridad para aberturas de hasta 120 mm</p>
+        <button type="button" class="seguridad-signal-thumb ssp-fill-thumb ssp-alcance-thumb" onclick="openLightbox('assets/images/ssp-alcance-alrededor.png')" title="Ampliar alcance alrededor">
+          <img src="assets/images/ssp-alcance-alrededor.png" alt="Distancias de seguridad por biomecánica del brazo">
+        </button>
+      </div>
+    </div>
+    <div class="seguridad-zones-grid ssp-aberturas-row">
+      <div class="seguridad-zone-card zone-yellow ssp-aberturas-card">
+        <h3>Ranuras y excepciones</h3>
+        <p>Las formas geométricas restringen el movimiento de manera diferente. Para aberturas irregulares, se debe inscribir la forma circular o cuadrada más pequeña posible dentro de la irregularidad.</p>
+        <div class="ssp-aberturas-thumbs">
+          <button type="button" class="seguridad-signal-thumb ssp-fill-thumb" onclick="openLightbox('assets/images/ssp-abertura-rendija.png')" title="Ampliar rendija">
+            <img src="assets/images/ssp-abertura-rendija.png" alt="Abertura en rendija: geometría vs distancia ds">
+          </button>
+          <button type="button" class="seguridad-signal-thumb ssp-fill-thumb" onclick="openLightbox('assets/images/ssp-abertura-cuadrada.png')" title="Ampliar cuadrada">
+            <img src="assets/images/ssp-abertura-cuadrada.png" alt="Abertura cuadrada: geometría vs distancia ds">
+          </button>
+          <button type="button" class="seguridad-signal-thumb ssp-fill-thumb" onclick="openLightbox('assets/images/ssp-abertura-circular.png')" title="Ampliar circular">
+            <img src="assets/images/ssp-abertura-circular.png" alt="Abertura circular: geometría vs distancia ds">
+          </button>
+        </div>
+        <div class="ssp-alert-banner ssp-alert-banner-compact" role="note">
+          <span class="ssp-alert-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.3 4.3L2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"></path>
+              <line x1="12" y1="10" x2="12" y2="14"></line>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </span>
+          <p>En ranuras paralelas de ancho &lt; 65 mm la distancia de seguridad máxima se reduce a 200 mm porque el pulgar actúa como tope anatómico.</p>
+        </div>
+      </div>
+      <div class="seguridad-zone-card zone-green ssp-acceso-card">
+        <h3>Acceso inferior</h3>
+        <p>La altura del hueco inferior «h» determina hasta dónde puede deslizarse el miembro inferior hacia la zona de peligro.</p>
+        <button type="button" class="seguridad-signal-thumb ssp-fill-thumb ssp-alcance-thumb" onclick="openLightbox('assets/images/ssp-acceso-inferior.png')" title="Ampliar acceso inferior">
+          <img src="assets/images/ssp-acceso-inferior.png" alt="Acceso inferior: relación entre hueco h y distancia de seguridad ds">
+        </button>
+        <div class="ssp-alert-banner ssp-alert-banner-compact" role="note">
+          <span class="ssp-alert-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.3 4.3L2.8 17.5A2 2 0 0 0 4.5 20.5h15a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0z"></path>
+              <line x1="12" y1="10" x2="12" y2="14"></line>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </span>
+          <p><strong>Mandato de diseño:</strong> los resguardos deben extenderse lo más cerca posible del nivel de suelo para minimizar la variable «h», reduciendo drásticamente la distancia de seguridad requerida en la instalación.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<article class="slide" id="slide-23" data-index="21">
+  <header class="slide-header">
+    <h2 class="slide-title">
+      <span class="year-tag">6.5</span>
+      <span class="title-text">La célula robótica unificada</span>
+    </h2>
+  </header>
+  <p class="normativa-intro">
+    Un diseño técnico riguroso convierte el peligro inherente en seguridad matemática: perímetro, malla, hueco inferior y lógica SSP trabajan juntos.
+  </p>
+  <div class="seguridad-cell-layout ssp-celula-layout">
+    <div class="media-card ssp-celula-media">
+      <div class="media-gif-wrapper ssp-celula-wrap">
+        <img src="assets/images/ssp-celula-unificada.jpg" alt="Dossier de diseño: célula robótica unificada con altura perimetral, geometría de aberturas, acceso inferior y SSP" class="slide-gif ssp-celula-photo" onclick="openLightbox(this.src)" title="Ampliar">
+      </div>
+      <div class="card-source-caption"><span>El Dossier de Diseño: La Célula Robótica Unificada</span></div>
+    </div>
+  </div>
+</article>
+
+<article class="slide" id="slide-12" data-index="22">
+  <header class="slide-header">
+    <h2 class="slide-title">
+      <span class="year-tag">7</span>
       <span class="title-text">Fuentes Oficiales y Documentación de Referencia</span>
     </h2>
   </header>

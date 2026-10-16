@@ -19,11 +19,17 @@ const SLIDES = [
   { id: '5.2', title: 'La célula: perímetro y sensores', tag: 'Perímetro', level: 2 },
   { id: '5.3', title: 'El operario: protocolos', tag: 'Humano', level: 2 },
   { id: '5.4', title: 'Arquitectura del entorno seguro', tag: 'Entorno', level: 2 },
-  { id: '6', title: 'Fuentes y bibliografía', tag: 'Fuentes', level: 1 }
+  { id: '6', title: 'Sistemas de seguridad', tag: 'SSP', level: 1 },
+  { id: '6.1', title: 'Peligros inherentes y dato técnico', tag: 'Riesgos', level: 2 },
+  { id: '6.2', title: 'Principios operativos y SSP', tag: 'Arquitectura', level: 2 },
+  { id: '6.3', title: 'Cerramiento y normativa', tag: 'Resguardos', level: 2 },
+  { id: '6.4', title: 'Microdiseño de distancias', tag: 'Distancias', level: 2 },
+  { id: '6.5', title: 'Célula robótica unificada', tag: 'Síntesis', level: 2 },
+  { id: '7', title: 'Fuentes y bibliografía', tag: 'Fuentes', level: 1 }
 ];
 
 /** Secciones con subítems desplegables en el menú lateral. */
-const COLLAPSIBLE_SECTION_IDS = ['2', '5'];
+const COLLAPSIBLE_SECTION_IDS = ['2', '5', '6'];
 
 const PDF_WATT = 'assets/docs/James_Watt_Patent_1769_No_913.pdf';
 
