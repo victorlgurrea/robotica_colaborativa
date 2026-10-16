@@ -14,8 +14,16 @@ const SLIDES = [
   { id: '2.7', title: '1974 ASEA IRB 6 y SEAT', tag: 'GIF', level: 2 },
   { id: '3', title: 'Marco legal y normativa', tag: 'Normas', level: 1 },
   { id: '4', title: '¿Dónde ocurren los accidentes?', tag: 'Datos', level: 1 },
-  { id: '5', title: 'Fuentes y bibliografía', tag: 'Fuentes', level: 1 }
+  { id: '5', title: 'Seguridad', tag: 'Defensa', level: 1 },
+  { id: '5.1', title: 'El robot: seguridad intrínseca', tag: 'Núcleo', level: 2 },
+  { id: '5.2', title: 'La célula: perímetro y sensores', tag: 'Perímetro', level: 2 },
+  { id: '5.3', title: 'El operario: protocolos', tag: 'Humano', level: 2 },
+  { id: '5.4', title: 'Arquitectura del entorno seguro', tag: 'Entorno', level: 2 },
+  { id: '6', title: 'Fuentes y bibliografía', tag: 'Fuentes', level: 1 }
 ];
+
+/** Secciones con subítems desplegables en el menú lateral. */
+const COLLAPSIBLE_SECTION_IDS = ['2', '5'];
 
 const PDF_WATT = 'assets/docs/James_Watt_Patent_1769_No_913.pdf';
 
@@ -41,13 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  /** Índices de diapositivas nivel 2 bajo el ítem "2" (Resumen cronológico). */
-  const SECTION_2_PARENT_INDEX = SLIDES.findIndex((s) => s.id === '2');
-  const SECTION_2_CHILD_INDEXES = SLIDES
-    .map((s, idx) => (s.level === 2 && String(s.id).startsWith('2.') ? idx : -1))
-    .filter((idx) => idx >= 0);
-
-  let section2Expanded = false;
+  const sectionChildIndexes = {};
+  const sectionExpanded = {};
+  COLLAPSIBLE_SECTION_IDS.forEach((parentId) => {
+    sectionChildIndexes[parentId] = SLIDES
+      .map((s, idx) => (s.level === 2 && String(s.id).startsWith(`${parentId}.`) ? idx : -1))
+      .filter((idx) => idx >= 0);
+    sectionExpanded[parentId] = false;
+  });
 
   function createNavButton(item, idx) {
     const level = item.level || 1;
@@ -65,9 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
     return btn;
   }
 
-  function setSection2Expanded(expanded) {
-    section2Expanded = expanded;
-    const group = sidebarNav?.querySelector('.nav-group-2');
+  function setSectionExpanded(parentId, expanded) {
+    sectionExpanded[parentId] = expanded;
+    const group = sidebarNav?.querySelector(`.nav-group-${parentId}`);
     if (!group) return;
     group.classList.toggle('is-expanded', expanded);
     group.classList.toggle('is-collapsed', !expanded);
@@ -77,8 +86,53 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function toggleSection2() {
-    setSection2Expanded(!section2Expanded);
+  function toggleSection(parentId) {
+    setSectionExpanded(parentId, !sectionExpanded[parentId]);
+  }
+
+  function buildCollapsibleGroup(parentId, parentIndex) {
+    const group = document.createElement('div');
+    group.className = `nav-group nav-group-${parentId} is-collapsed`;
+
+    const parentBtn = createNavButton(SLIDES[parentIndex], parentIndex);
+    parentBtn.classList.add('nav-parent');
+    parentBtn.setAttribute('aria-expanded', 'false');
+    parentBtn.setAttribute('aria-controls', `nav-children-${parentId}`);
+    parentBtn.insertAdjacentHTML(
+      'beforeend',
+      `<span class="nav-chevron" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </span>`
+    );
+    parentBtn.addEventListener('click', () => {
+      toggleSection(parentId);
+      goToSlide(parentIndex);
+      if (window.innerWidth <= 768) sidebar?.classList.remove('mobile-open');
+    });
+    group.appendChild(parentBtn);
+
+    const children = document.createElement('div');
+    children.className = 'nav-children';
+    children.id = `nav-children-${parentId}`;
+    children.setAttribute('role', 'group');
+
+    let j = parentIndex + 1;
+    while (j < SLIDES.length && SLIDES[j].level === 2 && String(SLIDES[j].id).startsWith(`${parentId}.`)) {
+      const childIdx = j;
+      const childBtn = createNavButton(SLIDES[j], childIdx);
+      childBtn.addEventListener('click', () => {
+        setSectionExpanded(parentId, true);
+        goToSlide(childIdx);
+        if (window.innerWidth <= 768) sidebar?.classList.remove('mobile-open');
+      });
+      children.appendChild(childBtn);
+      j += 1;
+    }
+
+    group.appendChild(children);
+    return { group, nextIndex: j };
   }
 
   function buildSidebar() {
@@ -89,50 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
     while (i < SLIDES.length) {
       const item = SLIDES[i];
 
-      if (item.id === '2') {
-        const group = document.createElement('div');
-        group.className = 'nav-group nav-group-2 is-collapsed';
-
-        const parentBtn = createNavButton(item, i);
-        parentBtn.classList.add('nav-parent');
-        parentBtn.setAttribute('aria-expanded', 'false');
-        parentBtn.setAttribute('aria-controls', 'nav-children-2');
-        parentBtn.insertAdjacentHTML(
-          'beforeend',
-          `<span class="nav-chevron" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </span>`
-        );
-        parentBtn.addEventListener('click', () => {
-          toggleSection2();
-          goToSlide(SECTION_2_PARENT_INDEX);
-          if (window.innerWidth <= 768) sidebar?.classList.remove('mobile-open');
-        });
-        group.appendChild(parentBtn);
-
-        const children = document.createElement('div');
-        children.className = 'nav-children';
-        children.id = 'nav-children-2';
-        children.setAttribute('role', 'group');
-
-        let j = i + 1;
-        while (j < SLIDES.length && SLIDES[j].level === 2 && String(SLIDES[j].id).startsWith('2.')) {
-          const childIdx = j;
-          const childBtn = createNavButton(SLIDES[j], childIdx);
-          childBtn.addEventListener('click', () => {
-            setSection2Expanded(true);
-            goToSlide(childIdx);
-            if (window.innerWidth <= 768) sidebar?.classList.remove('mobile-open');
-          });
-          children.appendChild(childBtn);
-          j += 1;
-        }
-
-        group.appendChild(children);
+      if (COLLAPSIBLE_SECTION_IDS.includes(item.id)) {
+        const { group, nextIndex } = buildCollapsibleGroup(item.id, i);
         sidebarNav.appendChild(group);
-        i = j;
+        i = nextIndex;
         continue;
       }
 
@@ -146,7 +160,9 @@ document.addEventListener('DOMContentLoaded', () => {
       i += 1;
     }
 
-    setSection2Expanded(section2Expanded);
+    COLLAPSIBLE_SECTION_IDS.forEach((parentId) => {
+      setSectionExpanded(parentId, sectionExpanded[parentId]);
+    });
   }
 
   function goToSlide(index) {
@@ -156,10 +172,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     currentIndex = index;
 
-    // Si entramos en un hito 2.x, desplegar el menú del ítem 2
-    if (SECTION_2_CHILD_INDEXES.includes(currentIndex)) {
-      setSection2Expanded(true);
-    }
+    COLLAPSIBLE_SECTION_IDS.forEach((parentId) => {
+      if (sectionChildIndexes[parentId].includes(currentIndex)) {
+        setSectionExpanded(parentId, true);
+      }
+    });
 
     slideEls.forEach((el, idx) => {
       el.classList.toggle('active', idx === currentIndex);
@@ -200,19 +217,16 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => goToSlide(1));
   });
 
-  slideMount.querySelectorAll('.btn-jump').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const target = parseInt(btn.dataset.targetSlide, 10);
+  function bindJumpTarget(el) {
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const target = parseInt(el.dataset.targetSlide, 10);
       if (!Number.isNaN(target)) goToSlide(target - 1);
     });
-  });
+  }
 
-  slideMount.querySelectorAll('.clickable-row').forEach((row) => {
-    row.addEventListener('click', () => {
-      const target = parseInt(row.dataset.targetSlide, 10);
-      if (!Number.isNaN(target)) goToSlide(target - 1);
-    });
-  });
+  slideMount.querySelectorAll('.btn-jump').forEach(bindJumpTarget);
+  slideMount.querySelectorAll('.clickable-row').forEach(bindJumpTarget);
 
   btnToggleSidebar?.addEventListener('click', () => {
     if (window.innerWidth <= 768) {
