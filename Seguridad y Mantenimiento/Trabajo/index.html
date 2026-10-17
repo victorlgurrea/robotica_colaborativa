@@ -847,7 +847,7 @@
           </svg>
         </div>
         <h3 class="normativa-name">Pruebas progresivas</h3>
-        <div class="normativa-code">Paso a paso → producción</div>
+        <div class="normativa-code">Paso a paso hasta producción</div>
         <p class="normativa-desc">1º movimiento paso a paso lento → 2º continuo lento → 3º aumento hasta velocidad de producción.</p>
       </div>
     </div>
@@ -855,22 +855,24 @@
 
   <div class="seguridad-signal-layout">
     <div class="seguridad-signal-cards">
-      <div class="seguridad-resp-card seguridad-signal-card">
+      <div class="seguridad-resp-card seguridad-signal-card seguridad-card-vertical-centered">
         <h3 class="card-tag">Avisos previos</h3>
-        <div class="seguridad-signal-card-body">
-          <button type="button" class="seguridad-signal-thumb" onclick="openLightbox('assets/images/aviso-sirena.png')" title="Ampliar sirena">
+        <div class="seguridad-vertical-card-body">
+          <button type="button" class="seguridad-signal-thumb seguridad-thumb-adaptive" onclick="openLightbox('assets/images/aviso-sirena.png')" title="Ampliar sirena">
             <img src="assets/images/aviso-sirena.png" alt="Icono de sirena de aviso previo">
           </button>
-          <p class="seguridad-signal-text">Sirenas audibles obligatorias antes de reiniciar el ciclo de trabajo tras una parada.</p>
+          <p class="seguridad-signal-text text-center-adaptive">Sirenas audibles obligatorias antes de reiniciar el ciclo de trabajo tras una parada.</p>
         </div>
       </div>
-      <div class="seguridad-resp-card seguridad-signal-card">
+      <div class="seguridad-resp-card seguridad-signal-card seguridad-card-baliza">
         <h3 class="card-tag">Balizas de estado · IEC 60204-1</h3>
-        <div class="seguridad-signal-card-body">
-          <button type="button" class="seguridad-signal-thumb seguridad-signal-thumb-tall" onclick="openLightbox('assets/images/baliza-estado.png')" title="Ampliar baliza">
-            <img src="assets/images/baliza-estado.png" alt="Baliza de estado luminosa de cinco colores">
-          </button>
-          <ul class="signal-color-list">
+        <div class="seguridad-baliza-body">
+          <div class="seguridad-baliza-top">
+            <button type="button" class="seguridad-signal-thumb seguridad-baliza-thumb-horizontal" onclick="openLightbox('assets/images/baliza-estado.png')" title="Ampliar baliza">
+              <img src="assets/images/baliza-estado.png" alt="Baliza de estado luminosa de cinco colores">
+            </button>
+          </div>
+          <ul class="signal-color-list signal-color-list-wide">
             <li><span class="signal-dot signal-red"></span><strong>Rojo</strong> — Emergencia / peligro: acción inmediata.</li>
             <li><span class="signal-dot signal-yellow"></span><strong>Amarillo</strong> — Condición anormal: vigilancia o intervención.</li>
             <li><span class="signal-dot signal-blue"></span><strong>Azul</strong> — Acción obligatoria del operario.</li>
