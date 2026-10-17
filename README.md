@@ -90,6 +90,7 @@ Más detalle: [`Seguridad y Mantenimiento/README.md`](Seguridad%20y%20Mantenimie
 | Flechas / clic en menú | Cambiar diapositiva |
 | `S` | Mostrar / ocultar barra lateral |
 | `F` | Pantalla completa |
+| Icono de idioma (barra superior) | Desplegable ES / EN con banderas (español por defecto) |
 
 ---
 

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prevención y Seguridad en la Automatización Industrial</title>
-  <link rel="stylesheet" href="css/styles.css?v=20261017b">
+  <link rel="stylesheet" href="css/styles.css?v=20261017-ok">
   <link rel="icon" type="image/png" href="assets/images/image1.png">
 </head>
 <body>
@@ -17,16 +17,16 @@
           </svg>
         </div>
         <div class="sidebar-header-titles">
-          <span class="sidebar-title">Seguridad Industrial</span>
-          <span class="sidebar-subtitle">Hitos, Seguridad y Sistemas</span>
+          <span class="sidebar-title" data-i18n="ui.sidebarTitle">Seguridad Industrial</span>
+          <span class="sidebar-subtitle" data-i18n="ui.sidebarSubtitle">Hitos, Seguridad y Sistemas</span>
         </div>
       </div>
-      <nav class="sidebar-nav" id="sidebar-nav" aria-label="Navegación de diapositivas"></nav>
+      <nav class="sidebar-nav" id="sidebar-nav" data-i18n-aria="ui.navAria" aria-label="Navegación de diapositivas"></nav>
     </aside>
     <main class="main-layout">
       <header class="top-bar">
         <div class="top-bar-left">
-          <button type="button" id="btn-toggle-sidebar" class="btn-icon" title="Ocultar / Mostrar menú lateral (S)">
+          <button type="button" id="btn-toggle-sidebar" class="btn-icon" data-i18n-title="ui.toggleSidebar" title="Ocultar / Mostrar menú lateral (S)">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -34,12 +34,52 @@
             </svg>
           </button>
           <div class="current-slide-heading">
-            <span>Tema:</span>
+            <span data-i18n="ui.themeLabel">Tema:</span>
             <span class="current-title-badge" id="top-current-title">Portada principal</span>
           </div>
         </div>
         <div class="top-bar-right">
-          <button type="button" id="btn-fullscreen" class="btn-icon" title="Pantalla completa (F)">
+          <div class="lang-dropdown" id="lang-dropdown">
+            <button type="button" class="btn-icon lang-dropdown-toggle" id="btn-lang-toggle" data-i18n-aria="meta.langAria" data-i18n-title="meta.langAria" aria-label="Idioma" title="Idioma" aria-haspopup="listbox" aria-expanded="false">
+              <span class="lang-toggle-globe" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M2 12h20"></path>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </span>
+              <span class="lang-flag lang-flag-current" id="lang-flag-current" aria-hidden="true">
+                <svg viewBox="0 0 24 16" width="20" height="13">
+                  <rect width="24" height="16" rx="2" fill="#c60b1e"/>
+                  <rect y="4" width="24" height="8" fill="#ffc400"/>
+                </svg>
+              </span>
+            </button>
+            <div class="lang-dropdown-menu" id="lang-dropdown-menu" role="listbox" hidden>
+              <button type="button" class="lang-option active" role="option" data-lang="es" aria-selected="true">
+                <span class="lang-flag" aria-hidden="true">
+                  <svg viewBox="0 0 24 16" width="22" height="15">
+                    <rect width="24" height="16" rx="2" fill="#c60b1e"/>
+                    <rect y="4" width="24" height="8" fill="#ffc400"/>
+                  </svg>
+                </span>
+                <span class="lang-option-label">Español</span>
+              </button>
+              <button type="button" class="lang-option" role="option" data-lang="en" aria-selected="false">
+                <span class="lang-flag" aria-hidden="true">
+                  <svg viewBox="0 0 24 16" width="22" height="15">
+                    <rect width="24" height="16" rx="2" fill="#012169"/>
+                    <path d="M0 0 L24 16 M24 0 L0 16" stroke="#fff" stroke-width="3.2"/>
+                    <path d="M0 0 L24 16 M24 0 L0 16" stroke="#c8102e" stroke-width="1.6"/>
+                    <path d="M12 0 V16 M0 8 H24" stroke="#fff" stroke-width="5.2"/>
+                    <path d="M12 0 V16 M0 8 H24" stroke="#c8102e" stroke-width="2.6"/>
+                  </svg>
+                </span>
+                <span class="lang-option-label">English</span>
+              </button>
+            </div>
+          </div>
+          <button type="button" id="btn-fullscreen" class="btn-icon" data-i18n-title="ui.fullscreen" title="Pantalla completa (F)">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
             </svg>
@@ -51,13 +91,13 @@
           <div class="slide-mount-container" id="slide-mount">
 <article class="slide slide-cover" id="slide-1" data-index="0">
   <div class="cover-wrapper">
-    <img src="assets/images/image1.png" alt="Portada de la presentación" class="cover-bg-image">
+    <img src="assets/images/image1.png" data-i18n-alt="slide1.coverAlt" alt="Portada de la presentación" class="cover-bg-image">
     <div class="cover-overlay-content">
-      <h1 class="cover-title">PREVENCIÓN Y SEGURIDAD EN LA AUTOMATIZACIÓN INDUSTRIAL</h1>
-      <p class="cover-subtitle">De los orígenes de la robótica a la normativa moderna de prevención de riesgos.</p>
+      <h1 class="cover-title" data-i18n="slide1.title">PREVENCIÓN Y SEGURIDAD EN LA AUTOMATIZACIÓN INDUSTRIAL</h1>
+      <p class="cover-subtitle" data-i18n="slide1.subtitle">De los orígenes de la robótica a la normativa moderna de prevención de riesgos.</p>
       <div class="cover-actions">
         <button type="button" class="btn-cover-start">
-          <span>Comenzar Presentación</span>
+          <span data-i18n="slide1.start">Comenzar Presentación</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <polygon points="5 3 19 12 5 21 5 3"></polygon>
           </svg>
@@ -71,7 +111,7 @@
             <line x1="3" y1="12" x2="3.01" y2="12"></line>
             <line x1="3" y1="18" x2="3.01" y2="18"></line>
           </svg>
-          <span>Cronograma</span>
+          <span data-i18n="slide1.timeline">Cronograma</span>
         </button>
       </div>
     </div>
@@ -83,56 +123,56 @@
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">2</span>
-      <span class="title-text">Hitos Históricos: Resumen Cronológico</span>
+      <span class="title-text" data-i18n="slide2.title">Hitos Históricos: Resumen Cronológico</span>
     </h2>
   </header>
   <div class="timeline-table-card">
     <table class="timeline-table">
       <thead>
         <tr>
-          <th style="width: 16%;">Año</th>
-          <th style="width: 32%;">Hito</th>
-          <th style="width: 52%;">Descripción</th>
+          <th style="width: 16%;" data-i18n="slide2.thYear">Año</th>
+          <th style="width: 32%;" data-i18n="slide2.thHito">Hito</th>
+          <th style="width: 52%;" data-i18n="slide2.thDesc">Descripción</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="clickable-row" data-target-slide="4" title="Ir a la máquina de vapor de Watt">
+        <tr class="clickable-row" data-target-slide="4" data-i18n-title="slide2.r1Title" title="Ir a la máquina de vapor de Watt">
           <td><span class="year-badge">1769</span></td>
-          <td class="hito-title">Máquina de Vapor de Watt</td>
-          <td>Patente de James Watt, mejora con condensador separado y regulador centrífugo, inicio de la mecanización.</td>
+          <td class="hito-title" data-i18n="slide2.r1Hito">Máquina de Vapor de Watt</td>
+          <td data-i18n="slide2.r1Desc">Patente de James Watt, mejora con condensador separado y regulador centrífugo, inicio de la mecanización.</td>
         </tr>
-        <tr class="clickable-row" data-target-slide="5" title="Ir a la cadena de montaje Ford">
+        <tr class="clickable-row" data-target-slide="5" data-i18n-title="slide2.r2Title" title="Ir a la cadena de montaje Ford">
           <td><span class="year-badge">1913</span></td>
-          <td class="hito-title">Cadena de Montaje Móvil</td>
-          <td>Implementada por Henry Ford para la fabricación de automóviles, estableciendo el flujo continuo.</td>
+          <td class="hito-title" data-i18n="slide2.r2Hito">Cadena de Montaje Móvil</td>
+          <td data-i18n="slide2.r2Desc">Implementada por Henry Ford para la fabricación de automóviles, estableciendo el flujo continuo.</td>
         </tr>
-        <tr class="clickable-row" data-target-slide="6" title="Ir al control numérico del MIT">
+        <tr class="clickable-row" data-target-slide="6" data-i18n-title="slide2.r3Title" title="Ir al control numérico del MIT">
           <td><span class="year-badge">1952 – 1959</span></td>
-          <td class="hito-title">Control Numérico (NC) y APT</td>
-          <td>Desarrollo de la fresadora de control numérico y el sistema de programación automática en el MIT.</td>
+          <td class="hito-title" data-i18n="slide2.r3Hito">Control Numérico (NC) y APT</td>
+          <td data-i18n="slide2.r3Desc">Desarrollo de la fresadora de control numérico y el sistema de programación automática en el MIT.</td>
         </tr>
-        <tr class="clickable-row" data-target-slide="7" title="Ir a Unimate / Kawasaki">
+        <tr class="clickable-row" data-target-slide="7" data-i18n-title="slide2.r4Title" title="Ir a Unimate / Kawasaki">
           <td><span class="year-badge">1961</span></td>
-          <td class="hito-title">Primer Robot Industrial (Unimate)</td>
-          <td>George Devol y Unimation instalan el primer manipulador programable en General Motors.</td>
+          <td class="hito-title" data-i18n="slide2.r4Hito">Primer Robot Industrial (Unimate)</td>
+          <td data-i18n="slide2.r4Desc">George Devol y Unimation instalan el primer manipulador programable en General Motors.</td>
         </tr>
-        <tr class="clickable-row" data-target-slide="7" title="Ir a Kawasaki-Unimate y Bedford Associates">
+        <tr class="clickable-row" data-target-slide="7" data-i18n-title="slide2.r5Title" title="Ir a Kawasaki-Unimate y Bedford Associates">
           <td><span class="year-badge">1967 – 1969</span></td>
-          <td class="hito-title">Expansión Japonesa y Bedford Associates</td>
-          <td>
+          <td class="hito-title" data-i18n="slide2.r5Hito">Expansión Japonesa y Bedford Associates</td>
+          <td data-i18n-html="slide2.r5DescHtml">
             <p>Acuerdo entre Kawasaki y Unimation para la producción del robot Kawasaki-Unimate 2000.</p>
             <p>Desarrollo por Bedford Associates del primer PLC (el Modicon 084) para General Motors.</p>
           </td>
         </tr>
-        <tr class="clickable-row" data-target-slide="8" title="Ir a KUKA Famulus">
+        <tr class="clickable-row" data-target-slide="8" data-i18n-title="slide2.r6Title" title="Ir a KUKA Famulus">
           <td><span class="year-badge">1973</span></td>
-          <td class="hito-title">KUKA FAMULUS (6 Ejes)</td>
-          <td>Primer robot industrial eléctrico de seis ejes presentado en Alemania.</td>
+          <td class="hito-title" data-i18n="slide2.r6Hito">KUKA FAMULUS (6 Ejes)</td>
+          <td data-i18n="slide2.r6Desc">Primer robot industrial eléctrico de seis ejes presentado en Alemania.</td>
         </tr>
-        <tr class="clickable-row" data-target-slide="9" title="Ir a ASEA IRB 6 y SEAT">
+        <tr class="clickable-row" data-target-slide="9" data-i18n-title="slide2.r7Title" title="Ir a ASEA IRB 6 y SEAT">
           <td><span class="year-badge">1974</span></td>
-          <td class="hito-title">ASEA IRB 6 y SEAT España</td>
-          <td>Presentación del robot eléctrico IRB 6 (Suecia) e incorporación de tres robots con tecnología FIAT en SEAT Zona Franca.</td>
+          <td class="hito-title" data-i18n="slide2.r7Hito">ASEA IRB 6 y SEAT España</td>
+          <td data-i18n="slide2.r7Desc">Presentación del robot eléctrico IRB 6 (Suecia) e incorporación de tres robots con tecnología FIAT en SEAT Zona Franca.</td>
         </tr>
       </tbody>
     </table>
@@ -144,35 +184,35 @@
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">1769</span>
-      <span class="title-text">Patente de James Watt (nº 913)</span>
+      <span class="title-text" data-i18n="slide3.title">Patente de James Watt (nº 913)</span>
     </h2>
   </header>
   <div class="slide-split">
     <div class="media-card">
       <div class="patent-docs-wrapper">
         <div class="patent-sheets-grid">
-          <div class="patent-sheet-card" onclick="openLightbox('assets/images/image4.png')" title="Clic para ampliar página 1">
-            <img src="assets/images/image4.png" alt="Patente de James Watt página 1" class="patent-sheet-img">
+          <div class="patent-sheet-card" onclick="openLightbox('assets/images/image4.png')" data-i18n-title="slide3.page1Title" title="Clic para ampliar página 1">
+            <img src="assets/images/image4.png" data-i18n-alt="slide3.page1Alt" alt="Patente de James Watt página 1" class="patent-sheet-img" data-i18n-alt="slide3.page1Alt">
           </div>
-          <div class="patent-sheet-card" onclick="openLightbox('assets/images/image5.png')" title="Clic para ampliar página 2">
-            <img src="assets/images/image5.png" alt="Patente de James Watt página 2" class="patent-sheet-img">
+          <div class="patent-sheet-card" onclick="openLightbox('assets/images/image5.png')" data-i18n-title="slide3.page2Title" title="Clic para ampliar página 2">
+            <img src="assets/images/image5.png" data-i18n-alt="slide3.page2Alt" alt="Patente de James Watt página 2" class="patent-sheet-img" data-i18n-alt="slide3.page2Alt">
           </div>
         </div>
       </div>
     </div>
     <div class="info-card">
-      <h3 class="card-tag">PATENTE DE JAMES WATT</h3>
+      <h3 class="card-tag" data-i18n="slide3.tag">PATENTE DE JAMES WATT</h3>
       <div class="card-points">
-        <p class="card-point-item">Método para reducir el consumo de vapor y combustible en las máquinas de fuego.</p>
-        <p class="card-point-item">Idea clave: un condensador separado del cilindro, que se mantiene siempre caliente.</p>
-        <p class="card-point-item">Inicio de la mecanización.</p>
-        <p class="card-point-item">El PDF completo del documento está en la diapositiva de la máquina de vapor.</p>
+        <p class="card-point-item" data-i18n="slide3.p1">Método para reducir el consumo de vapor y combustible en las máquinas de fuego.</p>
+        <p class="card-point-item" data-i18n="slide3.p2">Idea clave: un condensador separado del cilindro, que se mantiene siempre caliente.</p>
+        <p class="card-point-item" data-i18n="slide3.p3">Inicio de la mecanización.</p>
+        <p class="card-point-item" data-i18n="slide3.p4">El PDF completo del documento está en la diapositiva de la máquina de vapor.</p>
       </div>
       <button type="button" class="btn-patent btn-jump" data-target-slide="4">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <polyline points="9 18 15 12 9 6"></polyline>
         </svg>
-        <span>Ver máquina de vapor y PDF</span>
+        <span data-i18n="slide3.btn">Ver máquina de vapor y PDF</span>
       </button>
     </div>
   </div>
@@ -183,13 +223,13 @@
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">1769</span>
-      <span class="title-text">La máquina de vapor de Watt</span>
+      <span class="title-text" data-i18n="slide4.title">La máquina de vapor de Watt</span>
     </h2>
   </header>
   <div class="slide-split">
     <div class="media-card">
       <div class="media-gif-wrapper">
-        <img src="assets/gifs/maquina-vapor.gif" alt="Animación: máquina de vapor de Watt" class="slide-gif">
+        <img src="assets/gifs/maquina-vapor.gif" data-i18n-alt="slide4.gifAlt" alt="Animación: máquina de vapor de Watt" class="slide-gif" data-i18n-alt="slide4.gifAlt">
       </div>
       <div class="patent-actions-bar">
         <button type="button" class="btn-patent" onclick="openPdfModal('assets/docs/James_Watt_Patent_1769_No_913.pdf')">
@@ -199,9 +239,9 @@
             <line x1="16" y1="13" x2="8" y2="13"></line>
             <line x1="16" y1="17" x2="8" y2="17"></line>
           </svg>
-          <span>Ver contrato / patente de James Watt (PDF 1769)</span>
+          <span data-i18n="slide4.pdfBtn">Ver contrato / patente de James Watt (PDF 1769)</span>
         </button>
-        <a href="assets/docs/James_Watt_Patent_1769_No_913.pdf" download class="btn-icon" title="Descargar PDF original">
+        <a href="assets/docs/James_Watt_Patent_1769_No_913.pdf" download class="btn-icon" data-i18n-title="ui.downloadPdf" title="Descargar PDF original">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
@@ -211,14 +251,14 @@
       </div>
     </div>
     <div class="info-card">
-      <h3 class="card-tag">MÁQUINA DE VAPOR DE WATT</h3>
+      <h3 class="card-tag" data-i18n="slide4.tag">MÁQUINA DE VAPOR DE WATT</h3>
       <div class="card-points">
-        <p class="card-point-item">Mejora con condensador separado y regulador centrífugo.</p>
-        <p class="card-point-item">El regulador es un precedente del control con realimentación.</p>
-        <p class="card-point-item">Documento oficial: patente A.D. 1769, nº 913 (PDF).</p>
+        <p class="card-point-item" data-i18n="slide4.p1">Mejora con condensador separado y regulador centrífugo.</p>
+        <p class="card-point-item" data-i18n="slide4.p2">El regulador es un precedente del control con realimentación.</p>
+        <p class="card-point-item" data-i18n="slide4.p3">Documento oficial: patente A.D. 1769, nº 913 (PDF).</p>
       </div>
       <div class="card-source-caption">
-        <span>Animación: funcionamiento de la máquina de vapor de Watt</span>
+        <span data-i18n="slide4.caption">Animación: funcionamiento de la máquina de vapor de Watt</span>
       </div>
     </div>
   </div>
@@ -229,23 +269,23 @@
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">1913</span>
-      <span class="title-text">Cadena de montaje móvil</span>
+      <span class="title-text" data-i18n="slide5.title">Cadena de montaje móvil</span>
     </h2>
   </header>
   <div class="slide-split">
     <div class="media-card">
       <div class="media-gif-wrapper">
-        <img src="assets/gifs/ford-montaje.gif" alt="Animación: cadena de montaje Ford" class="slide-gif">
+        <img src="assets/gifs/ford-montaje.gif" data-i18n-alt="slide5.gifAlt" alt="Animación: cadena de montaje Ford" class="slide-gif" data-i18n-alt="slide5.gifAlt">
       </div>
     </div>
     <div class="info-card">
-      <h3 class="card-tag">HENRY FORD</h3>
+      <h3 class="card-tag" data-i18n="slide5.tag">HENRY FORD</h3>
       <div class="card-points">
-        <p class="card-point-item">Implementada por Henry Ford para la fabricación de automóviles.</p>
-        <p class="card-point-item">Establece el flujo continuo de producción.</p>
+        <p class="card-point-item" data-i18n="slide5.p1">Implementada por Henry Ford para la fabricación de automóviles.</p>
+        <p class="card-point-item" data-i18n="slide5.p2">Establece el flujo continuo de producción.</p>
       </div>
       <div class="card-source-caption">
-        <span>Animación: línea de montaje del Ford T (1919)</span>
+        <span data-i18n="slide5.caption">Animación: línea de montaje del Ford T (1919)</span>
       </div>
     </div>
   </div>
@@ -256,23 +296,23 @@
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">1952 – 1959</span>
-      <span class="title-text">Control numérico (NC) y APT</span>
+      <span class="title-text" data-i18n="slide6.title">Control numérico (NC) y APT</span>
     </h2>
   </header>
   <div class="slide-split">
     <div class="media-card">
       <div class="media-gif-wrapper">
-        <img src="assets/gifs/mit-control-numerico.gif" alt="Animación: control numérico MIT" class="slide-gif">
+        <img src="assets/gifs/mit-control-numerico.gif" data-i18n-alt="slide6.gifAlt" alt="Animación: control numérico MIT" class="slide-gif" data-i18n-alt="slide6.gifAlt">
       </div>
     </div>
     <div class="info-card">
-      <h3 class="card-tag">MIT</h3>
+      <h3 class="card-tag" data-i18n="slide6.tag">MIT</h3>
       <div class="card-points">
-        <p class="card-point-item">Desarrollo de la fresadora de control numérico sobre un modelo Cincinnati Hydro-Tel de 3 ejes verticales.</p>
-        <p class="card-point-item">Sistema de programación automática APT (Automatically Programmed Tools).</p>
+        <p class="card-point-item" data-i18n="slide6.p1">Desarrollo de la fresadora de control numérico sobre un modelo Cincinnati Hydro-Tel de 3 ejes verticales.</p>
+        <p class="card-point-item" data-i18n="slide6.p2">Sistema de programación automática APT (Automatically Programmed Tools).</p>
       </div>
       <div class="card-source-caption">
-        <span>Animación: MIT APT / control numérico (1959)</span>
+        <span data-i18n="slide6.caption">Animación: MIT APT / control numérico (1959)</span>
       </div>
     </div>
   </div>
@@ -283,31 +323,31 @@
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">1967 – 1969</span>
-      <span class="title-text">Expansión japonesa y el origen del PLC</span>
+      <span class="title-text" data-i18n="slide7.title">Expansión japonesa y el origen del PLC</span>
     </h2>
   </header>
   <div class="slide-split-dual">
     <!-- Card Izquierda: Kawasaki y Unimation -->
     <div class="info-card info-card-integrated">
-      <h3 class="card-tag">KAWASAKI Y UNIMATION</h3>
+      <h3 class="card-tag" data-i18n="slide7.tagKawasaki">KAWASAKI Y UNIMATION</h3>
       <div class="card-points">
-        <p class="card-point-item">Acuerdo de licencia entre Kawasaki Heavy Industries y Unimation.</p>
-        <p class="card-point-item">Inicio de la producción masiva del robot industrial Kawasaki-Unimate 2000 en Japón.</p>
+        <p class="card-point-item" data-i18n="slide7.k1">Acuerdo de licencia entre Kawasaki Heavy Industries y Unimation.</p>
+        <p class="card-point-item" data-i18n="slide7.k2">Inicio de la producción masiva del robot industrial Kawasaki-Unimate 2000 en Japón.</p>
       </div>
       <div class="card-embedded-media">
-        <img src="assets/gifs/kawasaki-unimate.gif" alt="Animación: robot Kawasaki-Unimate" class="embedded-media-img">
+        <img src="assets/gifs/kawasaki-unimate.gif" data-i18n-alt="slide7.gifAlt" alt="Animación: robot Kawasaki-Unimate" class="embedded-media-img" data-i18n-alt="slide7.gifAlt">
       </div>
     </div>
 
     <!-- Card Derecha: Bedford Associates y Modicon 084 -->
     <div class="info-card info-card-integrated">
-      <h3 class="card-tag">BEDFORD ASSOCIATES (MODICON 084)</h3>
+      <h3 class="card-tag" data-i18n="slide7.tagBedford">BEDFORD ASSOCIATES (MODICON 084)</h3>
       <div class="card-points">
-        <p class="card-point-item">Dick Morley y el equipo de Bedford Associates conciben en 1968 el Modicon 084.</p>
-        <p class="card-point-item">Primer PLC de la historia, diseñado para sustituir los bancos de relés cableados en General Motors. 256 E/S y 32 Kb de memoria.</p>
+        <p class="card-point-item" data-i18n="slide7.b1">Dick Morley y el equipo de Bedford Associates conciben en 1968 el Modicon 084.</p>
+        <p class="card-point-item" data-i18n="slide7.b2">Primer PLC de la historia, diseñado para sustituir los bancos de relés cableados en General Motors. 256 E/S y 32 Kb de memoria.</p>
       </div>
       <div class="card-embedded-media">
-        <img src="assets/images/modicon-084-bedford.png" alt="Equipo de Bedford Associates junto al primer PLC Modicon 084" class="embedded-media-img clickable-img" onclick="openLightbox('assets/images/modicon-084-bedford.png')" title="Clic para ampliar imagen">
+        <img src="assets/images/modicon-084-bedford.png" data-i18n-alt="slide7.imgAlt" alt="Equipo de Bedford Associates junto al primer PLC Modicon 084" class="embedded-media-img clickable-img" onclick="openLightbox('assets/images/modicon-084-bedford.png')" data-i18n-alt="slide7.imgAlt" data-i18n-title="ui.clickEnlarge" title="Clic para ampliar imagen">
       </div>
     </div>
   </div>
@@ -318,22 +358,22 @@
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">1973</span>
-      <span class="title-text">KUKA FAMULUS (6 ejes)</span>
+      <span class="title-text" data-i18n="slide8.title">KUKA FAMULUS (6 ejes)</span>
     </h2>
   </header>
   <div class="slide-split">
     <div class="media-card">
       <div class="media-gif-wrapper">
-        <img src="assets/gifs/kuka-famulus.gif" alt="Animación: robot KUKA FAMULUS" class="slide-gif">
+        <img src="assets/gifs/kuka-famulus.gif" data-i18n-alt="slide8.gifAlt" alt="Animación: robot KUKA FAMULUS" class="slide-gif" data-i18n-alt="slide8.gifAlt">
       </div>
     </div>
     <div class="info-card">
-      <h3 class="card-tag">KUKA, ALEMANIA</h3>
+      <h3 class="card-tag" data-i18n="slide8.tag">KUKA, ALEMANIA</h3>
       <div class="card-points">
-        <p class="card-point-item">Primer robot industrial eléctrico de seis ejes, presentado en Alemania.</p>
+        <p class="card-point-item" data-i18n="slide8.p1">Primer robot industrial eléctrico de seis ejes, presentado en Alemania.</p>
       </div>
       <div class="card-source-caption">
-        <span>Animación: KUKA FAMULUS (1973)</span>
+        <span data-i18n="slide8.caption">Animación: KUKA FAMULUS (1973)</span>
       </div>
     </div>
   </div>
@@ -344,23 +384,23 @@
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">1974</span>
-      <span class="title-text">ASEA IRB 6 y SEAT España</span>
+      <span class="title-text" data-i18n="slide9.title">ASEA IRB 6 y SEAT España</span>
     </h2>
   </header>
   <div class="slide-split">
     <div class="media-card">
       <div class="media-gif-wrapper">
-        <img src="assets/gifs/asea-irb6.gif" alt="Animación: robot ASEA IRB 6" class="slide-gif">
+        <img src="assets/gifs/asea-irb6.gif" data-i18n-alt="slide9.gifAlt" alt="Animación: robot ASEA IRB 6" class="slide-gif" data-i18n-alt="slide9.gifAlt">
       </div>
     </div>
     <div class="info-card">
-      <h3 class="card-tag">ASEA, SUECIA</h3>
+      <h3 class="card-tag" data-i18n="slide9.tag">ASEA, SUECIA</h3>
       <div class="card-points">
-        <p class="card-point-item">Presentación del robot eléctrico IRB 6 (Suecia).</p>
-        <p class="card-point-item">En SEAT Zona Franca (Barcelona) se incorporan los primeros robots de Cataluña: tres unidades con tecnología FIAT.</p>
+        <p class="card-point-item" data-i18n="slide9.p1">Presentación del robot eléctrico IRB 6 (Suecia).</p>
+        <p class="card-point-item" data-i18n="slide9.p2">En SEAT Zona Franca (Barcelona) se incorporan los primeros robots de Cataluña: tres unidades con tecnología FIAT.</p>
       </div>
       <div class="card-source-caption">
-        <span>Animación: ASEA IRB 6 (1974)</span>
+        <span data-i18n="slide9.caption">Animación: ASEA IRB 6 (1974)</span>
       </div>
     </div>
   </div>
@@ -371,10 +411,10 @@
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">3</span>
-      <span class="title-text">Marco legal y normativa</span>
+      <span class="title-text" data-i18n="slide10.title">Marco legal y normativa</span>
     </h2>
   </header>
-  <p class="normativa-intro">
+  <p class="normativa-intro" data-i18n="slide10.intro">
     La normativa de seguridad en automatización industrial busca disminuir los riesgos y la gravedad de los accidentes, estableciendo requisitos comunes para el diseño, uso y mantenimiento de robots y sistemas automatizados.
   </p>
   <div class="normativas-grid">
@@ -388,13 +428,13 @@
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
           </svg>
         </div>
-        <h3 class="normativa-name">Normativa Internacional</h3>
+        <h3 class="normativa-name" data-i18n="slide10.intName">Normativa Internacional</h3>
         <div class="normativa-code">ISO 10218</div>
-        <p class="normativa-desc">Norma pionera de ámbito internacional. Define e identifica los riesgos fundamentales asociados a los robots y establece el análisis de seguridad correspondiente. Sus indicaciones son de carácter general.</p>
+        <p class="normativa-desc" data-i18n="slide10.intDesc">Norma pionera de ámbito internacional. Define e identifica los riesgos fundamentales asociados a los robots y establece el análisis de seguridad correspondiente. Sus indicaciones son de carácter general.</p>
         <div class="normativa-downloads">
-          <a href="assets/docs/ISO-10218-1992.pdf" download class="btn-doc-download" title="Descargar ISO 10218:1992">ISO 10218:1992</a>
-          <a href="assets/docs/ISO-10218-2-2011.pdf" download class="btn-doc-download" title="Descargar ISO 10218-2:2011">ISO 10218-2:2011</a>
-          <a href="assets/docs/ISO-10218-1-2025.pdf" download class="btn-doc-download" title="Descargar ISO 10218-1:2025">ISO 10218-1:2025</a>
+          <a href="assets/docs/ISO-10218-1992.pdf" download class="btn-doc-download" data-i18n-title="slide10.dl1992" title="Descargar ISO 10218:1992">ISO 10218:1992</a>
+          <a href="assets/docs/ISO-10218-2-2011.pdf" download class="btn-doc-download" data-i18n-title="slide10.dl2011" title="Descargar ISO 10218-2:2011">ISO 10218-2:2011</a>
+          <a href="assets/docs/ISO-10218-1-2025.pdf" download class="btn-doc-download" data-i18n-title="slide10.dl2025" title="Descargar ISO 10218-1:2025">ISO 10218-1:2025</a>
         </div>
       </div>
     </div>
@@ -409,11 +449,11 @@
             <line x1="15" y1="7" x2="15" y2="20"></line>
           </svg>
         </div>
-        <h3 class="normativa-name">Normativa Americana</h3>
+        <h3 class="normativa-name" data-i18n="slide10.amName">Normativa Americana</h3>
         <div class="normativa-code">ANSI/RIA R15.06</div>
-        <p class="normativa-desc">Publicada originalmente en 1986 y revisada en 1992. Destaca por incluir estudios empíricos sobre la probabilidad y gravedad de los accidentes, vinculándolos directamente a la experiencia y formación del operador.</p>
+        <p class="normativa-desc" data-i18n="slide10.amDesc">Publicada originalmente en 1986 y revisada en 1992. Destaca por incluir estudios empíricos sobre la probabilidad y gravedad de los accidentes, vinculándolos directamente a la experiencia y formación del operador.</p>
         <div class="normativa-downloads">
-          <a href="assets/docs/ANSI_RIA_R1506.pdf" download class="btn-doc-download" title="Descargar ANSI/RIA R15.06">ANSI/RIA R15.06</a>
+          <a href="assets/docs/ANSI_RIA_R1506.pdf" download class="btn-doc-download" data-i18n-title="slide10.dlAnsi" title="Descargar ANSI/RIA R15.06">ANSI/RIA R15.06</a>
         </div>
       </div>
     </div>
@@ -428,11 +468,11 @@
             <circle cx="12" cy="12" r="3"></circle>
           </svg>
         </div>
-        <h3 class="normativa-name">Normativa Europea y Española</h3>
+        <h3 class="normativa-name" data-i18n="slide10.euName">Normativa Europea y Española</h3>
         <div class="normativa-code">EN 775 / UNE-EN 775</div>
-        <p class="normativa-desc">El Comité Europeo de Normalización (CEN) aprobó en 1992 la adaptación europea de la ISO 10218. Inmediatamente, AENOR adoptó este estándar para España bajo la denominación UNE-EN 775.</p>
+        <p class="normativa-desc" data-i18n="slide10.euDesc">El Comité Europeo de Normalización (CEN) aprobó en 1992 la adaptación europea de la ISO 10218. Inmediatamente, AENOR adoptó este estándar para España bajo la denominación UNE-EN 775.</p>
         <div class="normativa-downloads">
-          <span class="btn-doc-missing" title="Documento no disponible">EN 775 / AENOR — no disponible</span>
+          <span class="btn-doc-missing" data-i18n="slide10.missing" data-i18n-title="slide10.missingTitle" title="Documento no disponible">EN 775 / AENOR — no disponible</span>
         </div>
       </div>
     </div>
@@ -443,12 +483,12 @@
 <article class="slide" id="slide-11" data-index="10">
   <header class="slide-header">
     <h2 class="slide-title">
-      <span class="year-tag">Estadística</span>
-      <span class="title-text">¿Dónde ocurren realmente los accidentes?</span>
+      <span class="year-tag" data-i18n="slide11.yearTag">Estadística</span>
+      <span class="title-text" data-i18n="slide11.title">¿Dónde ocurren realmente los accidentes?</span>
     </h2>
   </header>
   <div class="accidents-container">
-    <p class="accidents-subtitle">Datos del Instituto de Seguridad del Trabajador de Tokio revelan una estadística vital:</p>
+    <p class="accidents-subtitle" data-i18n="slide11.subtitle">Datos del Instituto de Seguridad del Trabajador de Tokio revelan una estadística vital:</p>
     <div class="accidents-single-card-wrap">
       <div class="accident-card accident-card-single">
         <div class="pie-chart-section">
@@ -466,7 +506,7 @@
             </svg>
             <div class="pie-chart-center-badge">
               <span class="pie-center-val">90%</span>
-              <span class="pie-center-sub">Riesgo Crítico</span>
+              <span class="pie-center-sub" data-i18n="slide11.pieCenter">Riesgo Crítico</span>
             </div>
           </div>
         </div>
@@ -485,8 +525,8 @@
                 </svg>
               </div>
             </div>
-            <h3 class="stat-title">Operaciones de mantenimiento, programación y ajustes</h3>
-            <p class="stat-explanation">(El humano entra en el dominio de la máquina).</p>
+            <h3 class="stat-title" data-i18n="slide11.majorTitle">Operaciones de mantenimiento, programación y ajustes</h3>
+            <p class="stat-explanation" data-i18n="slide11.majorExpl">(El humano entra en el dominio de la máquina).</p>
           </div>
 
           <!-- Ficha 10% Producción normal -->
@@ -503,8 +543,8 @@
                 </svg>
               </div>
             </div>
-            <h3 class="stat-title">Operaciones normales de producción</h3>
-            <p class="stat-explanation">(El humano está fuera del perímetro activo).</p>
+            <h3 class="stat-title" data-i18n="slide11.minorTitle">Operaciones normales de producción</h3>
+            <p class="stat-explanation" data-i18n="slide11.minorExpl">(El humano está fuera del perímetro activo).</p>
           </div>
         </div>
       </div>
@@ -517,17 +557,17 @@
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">5</span>
-      <span class="title-text">Seguridad: defensa en profundidad</span>
+      <span class="title-text" data-i18n="slide13.title">Seguridad: defensa en profundidad</span>
     </h2>
   </header>
-  <p class="normativa-intro">
+  <p class="normativa-intro" data-i18n="slide13.intro">
     La seguridad no es una barrera aislada: es una filosofía de diseño. Fabricante e integrador se reparte responsabilidades bajo el marco UNE-EN 775; la protección real nace al alinear robot, célula y operario.
   </p>
   <div class="seguridad-overview">
     <div class="seguridad-top-split">
       <div class="seguridad-resp-grid seguridad-resp-stack">
         <div class="seguridad-resp-card">
-          <h3 class="card-tag">Fabricante · Seguridad intrínseca</h3>
+          <h3 class="card-tag" data-i18n="slide13.fabTag">Fabricante · Seguridad intrínseca</h3>
           <div class="seguridad-icon-list">
             <div class="seguridad-icon-item">
               <div class="seguridad-icon-box" aria-hidden="true">
@@ -540,7 +580,7 @@
                   <path d="M18.5 13.2v2.6M17.2 14.5h2.6"></path>
                 </svg>
               </div>
-              <span>Diseño interno del robot</span>
+              <span data-i18n="slide13.fab1">Diseño interno del robot</span>
             </div>
             <div class="seguridad-icon-item">
               <div class="seguridad-icon-box" aria-hidden="true">
@@ -549,7 +589,7 @@
                   <path d="M8 11.5l8 3M8 14.5l8-3"></path>
                 </svg>
               </div>
-              <span>Mecanismos de autodefensa</span>
+              <span data-i18n="slide13.fab2">Mecanismos de autodefensa</span>
             </div>
             <div class="seguridad-icon-item">
               <div class="seguridad-icon-box" aria-hidden="true">
@@ -560,12 +600,12 @@
                   <circle cx="17.5" cy="17.5" r="2.5"></circle>
                 </svg>
               </div>
-              <span>Cumplimiento de la normativa base</span>
+              <span data-i18n="slide13.fab3">Cumplimiento de la normativa base</span>
             </div>
           </div>
         </div>
         <div class="seguridad-resp-card">
-          <h3 class="card-tag">Usuario / Integrador · Implantación</h3>
+          <h3 class="card-tag" data-i18n="slide13.usrTag">Usuario / Integrador · Implantación</h3>
           <div class="seguridad-icon-list">
             <div class="seguridad-icon-item">
               <div class="seguridad-icon-box" aria-hidden="true">
@@ -576,7 +616,7 @@
                   <path d="M3 8h18M8 3v5"></path>
                 </svg>
               </div>
-              <span>Diseño de la célula perimetral</span>
+              <span data-i18n="slide13.usr1">Diseño de la célula perimetral</span>
             </div>
             <div class="seguridad-icon-item">
               <div class="seguridad-icon-box" aria-hidden="true">
@@ -586,7 +626,7 @@
                   <path d="M10 10l-1.5 2L10 14M14 10l1.5 2L14 14"></path>
                 </svg>
               </div>
-              <span>Programación del sistema</span>
+              <span data-i18n="slide13.usr2">Programación del sistema</span>
             </div>
             <div class="seguridad-icon-item">
               <div class="seguridad-icon-box" aria-hidden="true">
@@ -596,7 +636,7 @@
                   <path d="M8 15h2M8 18h3"></path>
                 </svg>
               </div>
-              <span>Protocolos de mantenimiento</span>
+              <span data-i18n="slide13.usr3">Protocolos de mantenimiento</span>
             </div>
             <div class="seguridad-icon-item">
               <div class="seguridad-icon-box" aria-hidden="true">
@@ -610,27 +650,27 @@
                   <path d="M9.5 5.2h5l.8 1.4H8.7z"></path>
                 </svg>
               </div>
-              <span>Formación de operarios</span>
+              <span data-i18n="slide13.usr4">Formación de operarios</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="seguridad-layers-visual" aria-label="Modelo de defensa en profundidad">
-        <div class="onion-layer onion-humano btn-jump" data-target-slide="15" title="Ir a 5.3 — El operario">
+      <div class="seguridad-layers-visual" data-i18n-aria="slide13.onionAria" aria-label="Modelo de defensa en profundidad">
+        <div class="onion-layer onion-humano btn-jump" data-target-slide="15" data-i18n-title="slide13.onionHumanTitle" title="Ir a 5.3 — El operario">
           <div class="onion-label onion-label-outer">
-            <strong>El Humano <span class="onion-phase">(5.3)</span></strong>
-            <span>Protocolos de acceso, formación, Teach Pendant, pruebas progresivas.</span>
+            <strong data-i18n-html="slide13.onionHumanStrong">El Humano <span class="onion-phase">(5.3)</span></strong>
+            <span data-i18n="slide13.onionHumanDesc">Protocolos de acceso, formación, Teach Pendant, pruebas progresivas.</span>
           </div>
-          <div class="onion-layer onion-celula btn-jump" data-target-slide="14" title="Ir a 5.2 — La célula">
+          <div class="onion-layer onion-celula btn-jump" data-target-slide="14" data-i18n-title="slide13.onionCellTitle" title="Ir a 5.2 — La célula">
             <div class="onion-label onion-label-mid">
-              <strong>La Célula <span class="onion-phase">(5.2 · 5.4)</span></strong>
-              <span>Barreras, sensores, zonas y arquitectura del entorno seguro.</span>
+              <strong data-i18n-html="slide13.onionCellStrong">La Célula <span class="onion-phase">(5.2 · 5.4)</span></strong>
+              <span data-i18n="slide13.onionCellDesc">Barreras, sensores, zonas y arquitectura del entorno seguro.</span>
             </div>
-            <div class="onion-layer onion-robot btn-jump" data-target-slide="13" title="Ir a 5.1 — El robot">
+            <div class="onion-layer onion-robot btn-jump" data-target-slide="13" data-i18n-title="slide13.onionRobotTitle" title="Ir a 5.1 — El robot">
               <div class="onion-label onion-label-center">
-                <strong>El Robot <span class="onion-phase">(5.1)</span></strong>
-                <span>Watchdog, velocidad &lt;0,3 m/s, detectores de colisión.</span>
+                <strong data-i18n-html="slide13.onionRobotStrong">El Robot <span class="onion-phase">(5.1)</span></strong>
+                <span data-i18n="slide13.onionRobotDesc">Watchdog, velocidad &lt;0,3 m/s, detectores de colisión.</span>
               </div>
             </div>
           </div>
@@ -638,8 +678,8 @@
       </div>
     </div>
     <p class="seguridad-quote">
-      Si falla el software, actúa el hardware. Si el humano comete un error, el perímetro lo protege. La seguridad es la alineación de todas las capas.
-      <button type="button" class="btn-jump seguridad-entorno-link" data-target-slide="16">5.4 Arquitectura del entorno seguro →</button>
+      <span data-i18n="slide13.quote">Si falla el software, actúa el hardware. Si el humano comete un error, el perímetro lo protege. La seguridad es la alineación de todas las capas.</span>
+      <button type="button" class="btn-jump seguridad-entorno-link" data-target-slide="16" data-i18n="slide13.link54">5.4 Arquitectura del entorno seguro →</button>
     </p>
   </div>
 </article>
@@ -648,10 +688,10 @@
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">5.1</span>
-      <span class="title-text">El robot: seguridad intrínseca</span>
+      <span class="title-text" data-i18n="slide14.title">El robot: seguridad intrínseca</span>
     </h2>
   </header>
-  <p class="normativa-intro">
+  <p class="normativa-intro" data-i18n="slide14.intro">
     Primera capa del ciclo de protección: el propio robot vigila su comportamiento, se autocomprueba antes de arrancar y restringe quién puede modificar el control.
   </p>
   <div class="normativas-grid seguridad-cards-grid">
@@ -665,9 +705,9 @@
             <path d="M9 3v3M12 3v3M15 3v3M9 18v3M12 18v3M15 18v3M3 9h3M3 12h3M3 15h3M18 9h3M18 12h3M18 15h3"></path>
           </svg>
         </div>
-        <h3 class="normativa-name">El Watchdog</h3>
-        <div class="normativa-code">Supervisión continua</div>
-        <p class="normativa-desc">Monitoriza en tiempo real bucles de realimentación, accionamientos y el propio sistema de control, para detectar fallos antes de que se propaguen.</p>
+        <h3 class="normativa-name" data-i18n="slide14.wName">El Watchdog</h3>
+        <div class="normativa-code" data-i18n="slide14.wCode">Supervisión continua</div>
+        <p class="normativa-desc" data-i18n="slide14.wDesc">Monitoriza en tiempo real bucles de realimentación, accionamientos y el propio sistema de control, para detectar fallos antes de que se propaguen.</p>
       </div>
     </div>
     <div class="normativa-card">
@@ -683,9 +723,9 @@
             <path d="M17 15.6v1.7l1.2.7"></path>
           </svg>
         </div>
-        <h3 class="normativa-name">Autodiagnóstico previo</h3>
-        <div class="normativa-code">Antes del primer arranque</div>
-        <p class="normativa-desc">Comprobación obligatoria de tensiones, LEDs indicadores y mensajes de error. Sin un estado sano, el ciclo no debe iniciarse.</p>
+        <h3 class="normativa-name" data-i18n="slide14.aName">Autodiagnóstico previo</h3>
+        <div class="normativa-code" data-i18n="slide14.aCode">Antes del primer arranque</div>
+        <p class="normativa-desc" data-i18n="slide14.aDesc">Comprobación obligatoria de tensiones, LEDs indicadores y mensajes de error. Sin un estado sano, el ciclo no debe iniciarse.</p>
       </div>
     </div>
     <div class="normativa-card">
@@ -699,13 +739,13 @@
             <path d="M3 12h3M18 12h3M5 8l2 2M19 8l-2 2M5 16l2-2M19 16l-2-2"></path>
           </svg>
         </div>
-        <h3 class="normativa-name">Control de acceso</h3>
-        <div class="normativa-code">Llaves y códigos</div>
-        <p class="normativa-desc">Bloqueo de la unidad de control, del arranque y de la modificación de programas mediante llaves físicas o códigos de seguridad.</p>
+        <h3 class="normativa-name" data-i18n="slide14.cName">Control de acceso</h3>
+        <div class="normativa-code" data-i18n="slide14.cCode">Llaves y códigos</div>
+        <p class="normativa-desc" data-i18n="slide14.cDesc">Bloqueo de la unidad de control, del arranque y de la modificación de programas mediante llaves físicas o códigos de seguridad.</p>
       </div>
     </div>
   </div>
-  <p class="seguridad-note">
+  <p class="seguridad-note" data-i18n="slide14.note">
     En la práctica, esta capa se completa con límites de velocidad (p. ej. &lt; 0,3 m/s en modos de enseñanza) y detección de colisión: si falla el software, el hardware debe actuar.
   </p>
 </article>
@@ -714,19 +754,19 @@
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">5.2</span>
-      <span class="title-text">La célula: perímetro y sensores</span>
+      <span class="title-text" data-i18n="slide15.title">La célula: perímetro y sensores</span>
     </h2>
   </header>
-  <p class="normativa-intro">
+  <p class="normativa-intro" data-i18n="slide15.intro">
     Segunda capa: aislar el riesgo con barreras físicas, zonas de interacción controladas y un ecosistema de sensores del fabricante.
   </p>
   <div class="seguridad-cell-layout">
     <div class="seguridad-cell-hero">
       <div class="seguridad-resp-card">
-        <h3 class="card-tag">Barreras físicas de acceso</h3>
+        <h3 class="card-tag" data-i18n="slide15.barriersTag">Barreras físicas de acceso</h3>
         <div class="card-points">
-          <p class="card-point-item">Vallado perimetral con enclavamientos.</p>
-          <p class="card-point-item">Parada inmediata e incondicional si alguien entra en la zona de trabajo.</p>
+          <p class="card-point-item" data-i18n="slide15.barriers1">Vallado perimetral con enclavamientos.</p>
+          <p class="card-point-item" data-i18n="slide15.barriers2">Parada inmediata e incondicional si alguien entra en la zona de trabajo.</p>
         </div>
       </div>
 
@@ -734,22 +774,22 @@
         <div class="media-gif-wrapper seguridad-cell-photo-wrap">
           <img
             src="assets/images/celula-robot-vallado.png"
-            alt="Célula robotizada con vallado perimetral, interbloqueos y baliza de estado"
+            alt="Célula robotizada con vallado perimetral, interbloqueos y baliza de estado" data-i18n-alt="slide15.cellAlt"
             class="slide-gif seguridad-cell-photo"
             onclick="openLightbox(this.src)"
-            title="Ampliar imagen"
+            data-i18n-title="ui.enlargeImage" title="Ampliar imagen"
           >
         </div>
         <div class="card-source-caption">
-          <span>Célula con vallado, enclavamientos y paro de emergencia</span>
+          <span data-i18n="slide15.cellCaption">Célula con vallado, enclavamientos y paro de emergencia</span>
         </div>
       </div>
 
       <div class="seguridad-resp-card">
-        <h3 class="card-tag">Condiciones de instalación auxiliar</h3>
+        <h3 class="card-tag" data-i18n="slide15.auxTag">Condiciones de instalación auxiliar</h3>
         <div class="card-points">
-          <p class="card-point-item">Protecciones eléctricas y aislamientos.</p>
-          <p class="card-point-item">Sistemas neumáticos e hidráulicos estructurados y seguros.</p>
+          <p class="card-point-item" data-i18n="slide15.aux1">Protecciones eléctricas y aislamientos.</p>
+          <p class="card-point-item" data-i18n="slide15.aux2">Sistemas neumáticos e hidráulicos estructurados y seguros.</p>
         </div>
       </div>
     </div>
@@ -763,56 +803,58 @@
               alt="Diagrama de zonas de interacción: intercambio a distancia, movimientos condicionados y zonas de reparación"
               class="slide-gif seguridad-cell-photo"
               onclick="openLightbox(this.src)"
+              data-i18n-alt="slide15.zonesAlt"
+              data-i18n-title="slide15.zonesTitle"
               title="Ampliar diagrama de zonas"
             >
           </div>
           <div class="seguridad-zones-legend">
             <div class="seguridad-zone-card zone-green">
-              <h3>Intercambio a distancia</h3>
-              <p>Mesas giratorias para alimentar piezas sin entrar en el área de trabajo automática.</p>
+              <h3 data-i18n="slide15.zoneGreenH">Intercambio a distancia</h3>
+              <p data-i18n="slide15.zoneGreenP">Mesas giratorias para alimentar piezas sin entrar en el área de trabajo automática.</p>
             </div>
             <div class="seguridad-zone-card zone-yellow">
-              <h3>Movimientos condicionados</h3>
-              <p>Pausas absolutas programadas en el instante exacto en que el humano debe intervenir.</p>
+              <h3 data-i18n="slide15.zoneYellowH">Movimientos condicionados</h3>
+              <p data-i18n="slide15.zoneYellowP">Pausas absolutas programadas en el instante exacto en que el humano debe intervenir.</p>
             </div>
             <div class="seguridad-zone-card zone-red">
-              <h3>Zonas de reparación</h3>
-              <p>Áreas al alcance físico, excluidas por software/hardware del ciclo automático.</p>
+              <h3 data-i18n="slide15.zoneRedH">Zonas de reparación</h3>
+              <p data-i18n="slide15.zoneRedP">Áreas al alcance físico, excluidas por software/hardware del ciclo automático.</p>
             </div>
           </div>
         </div>
         <div class="card-source-caption">
-          <span>Zonas de interacción humano–robot en la célula</span>
+          <span data-i18n="slide15.zonesCaption">Zonas de interacción humano–robot en la célula</span>
         </div>
       </div>
     </div>
 
     <div class="seguridad-sensors-row">
       <div class="seguridad-sensor-card">
-        <button type="button" class="seguridad-sensor-thumb" onclick="openLightbox('assets/images/barrera-fotoelectrica.png')" title="Ampliar barrera fotoeléctrica">
-          <img src="assets/images/barrera-fotoelectrica.png" alt="Barreras fotoeléctricas / cortinas de luz">
+        <button type="button" class="seguridad-sensor-thumb" onclick="openLightbox('assets/images/barrera-fotoelectrica.png')" data-i18n-title="slide15.sensor1Title" title="Ampliar barrera fotoeléctrica">
+          <img src="assets/images/barrera-fotoelectrica.png" alt="Barreras fotoeléctricas / cortinas de luz" data-i18n-alt="slide15.sensor1Alt">
         </button>
         <div class="seguridad-sensor-text">
-          <strong>Barreras fotoeléctricas</strong>
-          <span>Cortinas de luz en accesos abiertos.</span>
+          <strong data-i18n="slide15.sensor1Strong">Barreras fotoeléctricas</strong>
+          <span data-i18n="slide15.sensor1Span">Cortinas de luz en accesos abiertos.</span>
         </div>
       </div>
       <div class="seguridad-sensor-card">
-        <button type="button" class="seguridad-sensor-thumb" onclick="openLightbox('assets/images/escaner-laser.png')" title="Ampliar escáner láser">
-          <img src="assets/images/escaner-laser.png" alt="Escáner láser de seguridad">
+        <button type="button" class="seguridad-sensor-thumb" onclick="openLightbox('assets/images/escaner-laser.png')" data-i18n-title="slide15.sensor2Title" title="Ampliar escáner láser">
+          <img src="assets/images/escaner-laser.png" alt="Escáner láser de seguridad" data-i18n-alt="slide15.sensor2Alt">
         </button>
         <div class="seguridad-sensor-text">
-          <strong>Escáneres láser</strong>
-          <span>Presencia y proximidad en planta.</span>
+          <strong data-i18n="slide15.sensor2Strong">Escáneres láser</strong>
+          <span data-i18n="slide15.sensor2Span">Presencia y proximidad en planta.</span>
         </div>
       </div>
       <div class="seguridad-sensor-card">
-        <button type="button" class="seguridad-sensor-thumb" onclick="openLightbox('assets/images/interbloqueos-paradas.png')" title="Ampliar interbloqueos y paradas">
-          <img src="assets/images/interbloqueos-paradas.png" alt="Interbloqueos y paradas de emergencia">
+        <button type="button" class="seguridad-sensor-thumb" onclick="openLightbox('assets/images/interbloqueos-paradas.png')" data-i18n-title="slide15.sensor3Title" title="Ampliar interbloqueos y paradas">
+          <img src="assets/images/interbloqueos-paradas.png" alt="Interbloqueos y paradas de emergencia" data-i18n-alt="slide15.sensor3Alt">
         </button>
         <div class="seguridad-sensor-text">
-          <strong>Interbloqueos y paradas</strong>
-          <span>Accesos codificados y setas de emergencia.</span>
+          <strong data-i18n="slide15.sensor3Strong">Interbloqueos y paradas</strong>
+          <span data-i18n="slide15.sensor3Span">Accesos codificados y setas de emergencia.</span>
         </div>
       </div>
     </div>
@@ -823,10 +865,10 @@
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">5.3</span>
-      <span class="title-text">El operario: protocolos y factor humano</span>
+      <span class="title-text" data-i18n="slide16.title">El operario: protocolos y factor humano</span>
     </h2>
   </header>
-  <p class="normativa-intro">
+  <p class="normativa-intro" data-i18n="slide16.intro">
     Tercera capa: procedimientos, señalización y disciplina operativa. La señalización no sustituye la prevención; la formación continua es obligatoria.
   </p>
   <div class="normativas-grid seguridad-cards-grid seguridad-cards-compact">
@@ -842,9 +884,9 @@
             <path d="M14 9v4l2 1.5M16 8h2v6"></path>
           </svg>
         </div>
-        <h3 class="normativa-name">Regla de oro</h3>
-        <div class="normativa-code">Cero entrada</div>
-        <p class="normativa-desc">No entrar en la zona de trabajo con el robot en automático, ni siquiera en fases de prueba.</p>
+        <h3 class="normativa-name" data-i18n="slide16.ruleName">Regla de oro</h3>
+        <div class="normativa-code" data-i18n="slide16.ruleCode">Cero entrada</div>
+        <p class="normativa-desc" data-i18n="slide16.ruleDesc">No entrar en la zona de trabajo con el robot en automático, ni siquiera en fases de prueba.</p>
       </div>
     </div>
     <div class="normativa-card">
@@ -860,9 +902,9 @@
             <circle cx="19.5" cy="14.5" r="1.1" fill="currentColor" stroke="none"></circle>
           </svg>
         </div>
-        <h3 class="normativa-name">Programación a dos</h3>
-        <div class="normativa-code">Velocidad lenta</div>
-        <p class="normativa-desc">Uno programa a baja velocidad; el otro observa con el dedo en el paro de emergencia.</p>
+        <h3 class="normativa-name" data-i18n="slide16.pairName">Programación a dos</h3>
+        <div class="normativa-code" data-i18n="slide16.pairCode">Velocidad lenta</div>
+        <p class="normativa-desc" data-i18n="slide16.pairDesc">Uno programa a baja velocidad; el otro observa con el dedo en el paro de emergencia.</p>
       </div>
     </div>
     <div class="normativa-card">
@@ -878,9 +920,9 @@
             <path d="M8.5 11l4-3 4.5-1"></path>
           </svg>
         </div>
-        <h3 class="normativa-name">Pruebas progresivas</h3>
-        <div class="normativa-code">Paso a paso hasta producción</div>
-        <p class="normativa-desc">1º movimiento paso a paso lento → 2º continuo lento → 3º aumento hasta velocidad de producción.</p>
+        <h3 class="normativa-name" data-i18n="slide16.testName">Pruebas progresivas</h3>
+        <div class="normativa-code" data-i18n="slide16.testCode">Paso a paso hasta producción</div>
+        <p class="normativa-desc" data-i18n="slide16.testDesc">1º movimiento paso a paso lento → 2º continuo lento → 3º aumento hasta velocidad de producción.</p>
       </div>
     </div>
   </div>
@@ -888,49 +930,49 @@
   <div class="seguridad-signal-layout">
     <div class="seguridad-signal-cards">
       <div class="seguridad-resp-card seguridad-signal-card seguridad-card-vertical-centered">
-        <h3 class="card-tag">Avisos previos</h3>
+        <h3 class="card-tag" data-i18n="slide16.avisosTag">Avisos previos</h3>
         <div class="seguridad-vertical-card-body">
-          <button type="button" class="seguridad-signal-thumb seguridad-thumb-adaptive" onclick="openLightbox('assets/images/aviso-sirena.png')" title="Ampliar sirena">
-            <img src="assets/images/aviso-sirena.png" alt="Icono de sirena de aviso previo">
+          <button type="button" class="seguridad-signal-thumb seguridad-thumb-adaptive" onclick="openLightbox('assets/images/aviso-sirena.png')" data-i18n-title="slide16.sirenaTitle" title="Ampliar sirena">
+            <img src="assets/images/aviso-sirena.png" data-i18n-alt="slide16.sirenaAlt" alt="Icono de sirena de aviso previo">
           </button>
-          <p class="seguridad-signal-text text-center-adaptive">Sirenas audibles obligatorias antes de reiniciar el ciclo de trabajo tras una parada.</p>
+          <p class="seguridad-signal-text text-center-adaptive" data-i18n="slide16.sirenaText">Sirenas audibles obligatorias antes de reiniciar el ciclo de trabajo tras una parada.</p>
         </div>
       </div>
       <div class="seguridad-resp-card seguridad-signal-card seguridad-card-baliza">
-        <h3 class="card-tag">Balizas de estado · IEC 60204-1</h3>
+        <h3 class="card-tag" data-i18n="slide16.balizaTag">Balizas de estado · IEC 60204-1</h3>
         <div class="seguridad-baliza-body">
           <div class="seguridad-baliza-top">
-            <button type="button" class="seguridad-signal-thumb seguridad-baliza-thumb-horizontal" onclick="openLightbox('assets/images/baliza-estado.png')" title="Ampliar baliza">
-              <img src="assets/images/baliza-estado.png" alt="Baliza de estado luminosa de cinco colores">
+            <button type="button" class="seguridad-signal-thumb seguridad-baliza-thumb-horizontal" onclick="openLightbox('assets/images/baliza-estado.png')" data-i18n-title="slide16.balizaTitle" title="Ampliar baliza">
+              <img src="assets/images/baliza-estado.png" data-i18n-alt="slide16.balizaAlt" alt="Baliza de estado luminosa de cinco colores">
             </button>
           </div>
           <table class="baliza-color-table">
             <thead>
               <tr>
-                <th scope="col">Color</th>
-                <th scope="col">Descripción</th>
+                <th scope="col" data-i18n="slide16.thColor">Color</th>
+                <th scope="col" data-i18n="slide16.thDesc">Descripción</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="baliza-color-cell"><span class="signal-dot signal-red"></span>Rojo</td>
-                <td>Emergencia / peligro: acción inmediata.</td>
+                <td class="baliza-color-cell"><span class="signal-dot signal-red"></span><span data-i18n="slide16.colorRed">Rojo</span></td>
+                <td data-i18n="slide16.descRed">Emergencia / peligro: acción inmediata.</td>
               </tr>
               <tr>
-                <td class="baliza-color-cell"><span class="signal-dot signal-yellow"></span>Amarillo</td>
-                <td>Condición anormal: vigilancia o intervención.</td>
+                <td class="baliza-color-cell"><span class="signal-dot signal-yellow"></span><span data-i18n="slide16.colorYellow">Amarillo</span></td>
+                <td data-i18n="slide16.descYellow">Condición anormal: vigilancia o intervención.</td>
               </tr>
               <tr>
-                <td class="baliza-color-cell"><span class="signal-dot signal-blue"></span>Azul</td>
-                <td>Acción obligatoria del operario.</td>
+                <td class="baliza-color-cell"><span class="signal-dot signal-blue"></span><span data-i18n="slide16.colorBlue">Azul</span></td>
+                <td data-i18n="slide16.descBlue">Acción obligatoria del operario.</td>
               </tr>
               <tr>
-                <td class="baliza-color-cell"><span class="signal-dot signal-green"></span>Verde</td>
-                <td>Condición normal de la máquina.</td>
+                <td class="baliza-color-cell"><span class="signal-dot signal-green"></span><span data-i18n="slide16.colorGreen">Verde</span></td>
+                <td data-i18n="slide16.descGreen">Condición normal de la máquina.</td>
               </tr>
               <tr>
-                <td class="baliza-color-cell"><span class="signal-dot signal-white"></span>Blanco</td>
-                <td>Neutro / otras condiciones o monitorización.</td>
+                <td class="baliza-color-cell"><span class="signal-dot signal-white"></span><span data-i18n="slide16.colorWhite">Blanco</span></td>
+                <td data-i18n="slide16.descWhite">Neutro / otras condiciones o monitorización.</td>
               </tr>
             </tbody>
           </table>
@@ -947,13 +989,13 @@
             <path d="M9.5 16.5h5M5 8v6M19 8v6"></path>
           </svg>
         </span>
-        Teach Pendant — Nunca confiar la seguridad solo al software
+        <span data-i18n="slide16.teachTag">Teach Pendant — Nunca confiar la seguridad solo al software</span>
       </h3>
       <div class="card-points">
-        <p class="card-point-item">Probar la maleta antes de entrar en el área.</p>
-        <p class="card-point-item">Llevarla siempre en la mano si el robot está encendido.</p>
-        <p class="card-point-item">Nunca detener el robot con el cuerpo.</p>
-        <p class="card-point-item">No asumir que el programa ha terminado solo porque el robot no se mueve.</p>
+        <p class="card-point-item" data-i18n="slide16.teach1">Probar la maleta antes de entrar en el área.</p>
+        <p class="card-point-item" data-i18n="slide16.teach2">Llevarla siempre en la mano si el robot está encendido.</p>
+        <p class="card-point-item" data-i18n="slide16.teach3">Nunca detener el robot con el cuerpo.</p>
+        <p class="card-point-item" data-i18n="slide16.teach4">No asumir que el programa ha terminado solo porque el robot no se mueve.</p>
       </div>
     </div>
   </div>
@@ -963,10 +1005,10 @@
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">5.4</span>
-      <span class="title-text">Arquitectura del entorno seguro</span>
+      <span class="title-text" data-i18n="slide17.title">Arquitectura del entorno seguro</span>
     </h2>
   </header>
-  <p class="normativa-intro">
+  <p class="normativa-intro" data-i18n="slide17.intro">
     El entorno de la célula debe diseñarse para que el riesgo residual sea controlable: zonas marcadas, suelo despejado, rutas de escape y aislamiento remoto del robot.
   </p>
   <div class="seguridad-entorno-layout">
@@ -974,51 +1016,51 @@
       <div class="media-gif-wrapper seguridad-cell-photo-wrap">
         <img
           src="assets/images/arquitectura-entorno-seguro.png"
-          alt="Plano de entorno seguro: zona máxima de movimiento, rutas de escape y consola de control exterior"
+          data-i18n-alt="slide17.planAlt" alt="Plano de entorno seguro: zona máxima de movimiento, rutas de escape y consola de control exterior"
           class="slide-gif seguridad-cell-photo"
           onclick="openLightbox(this.src)"
-          title="Ampliar plano"
+          data-i18n-title="slide17.planTitle" title="Ampliar plano"
         >
       </div>
       <div class="card-source-caption">
-        <span>Zona máxima de movimiento, rutas de escape y consola fuera del alcance</span>
+        <span data-i18n="slide17.planCaption">Zona máxima de movimiento, rutas de escape y consola fuera del alcance</span>
       </div>
     </div>
     <div class="seguridad-entorno-points">
       <div class="seguridad-resp-card ssp-entorno-point">
-        <button type="button" class="seguridad-inline-icon ssp-entorno-icon" onclick="openLightbox('assets/images/marcado-zonas.png')" title="Ampliar marcado de zonas">
-          <img src="assets/images/marcado-zonas.png" alt="Marcado de zonas">
+        <button type="button" class="seguridad-inline-icon ssp-entorno-icon" onclick="openLightbox('assets/images/marcado-zonas.png')" data-i18n-title="slide17.z1Title" title="Ampliar marcado de zonas">
+          <img src="assets/images/marcado-zonas.png" data-i18n-alt="slide17.z1Alt" alt="Marcado de zonas">
         </button>
         <div>
-          <h3 class="card-tag">Marcado de zonas</h3>
-          <p class="seguridad-signal-text">Identificación clara de la zona máxima de movimiento con marcas en el suelo y señales. Controles ubicados estrictamente fuera de esta zona.</p>
+          <h3 class="card-tag" data-i18n="slide17.z1Tag">Marcado de zonas</h3>
+          <p class="seguridad-signal-text" data-i18n="slide17.z1Text">Identificación clara de la zona máxima de movimiento con marcas en el suelo y señales. Controles ubicados estrictamente fuera de esta zona.</p>
         </div>
       </div>
       <div class="seguridad-resp-card ssp-entorno-point">
-        <button type="button" class="seguridad-inline-icon ssp-entorno-icon" onclick="openLightbox('assets/images/entorno-despejado.png')" title="Ampliar entorno despejado">
-          <img src="assets/images/entorno-despejado.png" alt="Entorno despejado">
+        <button type="button" class="seguridad-inline-icon ssp-entorno-icon" onclick="openLightbox('assets/images/entorno-despejado.png')" data-i18n-title="slide17.z2Title" title="Ampliar entorno despejado">
+          <img src="assets/images/entorno-despejado.png" data-i18n-alt="slide17.z2Alt" alt="Entorno despejado">
         </button>
         <div>
-          <h3 class="card-tag">Entorno despejado</h3>
-          <p class="seguridad-signal-text">Espacio suficiente para guiar el robot con seguridad y evitar atrapamientos. Suelo libre de aceite, agua o residuos.</p>
+          <h3 class="card-tag" data-i18n="slide17.z2Tag">Entorno despejado</h3>
+          <p class="seguridad-signal-text" data-i18n="slide17.z2Text">Espacio suficiente para guiar el robot con seguridad y evitar atrapamientos. Suelo libre de aceite, agua o residuos.</p>
         </div>
       </div>
       <div class="seguridad-resp-card ssp-entorno-point">
-        <button type="button" class="seguridad-inline-icon ssp-entorno-icon" onclick="openLightbox('assets/images/ruta-escape.png')" title="Ampliar ruta de escape">
-          <img src="assets/images/ruta-escape.png" alt="Ruta de escape">
+        <button type="button" class="seguridad-inline-icon ssp-entorno-icon" onclick="openLightbox('assets/images/ruta-escape.png')" data-i18n-title="slide17.z3Title" title="Ampliar ruta de escape">
+          <img src="assets/images/ruta-escape.png" data-i18n-alt="slide17.z3Alt" alt="Ruta de escape">
         </button>
         <div>
-          <h3 class="card-tag">Rutas de escape</h3>
-          <p class="seguridad-signal-text">Conocer y mantener siempre despejado el camino de salida de la célula ante movimientos anómalos.</p>
+          <h3 class="card-tag" data-i18n="slide17.z3Tag">Rutas de escape</h3>
+          <p class="seguridad-signal-text" data-i18n="slide17.z3Text">Conocer y mantener siempre despejado el camino de salida de la célula ante movimientos anómalos.</p>
         </div>
       </div>
       <div class="seguridad-resp-card ssp-entorno-point">
-        <button type="button" class="seguridad-inline-icon ssp-entorno-icon" onclick="openLightbox('assets/images/aislamiento-remoto.png')" title="Ampliar aislamiento remoto">
-          <img src="assets/images/aislamiento-remoto.png" alt="Aislamiento remoto del robot">
+        <button type="button" class="seguridad-inline-icon ssp-entorno-icon" onclick="openLightbox('assets/images/aislamiento-remoto.png')" data-i18n-title="slide17.z4Title" title="Ampliar aislamiento remoto">
+          <img src="assets/images/aislamiento-remoto.png" data-i18n-alt="slide17.z4Alt" alt="Aislamiento remoto del robot">
         </button>
         <div>
-          <h3 class="card-tag">Aislamiento remoto</h3>
-          <p class="seguridad-signal-text">Aislar al robot de señales de control remoto que puedan provocar un movimiento inesperado mientras hay personal a su alcance.</p>
+          <h3 class="card-tag" data-i18n="slide17.z4Tag">Aislamiento remoto</h3>
+          <p class="seguridad-signal-text" data-i18n="slide17.z4Text">Aislar al robot de señales de control remoto que puedan provocar un movimiento inesperado mientras hay personal a su alcance.</p>
         </div>
       </div>
     </div>
@@ -1029,10 +1071,10 @@
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">6</span>
-      <span class="title-text">Sistemas de seguridad</span>
+      <span class="title-text" data-i18n="slide18.title">Sistemas de seguridad</span>
     </h2>
   </header>
-  <p class="normativa-intro">
+  <p class="normativa-intro" data-i18n="slide18.intro">
     Los robots modernos operan a alta velocidad en instalaciones complejas: la integración multiplica los riesgos y exige medidas técnicas de seguridad, no solo prevención basada en el comportamiento.
   </p>
   <div class="seguridad-overview">
@@ -1040,41 +1082,41 @@
       <table class="timeline-table">
         <thead>
           <tr>
-            <th style="width: 14%;">Apartado</th>
-            <th style="width: 32%;">Enfoque</th>
-            <th style="width: 54%;">Qué cubre</th>
+            <th style="width: 14%;" data-i18n="slide18.thApartado">Apartado</th>
+            <th style="width: 32%;" data-i18n="slide18.thEnfoque">Enfoque</th>
+            <th style="width: 54%;" data-i18n="slide18.thCubre">Qué cubre</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="clickable-row" data-target-slide="18" title="Ir a 6.1">
+          <tr class="clickable-row" data-target-slide="18" data-i18n-title="slide18.r1Title" title="Ir a 6.1">
             <td><span class="year-badge">6.1</span></td>
-            <td class="hito-title">Peligros inherentes</td>
-            <td>Solapamiento, energía, programación, EMC y factor humano; el dato &gt;50% fallos técnicos.</td>
+            <td class="hito-title" data-i18n="slide18.r1Hito">Peligros inherentes</td>
+            <td data-i18n="slide18.r1Desc">Solapamiento, energía, programación, EMC y factor humano; el dato &gt;50% fallos técnicos.</td>
           </tr>
-          <tr class="clickable-row" data-target-slide="19" title="Ir a 6.2">
+          <tr class="clickable-row" data-target-slide="19" data-i18n-title="slide18.r2Title" title="Ir a 6.2">
             <td><span class="year-badge">6.2</span></td>
-            <td class="hito-title">Principios y SSP</td>
-            <td>Estados automático / intervención manual y arquitectura del Sistema de Seguridad Personal.</td>
+            <td class="hito-title" data-i18n="slide18.r2Hito">Principios y SSP</td>
+            <td data-i18n="slide18.r2Desc">Estados automático / intervención manual y arquitectura del Sistema de Seguridad Personal.</td>
           </tr>
-          <tr class="clickable-row" data-target-slide="20" title="Ir a 6.3">
+          <tr class="clickable-row" data-target-slide="20" data-i18n-title="slide18.r3Title" title="Ir a 6.3">
             <td><span class="year-badge">6.3</span></td>
-            <td class="hito-title">Cerramiento y normativa</td>
-            <td>Resguardos (altura + distancia) y marco UNE EN 292, 294, 811 y 953.</td>
+            <td class="hito-title" data-i18n="slide18.r3Hito">Cerramiento y normativa</td>
+            <td data-i18n="slide18.r3Desc">Resguardos (altura + distancia) y marco UNE EN 292, 294, 811 y 953.</td>
           </tr>
-          <tr class="clickable-row" data-target-slide="21" title="Ir a 6.4">
+          <tr class="clickable-row" data-target-slide="21" data-i18n-title="slide18.r4Title" title="Ir a 6.4">
             <td><span class="year-badge">6.4</span></td>
-            <td class="hito-title">Microdiseño de distancias</td>
-            <td>Alcance hacia arriba, ecuación frontal, biomecánica, aberturas y acceso inferior.</td>
+            <td class="hito-title" data-i18n="slide18.r4Hito">Microdiseño de distancias</td>
+            <td data-i18n="slide18.r4Desc">Alcance hacia arriba, ecuación frontal, biomecánica, aberturas y acceso inferior.</td>
           </tr>
-          <tr class="clickable-row" data-target-slide="22" title="Ir a 6.5">
+          <tr class="clickable-row" data-target-slide="22" data-i18n-title="slide18.r5Title" title="Ir a 6.5">
             <td><span class="year-badge">6.5</span></td>
-            <td class="hito-title">Célula unificada</td>
-            <td>Síntesis: perímetro, malla, hueco inferior y cerebro SSP en una sola célula.</td>
+            <td class="hito-title" data-i18n="slide18.r5Hito">Célula unificada</td>
+            <td data-i18n="slide18.r5Desc">Síntesis: perímetro, malla, hueco inferior y cerebro SSP en una sola célula.</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p class="seguridad-quote">
+    <p class="seguridad-quote" data-i18n="slide18.quote">
       La prevención basada en el comportamiento es insuficiente: los peligros por fallos del sistema exigen medidas técnicas de seguridad.
     </p>
   </div>
@@ -1084,10 +1126,10 @@
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">6.1</span>
-      <span class="title-text">Peligros inherentes y el dato técnico</span>
+      <span class="title-text" data-i18n="slide19.title">Peligros inherentes y el dato técnico</span>
     </h2>
   </header>
-  <p class="normativa-intro">
+  <p class="normativa-intro" data-i18n="slide19.intro">
     Cinco familias de peligro caracterizan la automatización moderna. Más de la mitad de los accidentes se atribuyen a fallos técnicos de circuitos y control.
   </p>
   <div class="seguridad-cell-layout">
@@ -1095,59 +1137,59 @@
       <div class="normativa-card">
         <div class="normativa-stripe stripe-orange"></div>
         <div class="normativa-content">
-          <button type="button" class="normativa-icon-box normativa-icon-img" onclick="openLightbox('assets/images/ssp-solapamiento.png')" title="Ampliar solapamiento">
-            <img src="assets/images/ssp-solapamiento.png" alt="Solapamiento de radios de acción">
+          <button type="button" class="normativa-icon-box normativa-icon-img" onclick="openLightbox('assets/images/ssp-solapamiento.png')" data-i18n-title="slide19.s1Title" title="Ampliar solapamiento">
+            <img src="assets/images/ssp-solapamiento.png" alt="Solapamiento de radios de acción" data-i18n-alt="slide19.s1Alt" data-i18n-alt="slide19.s2Alt">
           </button>
-          <h3 class="normativa-name">Solapamiento</h3>
-          <p class="normativa-desc">Alta velocidad en radios de acción cruzados entre robots o ejes.</p>
+          <h3 class="normativa-name" data-i18n="slide19.s1Name">Solapamiento</h3>
+          <p class="normativa-desc" data-i18n="slide19.s1Desc">Alta velocidad en radios de acción cruzados entre robots o ejes.</p>
         </div>
       </div>
       <div class="normativa-card">
         <div class="normativa-stripe stripe-yellow"></div>
         <div class="normativa-content">
-          <button type="button" class="normativa-icon-box normativa-icon-img" onclick="openLightbox('assets/images/ssp-liberacion-energia.png')" title="Ampliar liberación de energía">
+          <button type="button" class="normativa-icon-box normativa-icon-img" onclick="openLightbox('assets/images/ssp-liberacion-energia.png')" data-i18n-title="slide19.s2Title" title="Ampliar liberación de energía">
             <img src="assets/images/ssp-liberacion-energia.png" alt="Liberación de energía y proyecciones">
           </button>
-          <h3 class="normativa-name">Liberación de energía</h3>
-          <p class="normativa-desc">Proyecciones de partículas, láseres o chorros de agua a presión.</p>
+          <h3 class="normativa-name" data-i18n="slide19.s2Name">Liberación de energía</h3>
+          <p class="normativa-desc" data-i18n="slide19.s2Desc">Proyecciones de partículas, láseres o chorros de agua a presión.</p>
         </div>
       </div>
       <div class="normativa-card">
         <div class="normativa-stripe stripe-white"></div>
         <div class="normativa-content">
-          <button type="button" class="normativa-icon-box normativa-icon-img" onclick="openLightbox('assets/images/ssp-libertad-programacion.png')" title="Ampliar libertad de programación">
-            <img src="assets/images/ssp-libertad-programacion.png" alt="Libertad de programación e imprevisibilidad">
+          <button type="button" class="normativa-icon-box normativa-icon-img" onclick="openLightbox('assets/images/ssp-libertad-programacion.png')" data-i18n-title="slide19.s3Title" title="Ampliar libertad de programación">
+            <img src="assets/images/ssp-libertad-programacion.png" alt="Libertad de programación e imprevisibilidad" data-i18n-alt="slide19.s3Alt">
           </button>
-          <h3 class="normativa-name">Libertad de programación</h3>
-          <p class="normativa-desc">Imprevisibilidad de dirección y velocidad del trajeto.</p>
+          <h3 class="normativa-name" data-i18n="slide19.s3Name">Libertad de programación</h3>
+          <p class="normativa-desc" data-i18n="slide19.s3Desc">Imprevisibilidad de dirección y velocidad del trajeto.</p>
         </div>
       </div>
       <div class="normativa-card">
         <div class="normativa-stripe stripe-orange"></div>
         <div class="normativa-content">
-          <button type="button" class="normativa-icon-box normativa-icon-img" onclick="openLightbox('assets/images/ssp-errores-emc.png')" title="Ampliar errores inducidos externos">
-            <img src="assets/images/ssp-errores-emc.png" alt="Errores inducidos externos EMC">
+          <button type="button" class="normativa-icon-box normativa-icon-img" onclick="openLightbox('assets/images/ssp-errores-emc.png')" data-i18n-title="slide19.s4Title" title="Ampliar errores inducidos externos">
+            <img src="assets/images/ssp-errores-emc.png" alt="Errores inducidos externos EMC" data-i18n-alt="slide19.s4Alt" data-i18n-alt="slide19.s5Alt">
           </button>
-          <h3 class="normativa-name">Errores inducidos externos</h3>
-          <p class="normativa-desc">Fallos por compatibilidad electromagnética (EMC).</p>
+          <h3 class="normativa-name" data-i18n="slide19.s4Name">Errores inducidos externos</h3>
+          <p class="normativa-desc" data-i18n="slide19.s4Desc">Fallos por compatibilidad electromagnética (EMC).</p>
         </div>
       </div>
       <div class="normativa-card">
         <div class="normativa-stripe stripe-yellow"></div>
         <div class="normativa-content">
-          <button type="button" class="normativa-icon-box normativa-icon-img" onclick="openLightbox('assets/images/ssp-factores-humanos.png')" title="Ampliar factores humanos">
+          <button type="button" class="normativa-icon-box normativa-icon-img" onclick="openLightbox('assets/images/ssp-factores-humanos.png')" data-i18n-title="slide19.s5Title" title="Ampliar factores humanos">
             <img src="assets/images/ssp-factores-humanos.png" alt="Factores humanos en operación">
           </button>
-          <h3 class="normativa-name">Factores humanos</h3>
-          <p class="normativa-desc">Errores de operación, mantenimiento o uso del pendant.</p>
+          <h3 class="normativa-name" data-i18n="slide19.s5Name">Factores humanos</h3>
+          <p class="normativa-desc" data-i18n="slide19.s5Desc">Errores de operación, mantenimiento o uso del pendant.</p>
         </div>
       </div>
       <div class="normativa-card">
         <div class="normativa-stripe stripe-white"></div>
         <div class="normativa-content">
           <div class="stat-number-giant" style="font-size: clamp(2rem, 3.5vw, 2.8rem); color: var(--accent-yellow);">≥50%</div>
-          <h3 class="normativa-name">Fallos técnicos</h3>
-          <p class="normativa-desc">Accidentes atribuibles a circuitos electrónicos y sistemas de control (&lt;20% error humano).</p>
+          <h3 class="normativa-name" data-i18n="slide19.s6Name">Fallos técnicos</h3>
+          <p class="normativa-desc" data-i18n="slide19.s6Desc">Accidentes atribuibles a circuitos electrónicos y sistemas de control (&lt;20% error humano).</p>
         </div>
       </div>
     </div>
@@ -1158,38 +1200,38 @@
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">6.2</span>
-      <span class="title-text">Principios operativos y Sistema SSP</span>
+      <span class="title-text" data-i18n="slide20.title">Principios operativos y Sistema SSP</span>
     </h2>
   </header>
-  <p class="normativa-intro">
+  <p class="normativa-intro" data-i18n="slide20.intro">
     Dos estados absolutos rigen la célula; el Sistema de Seguridad Personal (SSP) media entre el cerebro del robot y la frontera física.
   </p>
   <div class="seguridad-entorno-layout">
     <div class="seguridad-entorno-points ssp-estados-points">
       <div class="seguridad-resp-card seguridad-signal-card ssp-estado-card">
-        <h3 class="card-tag">Funcionamiento automático</h3>
+        <h3 class="card-tag" data-i18n="slide20.autoTag">Funcionamiento automático</h3>
         <div class="seguridad-signal-card-body ssp-estado-body">
-          <button type="button" class="seguridad-signal-thumb ssp-estado-thumb" onclick="openLightbox('assets/images/ssp-funcionamiento-automatico.png')" title="Ampliar funcionamiento automático">
-            <img src="assets/images/ssp-funcionamiento-automatico.png" alt="Funcionamiento automático: perímetro cerrado sin personas">
+          <button type="button" class="seguridad-signal-thumb ssp-estado-thumb" onclick="openLightbox('assets/images/ssp-funcionamiento-automatico.png')" data-i18n-title="slide20.autoTitle" title="Ampliar funcionamiento automático">
+            <img src="assets/images/ssp-funcionamiento-automatico.png" alt="Funcionamiento automático: perímetro cerrado sin personas" data-i18n-alt="slide20.autoAlt">
           </button>
-          <p class="seguridad-signal-text"><strong>Regla absoluta:</strong> ausencia total de personas en el espacio controlado. Perímetro cerrado y enclavado.</p>
+          <p class="seguridad-signal-text" data-i18n-html="slide20.autoTextHtml"><strong>Regla absoluta:</strong> ausencia total de personas en el espacio controlado. Perímetro cerrado y enclavado.</p>
         </div>
       </div>
       <div class="seguridad-resp-card seguridad-signal-card ssp-estado-card">
-        <h3 class="card-tag">Intervención manual</h3>
+        <h3 class="card-tag" data-i18n="slide20.manTag">Intervención manual</h3>
         <div class="seguridad-signal-card-body ssp-estado-body">
-          <button type="button" class="seguridad-signal-thumb ssp-estado-thumb" onclick="openLightbox('assets/images/ssp-intervencion-manual.png')" title="Ampliar intervención manual">
-            <img src="assets/images/ssp-intervencion-manual.png" alt="Intervención manual con parada segura y power off">
+          <button type="button" class="seguridad-signal-thumb ssp-estado-thumb" onclick="openLightbox('assets/images/ssp-intervencion-manual.png')" data-i18n-title="slide20.manTitle" title="Ampliar intervención manual">
+            <img src="assets/images/ssp-intervencion-manual.png" alt="Intervención manual con parada segura y power off" data-i18n-alt="slide20.manAlt">
           </button>
-          <p class="seguridad-signal-text"><strong>Regla absoluta:</strong> eliminación o reducción máxima del peligro mediante paradas forzosas (parada segura / power off).</p>
+          <p class="seguridad-signal-text" data-i18n-html="slide20.manTextHtml"><strong>Regla absoluta:</strong> eliminación o reducción máxima del peligro mediante paradas forzosas (parada segura / power off).</p>
         </div>
       </div>
     </div>
     <div class="media-card seguridad-entorno-media">
       <div class="media-gif-wrapper seguridad-cell-photo-wrap">
-        <img src="assets/images/ssp-arquitectura.png" alt="Arquitectura del Sistema de Seguridad Personal" class="slide-gif seguridad-cell-photo" onclick="openLightbox(this.src)" title="Ampliar SSP">
+        <img src="assets/images/ssp-arquitectura.png" alt="Arquitectura del Sistema de Seguridad Personal" data-i18n-alt="slide20.sspAlt" class="slide-gif seguridad-cell-photo" onclick="openLightbox(this.src)" data-i18n-title="slide20.sspTitle" title="Ampliar SSP">
       </div>
-      <div class="card-source-caption"><span>SSP: mediador del circuito de desconexión</span></div>
+      <div class="card-source-caption"><span data-i18n="slide20.sspCaption">SSP: mediador del circuito de desconexión</span></div>
     </div>
   </div>
 </article>
@@ -1198,11 +1240,11 @@
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">6.3</span>
-      <span class="title-text">Cerramiento físico y marco normativo</span>
+      <span class="title-text" data-i18n="slide21.title">Cerramiento físico y marco normativo</span>
     </h2>
   </header>
-  <h3 class="ssp-formula-heading">Eficiencia del Resguardo = Altura + Distancia</h3>
-  <p class="normativa-intro">
+  <h3 class="ssp-formula-heading" data-i18n="slide21.formula">Eficiencia del Resguardo = Altura + Distancia</h3>
+  <p class="normativa-intro" data-i18n="slide21.intro">
     El objetivo principal es proteger al trabajador frente a disfunciones del sistema de control mediante guardas.
   </p>
   <div class="seguridad-entorno-layout">
@@ -1210,49 +1252,49 @@
       <div class="media-gif-wrapper seguridad-cell-photo-wrap">
         <img
           src="assets/images/ssp-cerramiento-fisico.png"
-          alt="Cerramiento físico: altura Y y distancia X del robot"
+          alt="Cerramiento físico: altura Y y distancia X del robot" data-i18n-alt="slide21.mediaAlt"
           class="slide-gif seguridad-cell-photo"
           onclick="openLightbox(this.src)"
-          title="Ampliar"
+          data-i18n-title="slide21.mediaTitle" title="Ampliar"
         >
       </div>
-      <div class="card-source-caption"><span>Altura (Y) y distancia del robot (X)</span></div>
+      <div class="card-source-caption"><span data-i18n="slide21.mediaCaption">Altura (Y) y distancia del robot (X)</span></div>
     </div>
     <div class="seguridad-entorno-points">
       <div class="seguridad-resp-card seguridad-signal-card">
         <h3 class="card-tag">UNE EN 292 (1 y 2)</h3>
         <div class="seguridad-signal-card-body">
-          <button type="button" class="seguridad-signal-thumb" onclick="openLightbox('assets/images/ssp-une-en-292.png')" title="Ampliar UNE EN 292">
-            <img src="assets/images/ssp-une-en-292.png" alt="Diseño general y conceptos básicos">
+          <button type="button" class="seguridad-signal-thumb" onclick="openLightbox('assets/images/ssp-une-en-292.png')" data-i18n-title="slide21.n292Title" title="Ampliar UNE EN 292">
+            <img src="assets/images/ssp-une-en-292.png" alt="Diseño general y conceptos básicos" data-i18n-alt="slide21.n292Alt" data-i18n-alt="slide21.n294Alt">
           </button>
-          <p class="seguridad-signal-text">Diseño general y conceptos básicos de seguridad de máquinas.</p>
+          <p class="seguridad-signal-text" data-i18n="slide21.n292Text">Diseño general y conceptos básicos de seguridad de máquinas.</p>
         </div>
       </div>
       <div class="seguridad-resp-card seguridad-signal-card">
         <h3 class="card-tag">UNE EN 294</h3>
         <div class="seguridad-signal-card-body">
-          <button type="button" class="seguridad-signal-thumb" onclick="openLightbox('assets/images/ssp-une-en-294.png')" title="Ampliar UNE EN 294">
-            <img src="assets/images/ssp-une-en-294.png" alt="Alcance de miembros superiores">
+          <button type="button" class="seguridad-signal-thumb" onclick="openLightbox('assets/images/ssp-une-en-294.png')" data-i18n-title="slide21.n294Title" title="Ampliar UNE EN 294">
+            <img src="assets/images/ssp-une-en-294.png" alt="Alcance de miembros superiores" data-i18n-alt="slide21.n811Alt">
           </button>
-          <p class="seguridad-signal-text">Impedir el alcance de miembros superiores hacia la zona peligrosa.</p>
+          <p class="seguridad-signal-text" data-i18n="slide21.n294Text">Impedir el alcance de miembros superiores hacia la zona peligrosa.</p>
         </div>
       </div>
       <div class="seguridad-resp-card seguridad-signal-card">
         <h3 class="card-tag">UNE EN 811</h3>
         <div class="seguridad-signal-card-body">
-          <button type="button" class="seguridad-signal-thumb" onclick="openLightbox('assets/images/ssp-une-en-811.png')" title="Ampliar UNE EN 811">
-            <img src="assets/images/ssp-une-en-811.png" alt="Alcance de miembros inferiores">
+          <button type="button" class="seguridad-signal-thumb" onclick="openLightbox('assets/images/ssp-une-en-811.png')" data-i18n-title="slide21.n811Title" title="Ampliar UNE EN 811">
+            <img src="assets/images/ssp-une-en-811.png" alt="Alcance de miembros inferiores" data-i18n-alt="slide21.n953Alt">
           </button>
-          <p class="seguridad-signal-text">Impedir el alcance de miembros inferiores bajo resguardos.</p>
+          <p class="seguridad-signal-text" data-i18n="slide21.n811Text">Impedir el alcance de miembros inferiores bajo resguardos.</p>
         </div>
       </div>
       <div class="seguridad-resp-card seguridad-signal-card">
         <h3 class="card-tag">UNE EN 953</h3>
         <div class="seguridad-signal-card-body">
-          <button type="button" class="seguridad-signal-thumb" onclick="openLightbox('assets/images/ssp-une-en-953.png')" title="Ampliar UNE EN 953">
+          <button type="button" class="seguridad-signal-thumb" onclick="openLightbox('assets/images/ssp-une-en-953.png')" data-i18n-title="slide21.n953Title" title="Ampliar UNE EN 953">
             <img src="assets/images/ssp-une-en-953.png" alt="Diseño y construcción de resguardos">
           </button>
-          <p class="seguridad-signal-text">Diseño y construcción de resguardos fijos y móviles.</p>
+          <p class="seguridad-signal-text" data-i18n="slide21.n953Text">Diseño y construcción de resguardos fijos y móviles.</p>
         </div>
       </div>
       <div class="ssp-alert-banner" role="note">
@@ -1263,7 +1305,7 @@
             <line x1="12" y1="17" x2="12.01" y2="17"></line>
           </svg>
         </span>
-        <p>Si el perímetro es violado físicamente, el SSP entra en acción provocando la parada inmediata de la instalación.</p>
+        <p data-i18n="slide21.alert">Si el perímetro es violado físicamente, el SSP entra en acción provocando la parada inmediata de la instalación.</p>
       </div>
     </div>
   </div>
@@ -1273,45 +1315,45 @@
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">6.4</span>
-      <span class="title-text">Microdiseño de distancias de seguridad</span>
+      <span class="title-text" data-i18n="slide22.title">Microdiseño de distancias de seguridad</span>
     </h2>
   </header>
-  <p class="normativa-intro">
+  <p class="normativa-intro" data-i18n="slide22.intro">
     El dimensionado de resguardos se basa en tablas normativas: si un valor cae entre dos tabulados, se elige siempre el de mayor seguridad (prohibido interpolar).
   </p>
   <div class="seguridad-cell-layout ssp-microdiseno-layout">
     <div class="seguridad-zones-grid ssp-microdiseno-grid">
       <div class="seguridad-zone-card zone-green ssp-elevacion-card">
-        <h3>Elevación (alcance arriba)</h3>
+        <h3 data-i18n="slide22.elevH">Elevación (alcance arriba)</h3>
         <div class="ssp-elevacion-bajo">
-          <button type="button" class="seguridad-signal-thumb ssp-fill-thumb" onclick="openLightbox('assets/images/ssp-elevacion-riesgo-bajo.png')" title="Ampliar riesgo bajo">
-            <img src="assets/images/ssp-elevacion-riesgo-bajo.png" alt="Riesgo bajo: alcance a 2,50 m">
+          <button type="button" class="seguridad-signal-thumb ssp-fill-thumb" onclick="openLightbox('assets/images/ssp-elevacion-riesgo-bajo.png')" data-i18n-title="slide22.lowTitle" title="Ampliar riesgo bajo">
+            <img src="assets/images/ssp-elevacion-riesgo-bajo.png" alt="Riesgo bajo: alcance a 2,50 m" data-i18n-alt="slide22.lowAlt">
           </button>
           <div class="ssp-elevacion-copy">
-            <p class="ssp-elevacion-label"><strong>Riesgo bajo:</strong> lesiones leves/reversibles</p>
-            <p>La zona peligrosa se considera protegida por distanciamiento si está por encima de 2,5 m.</p>
+            <p class="ssp-elevacion-label" data-i18n-html="slide22.lowLabelHtml"><strong>Riesgo bajo:</strong> lesiones leves/reversibles</p>
+            <p data-i18n="slide22.lowP">La zona peligrosa se considera protegida por distanciamiento si está por encima de 2,5 m.</p>
           </div>
         </div>
         <div class="ssp-elevacion-bajo">
-          <button type="button" class="seguridad-signal-thumb ssp-fill-thumb" onclick="openLightbox('assets/images/ssp-elevacion-riesgo-alto.png')" title="Ampliar riesgo alto">
-            <img src="assets/images/ssp-elevacion-riesgo-alto.png" alt="Riesgo alto: alcance a 2,70 m">
+          <button type="button" class="seguridad-signal-thumb ssp-fill-thumb" onclick="openLightbox('assets/images/ssp-elevacion-riesgo-alto.png')" data-i18n-title="slide22.highTitle" title="Ampliar riesgo alto">
+            <img src="assets/images/ssp-elevacion-riesgo-alto.png" alt="Riesgo alto: alcance a 2,70 m" data-i18n-alt="slide22.highAlt">
           </button>
           <div class="ssp-elevacion-copy">
-            <p class="ssp-elevacion-label"><strong>Riesgo alto:</strong> lesiones graves/irreversibles</p>
-            <p>La zona peligrosa exige un alejamiento mayor situándose por encima de 2,7 m.</p>
+            <p class="ssp-elevacion-label" data-i18n-html="slide22.highLabelHtml"><strong>Riesgo alto:</strong> lesiones graves/irreversibles</p>
+            <p data-i18n="slide22.highP">La zona peligrosa exige un alejamiento mayor situándose por encima de 2,7 m.</p>
           </div>
         </div>
       </div>
       <div class="seguridad-zone-card zone-yellow ssp-ecuacion-card">
-        <h3>Ecuación frontal (a, b, c)</h3>
+        <h3 data-i18n="slide22.eqH">Ecuación frontal (a, b, c)</h3>
         <div class="ssp-ecuacion-body">
-          <button type="button" class="seguridad-signal-thumb ssp-fill-thumb ssp-ecuacion-fill" onclick="openLightbox('assets/images/ssp-ecuacion-frontal.png')" title="Ampliar ecuación frontal">
-            <img src="assets/images/ssp-ecuacion-frontal.png" alt="Ecuación frontal del resguardo: variables a, b y c">
+          <button type="button" class="seguridad-signal-thumb ssp-fill-thumb ssp-ecuacion-fill" onclick="openLightbox('assets/images/ssp-ecuacion-frontal.png')" data-i18n-title="slide22.eqTitle" title="Ampliar ecuación frontal">
+            <img src="assets/images/ssp-ecuacion-frontal.png" alt="Ecuación frontal del resguardo: variables a, b y c" data-i18n-alt="slide22.eqAlt">
           </button>
           <ul class="ssp-abc-list">
-            <li><strong>a</strong> = distancia del punto de peligro al suelo</li>
-            <li><strong>b</strong> = altura del borde superior de la barrera</li>
-            <li><strong>c</strong> = distancia horizontal desde el peligro al resguardo</li>
+            <li data-i18n-html="slide22.eqAHtml"><strong>a</strong> = distancia del punto de peligro al suelo</li>
+            <li data-i18n-html="slide22.eqBHtml"><strong>b</strong> = altura del borde superior de la barrera</li>
+            <li data-i18n-html="slide22.eqCHtml"><strong>c</strong> = distancia horizontal desde el peligro al resguardo</li>
           </ul>
         </div>
         <div class="ssp-alert-banner ssp-alert-banner-compact" role="note">
@@ -1322,29 +1364,29 @@
               <line x1="12" y1="17" x2="12.01" y2="17"></line>
             </svg>
           </span>
-          <p><strong>PROHIBIDO INTERPOLAR.</strong> Al consultar las tablas normativas para dimensionar a, b y c, si el cálculo cae entre dos valores tabulados, <strong>se elegirá obligatoriamente el valor que entrañe el mayor nivel de seguridad</strong>.</p>
+          <p data-i18n-html="slide22.eqAlertHtml"><strong>PROHIBIDO INTERPOLAR.</strong> Al consultar las tablas normativas para dimensionar a, b y c, si el cálculo cae entre dos valores tabulados, <strong>se elegirá obligatoriamente el valor que entrañe el mayor nivel de seguridad</strong>.</p>
         </div>
       </div>
       <div class="seguridad-zone-card zone-red ssp-alcance-card">
-        <h3>Alcance alrededor</h3>
-        <p class="ssp-alcance-subtitle">Distancia de seguridad para aberturas de hasta 120 mm</p>
-        <button type="button" class="seguridad-signal-thumb ssp-fill-thumb ssp-alcance-thumb" onclick="openLightbox('assets/images/ssp-alcance-alrededor.png')" title="Ampliar alcance alrededor">
-          <img src="assets/images/ssp-alcance-alrededor.png" alt="Distancias de seguridad por biomecánica del brazo">
+        <h3 data-i18n="slide22.reachH">Alcance alrededor</h3>
+        <p class="ssp-alcance-subtitle" data-i18n="slide22.reachSub">Distancia de seguridad para aberturas de hasta 120 mm</p>
+        <button type="button" class="seguridad-signal-thumb ssp-fill-thumb ssp-alcance-thumb" onclick="openLightbox('assets/images/ssp-alcance-alrededor.png')" data-i18n-title="slide22.reachTitle" title="Ampliar alcance alrededor">
+          <img src="assets/images/ssp-alcance-alrededor.png" alt="Distancias de seguridad por biomecánica del brazo" data-i18n-alt="slide22.reachAlt">
         </button>
       </div>
     </div>
     <div class="seguridad-zones-grid ssp-aberturas-row">
       <div class="seguridad-zone-card zone-yellow ssp-aberturas-card">
-        <h3>Ranuras y excepciones</h3>
-        <p>Las formas geométricas restringen el movimiento de manera diferente. Para aberturas irregulares, se debe inscribir la forma circular o cuadrada más pequeña posible dentro de la irregularidad.</p>
+        <h3 data-i18n="slide22.slotsH">Ranuras y excepciones</h3>
+        <p data-i18n="slide22.slotsP">Las formas geométricas restringen el movimiento de manera diferente. Para aberturas irregulares, se debe inscribir la forma circular o cuadrada más pequeña posible dentro de la irregularidad.</p>
         <div class="ssp-aberturas-thumbs">
-          <button type="button" class="seguridad-signal-thumb ssp-fill-thumb" onclick="openLightbox('assets/images/ssp-abertura-rendija.png')" title="Ampliar rendija">
-            <img src="assets/images/ssp-abertura-rendija.png" alt="Abertura en rendija: geometría vs distancia ds">
+          <button type="button" class="seguridad-signal-thumb ssp-fill-thumb" onclick="openLightbox('assets/images/ssp-abertura-rendija.png')" data-i18n-title="slide22.slot1Title" title="Ampliar rendija">
+            <img src="assets/images/ssp-abertura-rendija.png" alt="Abertura en rendija: geometría vs distancia ds" data-i18n-alt="slide22.slot1Alt" data-i18n-alt="slide22.slot2Alt">
           </button>
-          <button type="button" class="seguridad-signal-thumb ssp-fill-thumb" onclick="openLightbox('assets/images/ssp-abertura-cuadrada.png')" title="Ampliar cuadrada">
-            <img src="assets/images/ssp-abertura-cuadrada.png" alt="Abertura cuadrada: geometría vs distancia ds">
+          <button type="button" class="seguridad-signal-thumb ssp-fill-thumb" onclick="openLightbox('assets/images/ssp-abertura-cuadrada.png')" data-i18n-title="slide22.slot2Title" title="Ampliar cuadrada">
+            <img src="assets/images/ssp-abertura-cuadrada.png" alt="Abertura cuadrada: geometría vs distancia ds" data-i18n-alt="slide22.slot3Alt">
           </button>
-          <button type="button" class="seguridad-signal-thumb ssp-fill-thumb" onclick="openLightbox('assets/images/ssp-abertura-circular.png')" title="Ampliar circular">
+          <button type="button" class="seguridad-signal-thumb ssp-fill-thumb" onclick="openLightbox('assets/images/ssp-abertura-circular.png')" data-i18n-title="slide22.slot3Title" title="Ampliar circular">
             <img src="assets/images/ssp-abertura-circular.png" alt="Abertura circular: geometría vs distancia ds">
           </button>
         </div>
@@ -1356,14 +1398,14 @@
               <line x1="12" y1="17" x2="12.01" y2="17"></line>
             </svg>
           </span>
-          <p>En ranuras paralelas de ancho &lt; 65 mm la distancia de seguridad máxima se reduce a 200 mm porque el pulgar actúa como tope anatómico.</p>
+          <p data-i18n="slide22.slotsAlert">En ranuras paralelas de ancho &lt; 65 mm la distancia de seguridad máxima se reduce a 200 mm porque el pulgar actúa como tope anatómico.</p>
         </div>
       </div>
       <div class="seguridad-zone-card zone-green ssp-acceso-card">
-        <h3>Acceso inferior</h3>
-        <p>La altura del hueco inferior «h» determina hasta dónde puede deslizarse el miembro inferior hacia la zona de peligro.</p>
-        <button type="button" class="seguridad-signal-thumb ssp-fill-thumb ssp-alcance-thumb" onclick="openLightbox('assets/images/ssp-acceso-inferior.png')" title="Ampliar acceso inferior">
-          <img src="assets/images/ssp-acceso-inferior.png" alt="Acceso inferior: relación entre hueco h y distancia de seguridad ds">
+        <h3 data-i18n="slide22.accessH">Acceso inferior</h3>
+        <p data-i18n="slide22.accessP">La altura del hueco inferior «h» determina hasta dónde puede deslizarse el miembro inferior hacia la zona de peligro.</p>
+        <button type="button" class="seguridad-signal-thumb ssp-fill-thumb ssp-alcance-thumb" onclick="openLightbox('assets/images/ssp-acceso-inferior.png')" data-i18n-title="slide22.accessTitle" title="Ampliar acceso inferior">
+          <img src="assets/images/ssp-acceso-inferior.png" alt="Acceso inferior: relación entre hueco h y distancia de seguridad ds" data-i18n-alt="slide22.accessAlt">
         </button>
         <div class="ssp-alert-banner ssp-alert-banner-compact" role="note">
           <span class="ssp-alert-icon" aria-hidden="true">
@@ -1373,7 +1415,7 @@
               <line x1="12" y1="17" x2="12.01" y2="17"></line>
             </svg>
           </span>
-          <p><strong>Mandato de diseño:</strong> los resguardos deben extenderse lo más cerca posible del nivel de suelo para minimizar la variable «h», reduciendo drásticamente la distancia de seguridad requerida en la instalación.</p>
+          <p data-i18n-html="slide22.accessAlertHtml"><strong>Mandato de diseño:</strong> los resguardos deben extenderse lo más cerca posible del nivel de suelo para minimizar la variable «h», reduciendo drásticamente la distancia de seguridad requerida en la instalación.</p>
         </div>
       </div>
     </div>
@@ -1384,18 +1426,18 @@
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">6.5</span>
-      <span class="title-text">La célula robótica unificada</span>
+      <span class="title-text" data-i18n="slide23.title">La célula robótica unificada</span>
     </h2>
   </header>
-  <p class="normativa-intro">
+  <p class="normativa-intro" data-i18n="slide23.intro">
     Un diseño técnico riguroso convierte el peligro inherente en seguridad matemática: perímetro, malla, hueco inferior y lógica SSP trabajan juntos.
   </p>
   <div class="seguridad-cell-layout ssp-celula-layout">
     <div class="media-card ssp-celula-media">
       <div class="media-gif-wrapper ssp-celula-wrap">
-        <img src="assets/images/ssp-celula-unificada.jpg" alt="Dossier de diseño: célula robótica unificada con altura perimetral, geometría de aberturas, acceso inferior y SSP" class="slide-gif ssp-celula-photo" onclick="openLightbox(this.src)" title="Ampliar">
+        <img src="assets/images/ssp-celula-unificada.jpg" alt="Dossier de diseño: célula robótica unificada con altura perimetral, geometría de aberturas, acceso inferior y SSP" data-i18n-alt="slide23.imgAlt" class="slide-gif ssp-celula-photo" onclick="openLightbox(this.src)" data-i18n-title="slide23.imgTitle" title="Ampliar">
       </div>
-      <div class="card-source-caption"><span>El Dossier de Diseño: La Célula Robótica Unificada</span></div>
+      <div class="card-source-caption"><span data-i18n="slide23.caption">El Dossier de Diseño: La Célula Robótica Unificada</span></div>
     </div>
   </div>
 </article>
@@ -1404,49 +1446,49 @@
   <header class="slide-header">
     <h2 class="slide-title">
       <span class="year-tag">7</span>
-      <span class="title-text">Fuentes Oficiales y Documentación de Referencia</span>
+      <span class="title-text" data-i18n="slide12.title">Fuentes Oficiales y Documentación de Referencia</span>
     </h2>
   </header>
   <div class="sources-card">
     <ul class="sources-list">
       <li class="source-item">
-        <strong>1. Science Museum Group (2019):</strong> James Watt and the separate condenser.
+        <span data-i18n-html="slide12.s1Html"><strong>1. Science Museum Group (2019):</strong> James Watt and the separate condenser.</span>
         <br><a href="https://blog.sciencemuseum.org.uk/james-watt-and-the-separate-condenser/" target="_blank" rel="noopener">blog.sciencemuseum.org.uk</a>
       </li>
       <li class="source-item">
-        <strong>2. Virginia Tech Archives:</strong> Report on MIT Demonstration of Numerically Controlled Milling Machine (1952).
+        <span data-i18n-html="slide12.s2Html"><strong>2. Virginia Tech Archives:</strong> Report on MIT Demonstration of Numerically Controlled Milling Machine (1952).</span>
         <br><a href="https://aspace.lib.vt.edu/repositories/2/archival_objects/190379" target="_blank" rel="noopener">aspace.lib.vt.edu</a>
       </li>
       <li class="source-item">
-        <strong>3. Computer History Museum (1961):</strong> Unimate: First programmable robot in GM.
+        <span data-i18n-html="slide12.s3Html"><strong>3. Computer History Museum (1961):</strong> Unimate: First programmable robot in GM.</span>
         <br><a href="https://www.computerhistory.org/timeline/1961/" target="_blank" rel="noopener">computerhistory.org</a>
       </li>
       <li class="source-item">
-        <strong>4. Kawasaki Heavy Industries:</strong> History of the robot business (1968–1969).
+        <span data-i18n-html="slide12.s4Html"><strong>4. Kawasaki Heavy Industries:</strong> History of the robot business (1968–1969).</span>
         <br><a href="https://global.kawasaki.com/en/history/business/robot.html" target="_blank" rel="noopener">global.kawasaki.com</a>
       </li>
       <li class="source-item">
-        <strong>5. KUKA Robotics:</strong> Historia de la robótica industrial: robot FAMULUS (1973).
+        <span data-i18n-html="slide12.s5Html"><strong>5. KUKA Robotics:</strong> Historia de la robótica industrial: robot FAMULUS (1973).</span>
         <br><a href="https://www.kuka.com/es-es/empresa/homeofrobotik" target="_blank" rel="noopener">kuka.com</a>
       </li>
       <li class="source-item">
-        <strong>6. ABB (2023):</strong> 140 years of ASEA: Presentación del IRB 6 (1974).
+        <span data-i18n-html="slide12.s6Html"><strong>6. ABB (2023):</strong> 140 years of ASEA: Presentación del IRB 6 (1974).</span>
         <br><a href="https://new.abb.com/news/detail/106125/140-years-of-asea" target="_blank" rel="noopener">new.abb.com</a>
       </li>
       <li class="source-item">
-        <strong>7. ISO (1992):</strong> ISO 10218:1992 — Manipulating industrial robots — Safety.
+        <span data-i18n-html="slide12.s7Html"><strong>7. ISO (1992):</strong> ISO 10218:1992 — Manipulating industrial robots — Safety.</span>
         <br><a href="https://www.iso.org/standard/18252.html" target="_blank" rel="noopener">iso.org/standard/18252</a>
       </li>
       <li class="source-item">
-        <strong>8. ISO (2025):</strong> ISO 10218-1:2025 &amp; ISO 10218-2:2025 Robotics Safety.
+        <span data-i18n-html="slide12.s8Html"><strong>8. ISO (2025):</strong> ISO 10218-1:2025 &amp; ISO 10218-2:2025 Robotics Safety.</span>
         <br><a href="https://www.iso.org/standard/73933.html" target="_blank" rel="noopener">iso.org/standard/73933</a>
       </li>
       <li class="source-item">
-        <strong>9. SEAT S.A.:</strong> Historia de los 70 años de SEAT: Robots en Zona Franca (1974).
+        <span data-i18n-html="slide12.s9Html"><strong>9. SEAT S.A.:</strong> Historia de los 70 años de SEAT: Robots en Zona Franca (1974).</span>
         <br><a href="https://www.seat.es/sobre-seat/noticias/corporativas/70-anos-historia" target="_blank" rel="noopener">seat.es</a>
       </li>
       <li class="source-item">
-        <strong>10. AENOR / CEN:</strong> UNE-EN 775 — Robots manipuladores industriales. Seguridad (adaptación europea de ISO 10218).
+        <span data-i18n-html="slide12.s10Html"><strong>10. AENOR / CEN:</strong> UNE-EN 775 — Robots manipuladores industriales. Seguridad (adaptación europea de ISO 10218).</span>
       </li>
     </ul>
   </div>
@@ -1456,7 +1498,7 @@
       </section>
 
       <footer class="copyright-bar">
-        <span>© 2026 Todos los derechos reservados — <strong>Victor Larrañaga</strong>, <strong>Nestor Crespo</strong>, <strong>Gonzalo Sanchis</strong></span>
+        <span><span data-i18n="ui.copyright">© 2026 Todos los derechos reservados — </span><strong>Victor Larrañaga</strong>, <strong>Nestor Crespo</strong>, <strong>Gonzalo Sanchis</strong></span>
       </footer>
     </main>
   </div>
@@ -1468,26 +1510,26 @@
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
             <polyline points="14 2 14 8 20 8"></polyline>
           </svg>
-          <span>Documento: Patente / contrato de James Watt (A.D. 1769 Nº 913)</span>
+          <span data-i18n="ui.pdfTitle">Documento: Patente / contrato de James Watt (A.D. 1769 Nº 913)</span>
         </h3>
         <div class="pdf-modal-actions">
-          <a href="assets/docs/James_Watt_Patent_1769_No_913.pdf" target="_blank" class="btn-text" title="Abrir en pestaña nueva">
+          <a href="assets/docs/James_Watt_Patent_1769_No_913.pdf" target="_blank" class="btn-text" data-i18n-title="ui.pdfNewTabTitle" title="Abrir en pestaña nueva">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
               <polyline points="15 3 21 3 21 9"></polyline>
               <line x1="10" y1="14" x2="21" y2="3"></line>
             </svg>
-            <span>Pestaña Nueva</span>
+            <span data-i18n="ui.pdfNewTab">Pestaña Nueva</span>
           </a>
-          <a href="assets/docs/James_Watt_Patent_1769_No_913.pdf" download class="btn-text" title="Descargar archivo PDF">
+          <a href="assets/docs/James_Watt_Patent_1769_No_913.pdf" download class="btn-text" data-i18n-title="ui.pdfDownloadTitle" title="Descargar archivo PDF">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="7 10 12 15 17 10"></polyline>
               <line x1="12" y1="15" x2="12" y2="3"></line>
             </svg>
-            <span>Descargar</span>
+            <span data-i18n="ui.pdfDownload">Descargar</span>
           </a>
-          <button type="button" class="btn-close-modal" id="btn-close-pdf" title="Cerrar visor PDF (Esc)">
+          <button type="button" class="btn-close-modal" id="btn-close-pdf" data-i18n-title="ui.pdfClose" title="Cerrar visor PDF (Esc)">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -1496,19 +1538,20 @@
         </div>
       </div>
       <div class="pdf-frame-wrapper">
-        <iframe id="pdf-viewer-frame" class="pdf-frame" src="" title="Visor PDF James Watt"></iframe>
+        <iframe id="pdf-viewer-frame" class="pdf-frame" src="" data-i18n-title="ui.pdfFrameTitle" title="Visor PDF James Watt"></iframe>
       </div>
     </div>
   </div>
   <div class="lightbox-overlay" id="lightbox-overlay">
-    <button type="button" class="btn-close-lightbox" id="btn-close-lightbox" title="Cerrar (Esc)">
+    <button type="button" class="btn-close-lightbox" id="btn-close-lightbox" data-i18n-title="ui.lightboxClose" title="Cerrar (Esc)">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg>
     </button>
-    <img id="lightbox-img" src="" alt="Imagen ampliada" class="lightbox-img">
+    <img id="lightbox-img" src="" data-i18n-alt="ui.lightboxAlt" alt="Imagen ampliada" class="lightbox-img">
   </div>
+  <script src="js/i18n.js"></script>
   <script src="js/presentation.js"></script>
 </body>
 </html>

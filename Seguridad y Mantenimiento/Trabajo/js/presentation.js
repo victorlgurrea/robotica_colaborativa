@@ -2,7 +2,7 @@
  * Presentación local (HTML + JS): no necesita servidor.
  */
 
-const SLIDES = [
+const SLIDES_FALLBACK = [
   { id: '1', title: 'Portada principal', tag: 'Intro', level: 1 },
   { id: '2', title: 'Resumen cronológico', tag: 'Hitos', level: 1 },
   { id: '2.1', title: '1769 Patente de James Watt', tag: 'Patente', level: 2 },
@@ -28,12 +28,19 @@ const SLIDES = [
   { id: '7', title: 'Fuentes y bibliografía', tag: 'Fuentes', level: 1 }
 ];
 
+let SLIDES = (window.I18N && I18N.getSlides()) || SLIDES_FALLBACK;
+
 /** Secciones con subítems desplegables en el menú lateral. */
 const COLLAPSIBLE_SECTION_IDS = ['2', '5', '6'];
 
 const PDF_WATT = 'assets/docs/James_Watt_Patent_1769_No_913.pdf';
 
 document.addEventListener('DOMContentLoaded', () => {
+  if (window.I18N) {
+    I18N.apply(I18N.getLang());
+    SLIDES = I18N.getSlides();
+  }
+
   const totalSlides = SLIDES.length;
   let currentIndex = 0;
 
@@ -242,9 +249,53 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  const langDropdown = document.getElementById('lang-dropdown');
+  const btnLangToggle = document.getElementById('btn-lang-toggle');
+  const langDropdownMenu = document.getElementById('lang-dropdown-menu');
+
+  function closeLangDropdown() {
+    if (!langDropdownMenu || !btnLangToggle) return;
+    langDropdownMenu.hidden = true;
+    btnLangToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  function toggleLangDropdown() {
+    if (!langDropdownMenu || !btnLangToggle) return;
+    const open = langDropdownMenu.hidden;
+    langDropdownMenu.hidden = !open;
+    btnLangToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  btnLangToggle?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleLangDropdown();
+  });
+
+  langDropdownMenu?.querySelectorAll('.lang-option').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const lang = btn.dataset.lang;
+      if (window.I18N && lang) I18N.setLang(lang);
+      closeLangDropdown();
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!langDropdown?.contains(e.target)) closeLangDropdown();
+  });
+
+  document.addEventListener('i18n:langchange', () => {
+    if (window.I18N) {
+      SLIDES = I18N.getSlides();
+    }
+    buildSidebar();
+    goToSlide(currentIndex);
+  });
+
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeAllModals();
+      closeLangDropdown();
       sidebar?.classList.remove('mobile-open');
       return;
     }

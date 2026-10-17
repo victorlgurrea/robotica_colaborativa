@@ -36,16 +36,20 @@ Abrir: [http://localhost:8080](http://localhost:8080)
 
 ```text
 Trabajo/
-├── index.html              # Entrada principal
-├── presentacion.html       # Copia / alternativa de la presentación
+├── index.html              # Entrada principal (todas las diapositivas)
 ├── css/styles.css
-├── js/presentation.js
-├── content/                # Fragmentos de diapositivas
+├── js/
+│   ├── presentation.js     # Navegación, modales, idioma
+│   └── i18n.js             # Traducciones ES / EN
 └── assets/
     ├── images/
     ├── gifs/
     └── docs/               # PDFs de normativa y patente
 ```
+
+### Idiomas
+
+La presentación es **multidioma** (español por defecto e inglés). En la barra superior, junto a pantalla completa, hay un icono de idioma con desplegable y banderas. La preferencia se guarda en el navegador.
 
 ### Despliegue
 
