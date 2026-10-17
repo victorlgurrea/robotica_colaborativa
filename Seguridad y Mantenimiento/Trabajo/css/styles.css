@@ -1065,6 +1065,224 @@ body::before {
   align-items: stretch;
 }
 
+.accidents-single-card-wrap {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+  width: 100%;
+}
+
+.accident-card-single {
+  flex: 1;
+  background: linear-gradient(135deg, rgba(14, 38, 86, 0.95), rgba(8, 24, 56, 0.96));
+  border: 1.75px solid var(--border-blue);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(2, 8, 20, 0.7), var(--shadow-card);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 3.5vw, 3.5rem);
+  padding: clamp(1.5rem, 2.5vw, 2.8rem);
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.accident-card-single::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-yellow) 0%, var(--accent-yellow) 90%, var(--accent-cyan) 90%, var(--accent-cyan) 100%);
+}
+
+/* Columna Izquierda: Gráfico de queso / rosquilla SVG a gran tamaño */
+.pie-chart-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.pie-chart-wrapper {
+  position: relative;
+  width: min(85%, clamp(260px, 32vw, 420px));
+  aspect-ratio: 1 / 1;
+  height: auto;
+  max-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pie-chart-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  filter: drop-shadow(0 0 16px rgba(0, 0, 0, 0.5));
+}
+
+.pie-segment {
+  fill: transparent;
+  stroke-width: 24;
+  transition: stroke-width 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.pie-segment-90 {
+  stroke: var(--accent-yellow);
+  filter: drop-shadow(0 0 10px rgba(255, 212, 0, 0.55));
+}
+
+.pie-segment-90:hover {
+  stroke-width: 27;
+  filter: drop-shadow(0 0 18px rgba(255, 212, 0, 0.8));
+}
+
+.pie-segment-10 {
+  stroke: var(--accent-cyan);
+  filter: drop-shadow(0 0 8px rgba(76, 194, 255, 0.6));
+}
+
+.pie-segment-10:hover {
+  stroke-width: 27;
+  filter: drop-shadow(0 0 16px rgba(76, 194, 255, 0.85));
+}
+
+.pie-chart-center-badge {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  text-align: center;
+}
+
+.pie-center-val {
+  font-size: clamp(3rem, 5.5vw, 5rem);
+  font-weight: 900;
+  color: var(--accent-yellow);
+  line-height: 1;
+  text-shadow: 0 0 25px rgba(255, 212, 0, 0.6);
+}
+
+.pie-center-sub {
+  font-size: clamp(0.78rem, 1.05vw, 1rem);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+  margin-top: 0.35rem;
+}
+
+/* Sección derecha: Leyendas y detalles */
+.pie-legend-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  justify-content: center;
+}
+
+.pie-legend-card {
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  background: rgba(11, 31, 70, 0.65);
+  border: 1.5px solid var(--border-blue);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.pie-legend-card:hover {
+  transform: translateX(6px);
+}
+
+.pie-legend-card.legend-major {
+  border-color: rgba(255, 212, 0, 0.45);
+  background: linear-gradient(135deg, rgba(255, 212, 0, 0.08), rgba(11, 31, 70, 0.8));
+}
+
+.pie-legend-card.legend-major:hover {
+  border-color: var(--accent-yellow);
+  box-shadow: 0 0 20px rgba(255, 212, 0, 0.25);
+}
+
+.pie-legend-card.legend-minor {
+  border-color: rgba(76, 194, 255, 0.35);
+  background: linear-gradient(135deg, rgba(76, 194, 255, 0.06), rgba(11, 31, 70, 0.8));
+}
+
+.pie-legend-card.legend-minor:hover {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 18px rgba(76, 194, 255, 0.25);
+}
+
+.pie-legend-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.65rem;
+}
+
+.pie-legend-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.pie-legend-dot {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot-yellow {
+  background: var(--accent-yellow);
+  box-shadow: 0 0 10px rgba(255, 212, 0, 0.7);
+}
+
+.dot-cyan {
+  background: var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(76, 194, 255, 0.7);
+}
+
+.pie-percent-badge {
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.badge-yellow {
+  color: var(--accent-yellow);
+  text-shadow: 0 0 15px rgba(255, 212, 0, 0.4);
+}
+
+.badge-cyan {
+  color: var(--accent-cyan);
+  text-shadow: 0 0 15px rgba(76, 194, 255, 0.4);
+}
+
+.pie-legend-card .stat-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.pie-legend-card .stat-title {
+  font-size: clamp(1.05rem, 1.3vw, 1.35rem);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.pie-legend-card .stat-explanation {
+  font-size: clamp(0.85rem, 1vw, 0.98rem);
+  margin: 0;
+}
+
 .accident-card {
   border-radius: 10px;
   padding: 2rem 2.2rem;
@@ -1140,6 +1358,15 @@ body::before {
   color: var(--text-muted);
   font-style: italic;
   line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .accident-card-single {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    overflow-y: auto;
+  }
 }
 
 /* ==========================================================================

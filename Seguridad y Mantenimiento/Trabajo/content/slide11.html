@@ -7,32 +7,64 @@
   </header>
   <div class="accidents-container">
     <p class="accidents-subtitle">Datos del Instituto de Seguridad del Trabajador de Tokio revelan una estadística vital:</p>
-    <div class="accidents-split">
-      <div class="accident-card accident-card-major">
-        <div class="stat-header">
-          <div class="stat-number-giant">90%</div>
-          <div class="stat-icon stat-icon-yellow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+    <div class="accidents-single-card-wrap">
+      <div class="accident-card accident-card-single">
+        <div class="pie-chart-section">
+          <!-- Gráfico de queso / rosquilla SVG interactivo 90% vs 10% -->
+          <div class="pie-chart-wrapper">
+            <svg class="pie-chart-svg" viewBox="0 0 160 160">
+              <!-- Sector 10%: Operaciones normales (cian / azul claro) -->
+              <circle class="pie-segment pie-segment-10" cx="80" cy="80" r="54"
+                stroke-dasharray="33.93 339.29"
+                stroke-dashoffset="0"></circle>
+              <!-- Sector 90%: Mantenimiento y programación (amarillo dorado) -->
+              <circle class="pie-segment pie-segment-90" cx="80" cy="80" r="54"
+                stroke-dasharray="305.36 339.29"
+                stroke-dashoffset="-33.93"></circle>
             </svg>
+            <div class="pie-chart-center-badge">
+              <span class="pie-center-val">90%</span>
+              <span class="pie-center-sub">Riesgo Crítico</span>
+            </div>
           </div>
         </div>
-        <h3 class="stat-title">Operaciones de mantenimiento, programación y ajustes.</h3>
-        <p class="stat-explanation">(El humano entra en el dominio de la máquina).</p>
-      </div>
 
-      <div class="accident-card accident-card-minor">
-        <div class="stat-header">
-          <div class="stat-number-minor">10%</div>
-          <div class="stat-icon stat-icon-cyan">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-            </svg>
+        <div class="pie-legend-section">
+          <!-- Ficha 90% Mantenimiento -->
+          <div class="pie-legend-card legend-major">
+            <div class="pie-legend-header">
+              <div class="pie-legend-tag">
+                <span class="pie-legend-dot dot-yellow"></span>
+                <span class="pie-percent-badge badge-yellow">90%</span>
+              </div>
+              <div class="stat-icon stat-icon-yellow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="stat-title">Operaciones de mantenimiento, programación y ajustes</h3>
+            <p class="stat-explanation">(El humano entra en el dominio de la máquina).</p>
+          </div>
+
+          <!-- Ficha 10% Producción normal -->
+          <div class="pie-legend-card legend-minor">
+            <div class="pie-legend-header">
+              <div class="pie-legend-tag">
+                <span class="pie-legend-dot dot-cyan"></span>
+                <span class="pie-percent-badge badge-cyan">10%</span>
+              </div>
+              <div class="stat-icon stat-icon-cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="stat-title">Operaciones normales de producción</h3>
+            <p class="stat-explanation">(El humano está fuera del perímetro activo).</p>
           </div>
         </div>
-        <h3 class="stat-title">Operaciones normales de producción.</h3>
-        <p class="stat-explanation">(El humano está fuera del perímetro activo).</p>
       </div>
     </div>
   </div>
