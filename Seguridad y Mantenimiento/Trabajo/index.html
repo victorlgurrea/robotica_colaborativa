@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prevención y Seguridad en la Automatización Industrial</title>
-  <link rel="stylesheet" href="css/styles.css?v=20261017-ok">
+  <link rel="stylesheet" href="css/styles.css?v=20261017-ht">
   <link rel="icon" type="image/png" href="assets/images/image1.png">
 </head>
 <body>
@@ -126,56 +126,100 @@
       <span class="title-text" data-i18n="slide2.title">Hitos Históricos: Resumen Cronológico</span>
     </h2>
   </header>
-  <div class="timeline-table-card">
-    <table class="timeline-table">
-      <thead>
-        <tr>
-          <th style="width: 16%;" data-i18n="slide2.thYear">Año</th>
-          <th style="width: 32%;" data-i18n="slide2.thHito">Hito</th>
-          <th style="width: 52%;" data-i18n="slide2.thDesc">Descripción</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="clickable-row" data-target-slide="4" data-i18n-title="slide2.r1Title" title="Ir a la máquina de vapor de Watt">
-          <td><span class="year-badge">1769</span></td>
-          <td class="hito-title" data-i18n="slide2.r1Hito">Máquina de Vapor de Watt</td>
-          <td data-i18n="slide2.r1Desc">Patente de James Watt, mejora con condensador separado y regulador centrífugo, inicio de la mecanización.</td>
-        </tr>
-        <tr class="clickable-row" data-target-slide="5" data-i18n-title="slide2.r2Title" title="Ir a la cadena de montaje Ford">
-          <td><span class="year-badge">1913</span></td>
-          <td class="hito-title" data-i18n="slide2.r2Hito">Cadena de Montaje Móvil</td>
-          <td data-i18n="slide2.r2Desc">Implementada por Henry Ford para la fabricación de automóviles, estableciendo el flujo continuo.</td>
-        </tr>
-        <tr class="clickable-row" data-target-slide="6" data-i18n-title="slide2.r3Title" title="Ir al control numérico del MIT">
-          <td><span class="year-badge">1952 – 1959</span></td>
-          <td class="hito-title" data-i18n="slide2.r3Hito">Control Numérico (NC) y APT</td>
-          <td data-i18n="slide2.r3Desc">Desarrollo de la fresadora de control numérico y el sistema de programación automática en el MIT.</td>
-        </tr>
-        <tr class="clickable-row" data-target-slide="7" data-i18n-title="slide2.r4Title" title="Ir a Unimate / Kawasaki">
-          <td><span class="year-badge">1961</span></td>
-          <td class="hito-title" data-i18n="slide2.r4Hito">Primer Robot Industrial (Unimate)</td>
-          <td data-i18n="slide2.r4Desc">George Devol y Unimation instalan el primer manipulador programable en General Motors.</td>
-        </tr>
-        <tr class="clickable-row" data-target-slide="7" data-i18n-title="slide2.r5Title" title="Ir a Kawasaki-Unimate y Bedford Associates">
-          <td><span class="year-badge">1967 – 1969</span></td>
-          <td class="hito-title" data-i18n="slide2.r5Hito">Expansión Japonesa y Bedford Associates</td>
-          <td data-i18n-html="slide2.r5DescHtml">
-            <p>Acuerdo entre Kawasaki y Unimation para la producción del robot Kawasaki-Unimate 2000.</p>
-            <p>Desarrollo por Bedford Associates del primer PLC (el Modicon 084) para General Motors.</p>
-          </td>
-        </tr>
-        <tr class="clickable-row" data-target-slide="8" data-i18n-title="slide2.r6Title" title="Ir a KUKA Famulus">
-          <td><span class="year-badge">1973</span></td>
-          <td class="hito-title" data-i18n="slide2.r6Hito">KUKA FAMULUS (6 Ejes)</td>
-          <td data-i18n="slide2.r6Desc">Primer robot industrial eléctrico de seis ejes presentado en Alemania.</td>
-        </tr>
-        <tr class="clickable-row" data-target-slide="9" data-i18n-title="slide2.r7Title" title="Ir a ASEA IRB 6 y SEAT">
-          <td><span class="year-badge">1974</span></td>
-          <td class="hito-title" data-i18n="slide2.r7Hito">ASEA IRB 6 y SEAT España</td>
-          <td data-i18n="slide2.r7Desc">Presentación del robot eléctrico IRB 6 (Suecia) e incorporación de tres robots con tecnología FIAT en SEAT Zona Franca.</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="htimeline-card" role="list" data-i18n-aria="slide2.listAria" aria-label="Cronograma de hitos históricos">
+    <ol class="htimeline">
+      <li class="htimeline-item">
+        <button type="button" class="htimeline-btn clickable-row" data-target-slide="4" data-i18n-title="slide2.r1Title" title="Ir a la máquina de vapor de Watt">
+          <span class="htimeline-panel htimeline-panel--top">
+            <span class="htimeline-year">1769</span>
+            <strong class="htimeline-title" data-i18n="slide2.r1Hito">Máquina de Vapor de Watt</strong>
+            <span class="htimeline-desc" data-i18n="slide2.r1Short">Condensador separado y regulador centrífugo.</span>
+          </span>
+          <span class="htimeline-node" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="3"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8l1.8-1.8M18 6l1.8-1.8"/></svg>
+          </span>
+          <span class="htimeline-panel htimeline-panel--bottom htimeline-panel--empty" aria-hidden="true"></span>
+        </button>
+      </li>
+      <li class="htimeline-item">
+        <button type="button" class="htimeline-btn clickable-row" data-target-slide="5" data-i18n-title="slide2.r2Title" title="Ir a la cadena de montaje Ford">
+          <span class="htimeline-panel htimeline-panel--top htimeline-panel--empty" aria-hidden="true"></span>
+          <span class="htimeline-node" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="2" y="10" width="20" height="4" rx="1"/><circle cx="6" cy="17" r="2"/><circle cx="18" cy="17" r="2"/><path d="M4 10V7h4l2 3M14 10V6h6v4"/></svg>
+          </span>
+          <span class="htimeline-panel htimeline-panel--bottom">
+            <span class="htimeline-year">1913</span>
+            <strong class="htimeline-title" data-i18n="slide2.r2Hito">Cadena de Montaje Móvil</strong>
+            <span class="htimeline-desc" data-i18n="slide2.r2Short">Flujo continuo de Ford en automoción.</span>
+          </span>
+        </button>
+      </li>
+      <li class="htimeline-item">
+        <button type="button" class="htimeline-btn clickable-row" data-target-slide="6" data-i18n-title="slide2.r3Title" title="Ir al control numérico del MIT">
+          <span class="htimeline-panel htimeline-panel--top">
+            <span class="htimeline-year">1952 – 59</span>
+            <strong class="htimeline-title" data-i18n="slide2.r3Hito">Control Numérico y APT</strong>
+            <span class="htimeline-desc" data-i18n="slide2.r3Short">Fresadora NC y programación automática (MIT).</span>
+          </span>
+          <span class="htimeline-node" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="3" y="4" width="18" height="14" rx="1.5"/><path d="M7 18v2M17 18v2M8 8h8M8 12h5"/><circle cx="17" cy="12" r="1.5"/></svg>
+          </span>
+          <span class="htimeline-panel htimeline-panel--bottom htimeline-panel--empty" aria-hidden="true"></span>
+        </button>
+      </li>
+      <li class="htimeline-item">
+        <button type="button" class="htimeline-btn clickable-row" data-target-slide="7" data-i18n-title="slide2.r4Title" title="Ir a Unimate / Kawasaki">
+          <span class="htimeline-panel htimeline-panel--top htimeline-panel--empty" aria-hidden="true"></span>
+          <span class="htimeline-node" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M7 20V10l5-4 5 4v10"/><path d="M10 20v-5h4v5"/><circle cx="12" cy="8" r="1.5"/><path d="M4 12h3M17 12h3"/></svg>
+          </span>
+          <span class="htimeline-panel htimeline-panel--bottom">
+            <span class="htimeline-year">1961</span>
+            <strong class="htimeline-title" data-i18n="slide2.r4Hito">Unimate</strong>
+            <span class="htimeline-desc" data-i18n="slide2.r4Short">Primer robot industrial en General Motors.</span>
+          </span>
+        </button>
+      </li>
+      <li class="htimeline-item">
+        <button type="button" class="htimeline-btn clickable-row" data-target-slide="7" data-i18n-title="slide2.r5Title" title="Ir a Kawasaki-Unimate y Bedford Associates">
+          <span class="htimeline-panel htimeline-panel--top">
+            <span class="htimeline-year">1967 – 69</span>
+            <strong class="htimeline-title" data-i18n="slide2.r5Hito">Kawasaki y primer PLC</strong>
+            <span class="htimeline-desc" data-i18n="slide2.r5Short">Unimate 2000 en Japón y Modicon 084.</span>
+          </span>
+          <span class="htimeline-node" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="5" y="4" width="14" height="16" rx="1.5"/><path d="M9 8h6M9 12h6M9 16h3"/><circle cx="16" cy="16" r="1"/></svg>
+          </span>
+          <span class="htimeline-panel htimeline-panel--bottom htimeline-panel--empty" aria-hidden="true"></span>
+        </button>
+      </li>
+      <li class="htimeline-item">
+        <button type="button" class="htimeline-btn clickable-row" data-target-slide="8" data-i18n-title="slide2.r6Title" title="Ir a KUKA Famulus">
+          <span class="htimeline-panel htimeline-panel--top htimeline-panel--empty" aria-hidden="true"></span>
+          <span class="htimeline-node" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M5 20h14M12 20V9"/><path d="M12 9h6l2-3M12 12h-5l-2-2"/><circle cx="20" cy="6" r="1.5"/><circle cx="5" cy="10" r="1.5"/></svg>
+          </span>
+          <span class="htimeline-panel htimeline-panel--bottom">
+            <span class="htimeline-year">1973</span>
+            <strong class="htimeline-title" data-i18n="slide2.r6Hito">KUKA FAMULUS</strong>
+            <span class="htimeline-desc" data-i18n="slide2.r6Short">Primer robot eléctrico de seis ejes.</span>
+          </span>
+        </button>
+      </li>
+      <li class="htimeline-item">
+        <button type="button" class="htimeline-btn clickable-row" data-target-slide="9" data-i18n-title="slide2.r7Title" title="Ir a ASEA IRB 6 y SEAT">
+          <span class="htimeline-panel htimeline-panel--top">
+            <span class="htimeline-year">1974</span>
+            <strong class="htimeline-title" data-i18n="slide2.r7Hito">ASEA IRB 6 y SEAT</strong>
+            <span class="htimeline-desc" data-i18n="slide2.r7Short">IRB 6 y primeros robots en Zona Franca.</span>
+          </span>
+          <span class="htimeline-node" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M4 20V9l4-3h8l4 3v11"/><path d="M9 20v-5h6v5M8 11h.01M12 11h.01M16 11h.01"/></svg>
+          </span>
+          <span class="htimeline-panel htimeline-panel--bottom htimeline-panel--empty" aria-hidden="true"></span>
+        </button>
+      </li>
+    </ol>
   </div>
 </article>
 
