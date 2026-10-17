@@ -9,7 +9,7 @@ const SLIDES = [
   { id: '2.2', title: '1769 Máquina de vapor', tag: 'GIF', level: 2 },
   { id: '2.3', title: '1913 Cadena de montaje Ford', tag: 'GIF', level: 2 },
   { id: '2.4', title: '1952 Control numérico en el MIT', tag: 'GIF', level: 2 },
-  { id: '2.5', title: '1967 Kawasaki-Unimate', tag: 'GIF', level: 2 },
+  { id: '2.5', title: '1967 Kawasaki y Bedford (PLC)', tag: 'Hito', level: 2 },
   { id: '2.6', title: '1973 KUKA FAMULUS (6 ejes)', tag: 'GIF', level: 2 },
   { id: '2.7', title: '1974 ASEA IRB 6 y SEAT', tag: 'GIF', level: 2 },
   { id: '3', title: 'Marco legal y normativa', tag: 'Normas', level: 1 },
