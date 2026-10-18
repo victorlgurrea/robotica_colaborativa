@@ -196,19 +196,19 @@
       title: 'Industria 4.0 e Internet de las Cosas (IoT)',
       gifAlt: 'Animación Industria 4.0 e IoT / gemelo digital',
       tag: 'CUARTA REVOLUCIÓN INDUSTRIAL',
-      p1: 'Industria 4.0 (concepto ~2011): sistemas ciberfísicos, datos en tiempo real y fábrica inteligente.',
-      p2: 'El IoT / IIoT conecta sensores, robots, PLCs y la nube para monitorizar y decidir.',
-      p3: 'En seguridad: más visibilidad del estado de la célula, pero también nuevos riesgos de ciberseguridad.',
+      p1: 'Industria 4.0 (~2011): planta física + edge + nube forman un sistema ciberfísico en tiempo real.',
+      p2: 'El IIoT (sensores, robots, PLC) alimenta un gemelo digital para simular, predecir y decidir.',
+      p3: 'En seguridad: más visibilidad del estado de la célula, pero también riesgos de ciberseguridad.',
       caption: 'Animación: planta física ↔ edge ↔ nube/IA ↔ gemelo digital'
     },
     slide11: {
       title: 'Industria 5.0: IA y colaboración humana',
       gifAlt: 'Animación Industria 5.0: IA copiloto, operario y cobot',
       tag: 'QUINTA REVOLUCIÓN INDUSTRIAL',
-      p1: 'IA que ayuda a las personas a tomar decisiones.',
-      p2: 'Robots colaborativos que trabajan junto a operarios.',
-      p3: 'Fabricación centrada en las necesidades humanas.',
-      p4: 'Eficiencia energética y producción sostenible.',
+      p1: 'IA copiloto (explicable y ética) que sugiere al operario, no lo sustituye.',
+      p2: 'Cobots y humanos en el mismo puesto: fuerza, trayectorias y ergonomía coordinadas.',
+      p3: 'Producción personalizada y centrada en la persona, no solo en la máquina.',
+      p4: 'Objetivo de sostenibilidad: menos energía y CO₂ con más calidad.',
       caption: 'Animación: IA copiloto · operario · cobot · producto personalizado'
     },
     slide12: {
@@ -650,19 +650,19 @@
       title: 'Industry 4.0 and the Internet of Things (IoT)',
       gifAlt: 'Industry 4.0 and IoT / digital twin animation',
       tag: 'FOURTH INDUSTRIAL REVOLUTION',
-      p1: 'Industry 4.0 (concept ~2011): cyber-physical systems, real-time data and the smart factory.',
-      p2: 'IoT / IIoT connects sensors, robots, PLCs and the cloud to monitor and decide.',
-      p3: 'For safety: more visibility of cell status, but also new cybersecurity risks.',
+      p1: 'Industry 4.0 (~2011): physical plant + edge + cloud form a real-time cyber-physical system.',
+      p2: 'IIoT (sensors, robots, PLC) feeds a digital twin to simulate, predict and decide.',
+      p3: 'For safety: more visibility of cell status, but also cybersecurity risks.',
       caption: 'Animation: physical plant ↔ edge ↔ cloud/AI ↔ digital twin'
     },
     slide11: {
       title: 'Industry 5.0: AI and human collaboration',
       gifAlt: 'Industry 5.0 animation: AI copilot, operator and cobot',
       tag: 'FIFTH INDUSTRIAL REVOLUTION',
-      p1: 'AI that helps people make decisions.',
-      p2: 'Collaborative robots working alongside operators.',
-      p3: 'Manufacturing centered on human needs.',
-      p4: 'Energy efficiency and sustainable production.',
+      p1: 'AI copilot (explainable and ethical) that advises the operator, not replaces them.',
+      p2: 'Cobots and humans in the same workstation: force, trajectories and ergonomics coordinated.',
+      p3: 'Personalized, human-centered production — not machine-only.',
+      p4: 'Sustainability goal: less energy and CO₂ with higher quality.',
       caption: 'Animation: AI copilot · operator · cobot · personalized product'
     },
     slide12: {
