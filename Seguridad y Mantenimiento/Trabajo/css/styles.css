@@ -2540,16 +2540,19 @@ body::before {
 .ssp-estado-body {
   flex-direction: column;
   align-items: stretch;
-  gap: 0.65rem;
+  gap: 0.4rem;
+  flex: 1;
+  min-height: 0;
 }
 
 .ssp-estado-thumb {
   width: 100%;
   height: auto;
-  min-height: 10.5rem;
-  max-height: 14rem;
-  aspect-ratio: 16 / 10;
-  padding: 0.45rem;
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: none;
+  aspect-ratio: auto;
+  padding: 0.25rem;
 }
 
 .ssp-estado-thumb img {
@@ -2560,6 +2563,36 @@ body::before {
 
 .ssp-estado-card {
   flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#slide-21 .seguridad-entorno-layout {
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.45fr);
+  gap: 0.75rem;
+}
+
+#slide-21 .ssp-estados-points {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  overflow: hidden;
+}
+
+#slide-21 .ssp-estado-card {
+  padding: 0.45rem 0.55rem;
+}
+
+#slide-21 .ssp-estado-card .card-tag {
+  margin-bottom: 0.2rem;
+  font-size: clamp(0.68rem, 0.82vw, 0.8rem);
+}
+
+#slide-21 .ssp-estado-card .seguridad-signal-text {
+  font-size: clamp(0.62rem, 0.75vw, 0.74rem);
+  line-height: 1.28;
+  flex-shrink: 0;
 }
 
 .ssp-formula-heading {
@@ -2822,9 +2855,41 @@ body::before {
   min-height: 0;
 }
 
-.ssp-aberturas-card .ssp-alert-banner-compact,
-.ssp-acceso-card .ssp-alert-banner-compact {
+.ssp-aberturas-card .ssp-alert-banner-compact {
   margin-top: auto;
+}
+
+.ssp-acceso-body {
+  display: flex;
+  align-items: stretch;
+  gap: 0.55rem;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.ssp-acceso-thumb {
+  flex: 1.15 1 0;
+  min-width: 45%;
+  width: auto;
+  height: auto;
+  align-self: stretch;
+}
+
+.ssp-acceso-copy {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.ssp-acceso-copy > p {
+  margin: 0;
+}
+
+.ssp-acceso-card .ssp-alert-banner-compact {
+  margin-top: 0;
 }
 
 .ssp-alcance-card p {
@@ -3553,9 +3618,9 @@ body::before {
     font-size: clamp(0.95rem, 1.1vw, 1.15rem);
   }
 
-  .ssp-estado-thumb {
-    min-height: 12rem;
-    max-height: 18rem;
+  #slide-21 .ssp-estado-thumb {
+    min-height: 0;
+    max-height: none;
   }
 }
 
