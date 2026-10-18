@@ -841,7 +841,7 @@
         </div>
         <h3 class="normativa-name" data-i18n="slide15.wName">El Watchdog</h3>
         <div class="normativa-code" data-i18n="slide15.wCode">Supervisión continua</div>
-        <p class="normativa-desc" data-i18n="slide15.wDesc">Monitoriza en tiempo real bucles de realimentación, accionamientos y el propio sistema de control, para detectar fallos antes de que se propaguen.</p>
+        <p class="normativa-desc" data-i18n="slide15.wDesc">Vigila en tiempo real bucles de realimentación, accionamientos y el sistema de control. Si detecta una anomalía (señal perdida, eje descontrolado, watchdog sin respuesta), interrumpe el ciclo antes de que el fallo se propague al brazo o a la célula.</p>
       </div>
     </div>
     <div class="normativa-card">
@@ -859,7 +859,7 @@
         </div>
         <h3 class="normativa-name" data-i18n="slide15.aName">Autodiagnóstico previo</h3>
         <div class="normativa-code" data-i18n="slide15.aCode">Antes del primer arranque</div>
-        <p class="normativa-desc" data-i18n="slide15.aDesc">Comprobación obligatoria de tensiones, LEDs indicadores y mensajes de error. Sin un estado sano, el ciclo no debe iniciarse.</p>
+        <p class="normativa-desc" data-i18n="slide15.aDesc">Antes del primer movimiento se verifican tensiones, LEDs, sensores y mensajes de error. Si el autodiagnóstico no confirma un estado sano, el arranque queda bloqueado: no se inicia ningún ciclo automático con fallos pendientes.</p>
       </div>
     </div>
     <div class="normativa-card">
@@ -875,7 +875,7 @@
         </div>
         <h3 class="normativa-name" data-i18n="slide15.cName">Control de acceso</h3>
         <div class="normativa-code" data-i18n="slide15.cCode">Llaves y códigos</div>
-        <p class="normativa-desc" data-i18n="slide15.cDesc">Bloqueo de la unidad de control, del arranque y de la modificación de programas mediante llaves físicas o códigos de seguridad.</p>
+        <p class="normativa-desc" data-i18n="slide15.cDesc">Solo personal autorizado puede abrir la unidad de control, arrancar en automático o modificar programas. Llaves físicas, códigos o niveles de permiso evitan cambios accidentales o no autorizados que alteren el comportamiento del robot.</p>
       </div>
     </div>
   </div>
@@ -894,104 +894,75 @@
   <p class="normativa-intro" data-i18n="slide16.intro">
     Segunda capa: aislar el riesgo con barreras físicas, zonas de interacción controladas y un ecosistema de sensores del fabricante.
   </p>
-  <div class="seguridad-cell-layout">
-    <div class="seguridad-cell-hero">
-      <div class="seguridad-resp-card">
-        <h3 class="card-tag" data-i18n="slide16.barriersTag">Barreras físicas de acceso</h3>
-        <div class="card-points">
-          <p class="card-point-item" data-i18n="slide16.barriers1">Vallado perimetral con enclavamientos.</p>
-          <p class="card-point-item" data-i18n="slide16.barriers2">Parada inmediata e incondicional si alguien entra en la zona de trabajo.</p>
+  <div class="slide16-cols">
+    <section class="slide16-col slide16-col-perimeter">
+      <h3 class="slide16-col-title" data-i18n="slide16.barriersTag">Barreras físicas de acceso</h3>
+      <div class="slide16-col-body">
+        <p class="slide16-point" data-i18n="slide16.barriers1">Vallado perimetral con enclavamientos y baliza de estado: la puerta solo se abre si el robot está en estado seguro.</p>
+        <p class="slide16-point" data-i18n="slide16.barriers2">Si alguien entra en la zona de trabajo, paro inmediato e incondicional (interbloqueo / emergencia): no hay ciclo automático con personas dentro.</p>
+        <button type="button" class="slide16-media" onclick="openLightbox('assets/images/celula-robot-vallado.png')" data-i18n-title="ui.enlargeImage" title="Ampliar imagen">
+          <img src="assets/images/celula-robot-vallado.png" alt="Célula robotizada con vallado perimetral, interbloqueos y baliza de estado" data-i18n-alt="slide16.cellAlt">
+        </button>
+        <p class="slide16-caption" data-i18n="slide16.cellCaption">Célula con vallado, enclavamientos y paro de emergencia</p>
+        <h4 class="slide16-subhead" data-i18n="slide16.auxTag">Condiciones de instalación auxiliar</h4>
+        <p class="slide16-point" data-i18n="slide16.aux1">Armarios, puesta a tierra y aislamientos: la energía residual (eléctrica) no debe quedar accesible al operario tras un paro.</p>
+        <p class="slide16-point" data-i18n="slide16.aux2">Neumática e hidráulica con válvulas de seguridad y descarga controlada: sin presión peligrosa acumulada después de detener la célula.</p>
+      </div>
+    </section>
+
+    <section class="slide16-col slide16-col-zones">
+      <h3 class="slide16-col-title" data-i18n="slide16.zonesCaption">Zonas de interacción humano–robot en la célula</h3>
+      <div class="slide16-col-body">
+        <button type="button" class="slide16-media slide16-media-zones" onclick="openLightbox('assets/images/celula-zonas-interaccion.png')" data-i18n-title="slide16.zonesTitle" title="Ampliar diagrama de zonas">
+          <img src="assets/images/celula-zonas-interaccion.png" alt="Diagrama de zonas de interacción" data-i18n-alt="slide16.zonesAlt">
+        </button>
+        <div class="slide16-zone zone-green">
+          <h4 data-i18n="slide16.zoneGreenH">Intercambio a distancia</h4>
+          <p data-i18n="slide16.zoneGreenP">Zona verde: carga/descarga a distancia (mesas, alimentadores) sin pisar el área de ciclo automático; a menudo con cortinas de luz.</p>
+        </div>
+        <div class="slide16-zone zone-yellow">
+          <h4 data-i18n="slide16.zoneYellowH">Movimientos condicionados</h4>
+          <p data-i18n="slide16.zoneYellowP">Zona amarilla: el robot para en el instante de intervención humana; el acceso solo es posible con el ciclo en espera segura.</p>
+        </div>
+        <div class="slide16-zone zone-red">
+          <h4 data-i18n="slide16.zoneRedH">Zonas de reparación</h4>
+          <p data-i18n="slide16.zoneRedP">Zona roja: mantenimiento al alcance del brazo; excluida del automático por software y hardware (no se programa el ciclo ahí).</p>
         </div>
       </div>
+    </section>
 
-      <div class="media-card seguridad-cell-media">
-        <div class="media-gif-wrapper seguridad-cell-photo-wrap">
-          <img
-            src="assets/images/celula-robot-vallado.png"
-            alt="Célula robotizada con vallado perimetral, interbloqueos y baliza de estado" data-i18n-alt="slide16.cellAlt"
-            class="slide-gif seguridad-cell-photo"
-            onclick="openLightbox(this.src)"
-            data-i18n-title="ui.enlargeImage" title="Ampliar imagen"
-          >
-        </div>
-        <div class="card-source-caption">
-          <span data-i18n="slide16.cellCaption">Célula con vallado, enclavamientos y paro de emergencia</span>
-        </div>
-      </div>
-
-      <div class="seguridad-resp-card">
-        <h3 class="card-tag" data-i18n="slide16.auxTag">Condiciones de instalación auxiliar</h3>
-        <div class="card-points">
-          <p class="card-point-item" data-i18n="slide16.aux1">Protecciones eléctricas y aislamientos.</p>
-          <p class="card-point-item" data-i18n="slide16.aux2">Sistemas neumáticos e hidráulicos estructurados y seguros.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="seguridad-zones-block ssp-zones-combined-block">
-      <div class="media-card seguridad-zones-media ssp-zones-combined">
-        <div class="ssp-zones-inner">
-          <div class="media-gif-wrapper seguridad-cell-photo-wrap">
-            <img
-              src="assets/images/celula-zonas-interaccion.png"
-              alt="Diagrama de zonas de interacción: intercambio a distancia, movimientos condicionados y zonas de reparación"
-              class="slide-gif seguridad-cell-photo"
-              onclick="openLightbox(this.src)"
-              data-i18n-alt="slide16.zonesAlt"
-              data-i18n-title="slide16.zonesTitle"
-              title="Ampliar diagrama de zonas"
-            >
-          </div>
-          <div class="seguridad-zones-legend">
-            <div class="seguridad-zone-card zone-green">
-              <h3 data-i18n="slide16.zoneGreenH">Intercambio a distancia</h3>
-              <p data-i18n="slide16.zoneGreenP">Mesas giratorias para alimentar piezas sin entrar en el área de trabajo automática.</p>
-            </div>
-            <div class="seguridad-zone-card zone-yellow">
-              <h3 data-i18n="slide16.zoneYellowH">Movimientos condicionados</h3>
-              <p data-i18n="slide16.zoneYellowP">Pausas absolutas programadas en el instante exacto en que el humano debe intervenir.</p>
-            </div>
-            <div class="seguridad-zone-card zone-red">
-              <h3 data-i18n="slide16.zoneRedH">Zonas de reparación</h3>
-              <p data-i18n="slide16.zoneRedP">Áreas al alcance físico, excluidas por software/hardware del ciclo automático.</p>
-            </div>
+    <section class="slide16-col slide16-col-sensors">
+      <h3 class="slide16-col-title" data-i18n="slide16.sensorsTag">Sensores y dispositivos de seguridad</h3>
+      <div class="slide16-col-body slide16-sensors-stack">
+        <div class="slide16-sensor">
+          <button type="button" class="slide16-sensor-thumb" onclick="openLightbox('assets/images/barrera-fotoelectrica.png')" data-i18n-title="slide16.sensor1Title" title="Ampliar barrera fotoeléctrica">
+            <img src="assets/images/barrera-fotoelectrica.png" alt="Barreras fotoeléctricas / cortinas de luz" data-i18n-alt="slide16.sensor1Alt">
+          </button>
+          <div class="slide16-sensor-text">
+            <strong data-i18n="slide16.sensor1Strong">Barreras fotoeléctricas</strong>
+            <span data-i18n="slide16.sensor1Span">Cortinas de luz en accesos abiertos: cortan el haz y detienen el ciclo.</span>
           </div>
         </div>
-        <div class="card-source-caption">
-          <span data-i18n="slide16.zonesCaption">Zonas de interacción humano–robot en la célula</span>
+        <div class="slide16-sensor">
+          <button type="button" class="slide16-sensor-thumb" onclick="openLightbox('assets/images/escaner-laser.png')" data-i18n-title="slide16.sensor2Title" title="Ampliar escáner láser">
+            <img src="assets/images/escaner-laser.png" alt="Escáner láser de seguridad" data-i18n-alt="slide16.sensor2Alt">
+          </button>
+          <div class="slide16-sensor-text">
+            <strong data-i18n="slide16.sensor2Strong">Escáneres láser</strong>
+            <span data-i18n="slide16.sensor2Span">Detectan presencia y proximidad en planta; crean zonas de aviso y de paro.</span>
+          </div>
+        </div>
+        <div class="slide16-sensor">
+          <button type="button" class="slide16-sensor-thumb" onclick="openLightbox('assets/images/interbloqueos-paradas.png')" data-i18n-title="slide16.sensor3Title" title="Ampliar interbloqueos y paradas">
+            <img src="assets/images/interbloqueos-paradas.png" alt="Interbloqueos y paradas de emergencia" data-i18n-alt="slide16.sensor3Alt">
+          </button>
+          <div class="slide16-sensor-text">
+            <strong data-i18n="slide16.sensor3Strong">Interbloqueos y paradas</strong>
+            <span data-i18n="slide16.sensor3Span">Puertas codificadas y setas de emergencia enlazadas al circuito de seguridad.</span>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="seguridad-sensors-row">
-      <div class="seguridad-sensor-card">
-        <button type="button" class="seguridad-sensor-thumb" onclick="openLightbox('assets/images/barrera-fotoelectrica.png')" data-i18n-title="slide16.sensor1Title" title="Ampliar barrera fotoeléctrica">
-          <img src="assets/images/barrera-fotoelectrica.png" alt="Barreras fotoeléctricas / cortinas de luz" data-i18n-alt="slide16.sensor1Alt">
-        </button>
-        <div class="seguridad-sensor-text">
-          <strong data-i18n="slide16.sensor1Strong">Barreras fotoeléctricas</strong>
-          <span data-i18n="slide16.sensor1Span">Cortinas de luz en accesos abiertos.</span>
-        </div>
-      </div>
-      <div class="seguridad-sensor-card">
-        <button type="button" class="seguridad-sensor-thumb" onclick="openLightbox('assets/images/escaner-laser.png')" data-i18n-title="slide16.sensor2Title" title="Ampliar escáner láser">
-          <img src="assets/images/escaner-laser.png" alt="Escáner láser de seguridad" data-i18n-alt="slide16.sensor2Alt">
-        </button>
-        <div class="seguridad-sensor-text">
-          <strong data-i18n="slide16.sensor2Strong">Escáneres láser</strong>
-          <span data-i18n="slide16.sensor2Span">Presencia y proximidad en planta.</span>
-        </div>
-      </div>
-      <div class="seguridad-sensor-card">
-        <button type="button" class="seguridad-sensor-thumb" onclick="openLightbox('assets/images/interbloqueos-paradas.png')" data-i18n-title="slide16.sensor3Title" title="Ampliar interbloqueos y paradas">
-          <img src="assets/images/interbloqueos-paradas.png" alt="Interbloqueos y paradas de emergencia" data-i18n-alt="slide16.sensor3Alt">
-        </button>
-        <div class="seguridad-sensor-text">
-          <strong data-i18n="slide16.sensor3Strong">Interbloqueos y paradas</strong>
-          <span data-i18n="slide16.sensor3Span">Accesos codificados y setas de emergencia.</span>
-        </div>
-      </div>
-    </div>
+    </section>
   </div>
 </article>
 
@@ -1020,7 +991,7 @@
         </div>
         <h3 class="normativa-name" data-i18n="slide17.ruleName">Regla de oro</h3>
         <div class="normativa-code" data-i18n="slide17.ruleCode">Cero entrada</div>
-        <p class="normativa-desc" data-i18n="slide17.ruleDesc">No entrar en la zona de trabajo con el robot en automático, ni siquiera en fases de prueba.</p>
+        <p class="normativa-desc" data-i18n="slide17.ruleDesc">Prohibido entrar en la zona de trabajo con el robot en automático, también en pruebas o puesta a punto: el movimiento puede reanudarse sin aviso.</p>
       </div>
     </div>
     <div class="normativa-card">
@@ -1038,7 +1009,7 @@
         </div>
         <h3 class="normativa-name" data-i18n="slide17.pairName">Programación a dos</h3>
         <div class="normativa-code" data-i18n="slide17.pairCode">Velocidad lenta</div>
-        <p class="normativa-desc" data-i18n="slide17.pairDesc">Uno programa a baja velocidad; el otro observa con el dedo en el paro de emergencia.</p>
+        <p class="normativa-desc" data-i18n="slide17.pairDesc">Uno programa a velocidad lenta; el otro vigila desde fuera con el dedo en el paro de emergencia, listo para cortar si hay un movimiento inesperado.</p>
       </div>
     </div>
     <div class="normativa-card">
@@ -1056,7 +1027,7 @@
         </div>
         <h3 class="normativa-name" data-i18n="slide17.testName">Pruebas progresivas</h3>
         <div class="normativa-code" data-i18n="slide17.testCode">Paso a paso hasta producción</div>
-        <p class="normativa-desc" data-i18n="slide17.testDesc">1º movimiento paso a paso lento → 2º continuo lento → 3º aumento hasta velocidad de producción.</p>
+        <p class="normativa-desc" data-i18n="slide17.testDesc">Validar el programa por etapas: 1º movimiento paso a paso lento → 2º continuo lento → 3º solo entonces subir hasta la velocidad de producción.</p>
       </div>
     </div>
   </div>
@@ -1069,7 +1040,7 @@
           <button type="button" class="seguridad-signal-thumb seguridad-thumb-adaptive" onclick="openLightbox('assets/images/aviso-sirena.png')" data-i18n-title="slide17.sirenaTitle" title="Ampliar sirena">
             <img src="assets/images/aviso-sirena.png" data-i18n-alt="slide17.sirenaAlt" alt="Icono de sirena de aviso previo">
           </button>
-          <p class="seguridad-signal-text text-center-adaptive" data-i18n="slide17.sirenaText">Sirenas audibles obligatorias antes de reiniciar el ciclo de trabajo tras una parada.</p>
+          <p class="seguridad-signal-text text-center-adaptive" data-i18n="slide17.sirenaText">Tras una parada, las sirenas audibles avisan antes de reiniciar el ciclo: nadie debe estar dentro ni cerca de la zona peligrosa.</p>
         </div>
       </div>
       <div class="seguridad-resp-card seguridad-signal-card seguridad-card-baliza">
@@ -1090,23 +1061,23 @@
             <tbody>
               <tr>
                 <td class="baliza-color-cell"><span class="signal-dot signal-red"></span><span data-i18n="slide17.colorRed">Rojo</span></td>
-                <td data-i18n="slide17.descRed">Emergencia / peligro: acción inmediata.</td>
+                <td data-i18n="slide17.descRed">Emergencia o peligro: exige acción inmediata (p. ej. paro).</td>
               </tr>
               <tr>
                 <td class="baliza-color-cell"><span class="signal-dot signal-yellow"></span><span data-i18n="slide17.colorYellow">Amarillo</span></td>
-                <td data-i18n="slide17.descYellow">Condición anormal: vigilancia o intervención.</td>
+                <td data-i18n="slide17.descYellow">Condición anormal: hay que vigilar o intervenir pronto.</td>
               </tr>
               <tr>
                 <td class="baliza-color-cell"><span class="signal-dot signal-blue"></span><span data-i18n="slide17.colorBlue">Azul</span></td>
-                <td data-i18n="slide17.descBlue">Acción obligatoria del operario.</td>
+                <td data-i18n="slide17.descBlue">El operario debe realizar una acción obligatoria.</td>
               </tr>
               <tr>
                 <td class="baliza-color-cell"><span class="signal-dot signal-green"></span><span data-i18n="slide17.colorGreen">Verde</span></td>
-                <td data-i18n="slide17.descGreen">Condición normal de la máquina.</td>
+                <td data-i18n="slide17.descGreen">Condición normal: la máquina puede operar con seguridad.</td>
               </tr>
               <tr>
                 <td class="baliza-color-cell"><span class="signal-dot signal-white"></span><span data-i18n="slide17.colorWhite">Blanco</span></td>
-                <td data-i18n="slide17.descWhite">Neutro / otras condiciones o monitorización.</td>
+                <td data-i18n="slide17.descWhite">Estado neutro u otras condiciones (monitorización, etc.).</td>
               </tr>
             </tbody>
           </table>
@@ -1126,10 +1097,10 @@
         <span data-i18n="slide17.teachTag">Teach Pendant — Nunca confiar la seguridad solo al software</span>
       </h3>
       <div class="card-points">
-        <p class="card-point-item" data-i18n="slide17.teach1">Probar la maleta antes de entrar en el área.</p>
-        <p class="card-point-item" data-i18n="slide17.teach2">Llevarla siempre en la mano si el robot está encendido.</p>
-        <p class="card-point-item" data-i18n="slide17.teach3">Nunca detener el robot con el cuerpo.</p>
-        <p class="card-point-item" data-i18n="slide17.teach4">No asumir que el programa ha terminado solo porque el robot no se mueve.</p>
+        <p class="card-point-item" data-i18n="slide17.teach1">Probar la maleta (paro y habilitación) antes de entrar en el área.</p>
+        <p class="card-point-item" data-i18n="slide17.teach2">Llevarla siempre en la mano si el robot está encendido: no dejarla aparcada.</p>
+        <p class="card-point-item" data-i18n="slide17.teach3">Nunca detener el robot con el cuerpo: usar el dispositivo de seguridad, no el contacto físico.</p>
+        <p class="card-point-item" data-i18n="slide17.teach4">No asumir que el programa ha terminado solo porque el brazo está quieto: puede reanudarse.</p>
       </div>
     </div>
   </div>
@@ -1272,20 +1243,20 @@
         <div class="normativa-stripe stripe-orange"></div>
         <div class="normativa-content">
           <button type="button" class="normativa-icon-box normativa-icon-img" onclick="openLightbox('assets/images/ssp-solapamiento.png')" data-i18n-title="slide20.s1Title" title="Ampliar solapamiento">
-            <img src="assets/images/ssp-solapamiento.png" alt="Solapamiento de radios de acción" data-i18n-alt="slide20.s1Alt" data-i18n-alt="slide20.s2Alt">
+            <img src="assets/images/ssp-solapamiento.png" alt="Solapamiento de radios de acción" data-i18n-alt="slide20.s1Alt">
           </button>
           <h3 class="normativa-name" data-i18n="slide20.s1Name">Solapamiento</h3>
-          <p class="normativa-desc" data-i18n="slide20.s1Desc">Alta velocidad en radios de acción cruzados entre robots o ejes.</p>
+          <p class="normativa-desc" data-i18n="slide20.s1Desc">Cuando varios robots o ejes comparten zona de trabajo, sus radios se cruzan a alta velocidad y el riesgo de atrapamiento o choque aumenta.</p>
         </div>
       </div>
       <div class="normativa-card">
         <div class="normativa-stripe stripe-yellow"></div>
         <div class="normativa-content">
           <button type="button" class="normativa-icon-box normativa-icon-img" onclick="openLightbox('assets/images/ssp-liberacion-energia.png')" data-i18n-title="slide20.s2Title" title="Ampliar liberación de energía">
-            <img src="assets/images/ssp-liberacion-energia.png" alt="Liberación de energía y proyecciones">
+            <img src="assets/images/ssp-liberacion-energia.png" alt="Liberación de energía y proyecciones" data-i18n-alt="slide20.s2Alt">
           </button>
           <h3 class="normativa-name" data-i18n="slide20.s2Name">Liberación de energía</h3>
-          <p class="normativa-desc" data-i18n="slide20.s2Desc">Proyecciones de partículas, láseres o chorros de agua a presión.</p>
+          <p class="normativa-desc" data-i18n="slide20.s2Desc">El proceso puede proyectar partículas, virutas, chorros de agua a presión o haces láser fuera de la zona prevista y alcanzar al operario.</p>
         </div>
       </div>
       <div class="normativa-card">
@@ -1295,27 +1266,27 @@
             <img src="assets/images/ssp-libertad-programacion.png" alt="Libertad de programación e imprevisibilidad" data-i18n-alt="slide20.s3Alt">
           </button>
           <h3 class="normativa-name" data-i18n="slide20.s3Name">Libertad de programación</h3>
-          <p class="normativa-desc" data-i18n="slide20.s3Desc">Imprevisibilidad de dirección y velocidad del trajeto.</p>
+          <p class="normativa-desc" data-i18n="slide20.s3Desc">Al poder reprogramarse con libertad, el robot puede cambiar de trayectoria, sentido o velocidad sin aviso previo para quien está cerca.</p>
         </div>
       </div>
       <div class="normativa-card">
         <div class="normativa-stripe stripe-orange"></div>
         <div class="normativa-content">
           <button type="button" class="normativa-icon-box normativa-icon-img" onclick="openLightbox('assets/images/ssp-errores-emc.png')" data-i18n-title="slide20.s4Title" title="Ampliar errores inducidos externos">
-            <img src="assets/images/ssp-errores-emc.png" alt="Errores inducidos externos EMC" data-i18n-alt="slide20.s4Alt" data-i18n-alt="slide20.s5Alt">
+            <img src="assets/images/ssp-errores-emc.png" alt="Errores inducidos externos EMC" data-i18n-alt="slide20.s4Alt">
           </button>
           <h3 class="normativa-name" data-i18n="slide20.s4Name">Errores inducidos externos</h3>
-          <p class="normativa-desc" data-i18n="slide20.s4Desc">Fallos por compatibilidad electromagnética (EMC).</p>
+          <p class="normativa-desc" data-i18n="slide20.s4Desc">Interferencias electromagnéticas (EMC), ruido eléctrico o fallos de red pueden alterar señales de control y provocar movimientos no deseados.</p>
         </div>
       </div>
       <div class="normativa-card">
         <div class="normativa-stripe stripe-yellow"></div>
         <div class="normativa-content">
           <button type="button" class="normativa-icon-box normativa-icon-img" onclick="openLightbox('assets/images/ssp-factores-humanos.png')" data-i18n-title="slide20.s5Title" title="Ampliar factores humanos">
-            <img src="assets/images/ssp-factores-humanos.png" alt="Factores humanos en operación">
+            <img src="assets/images/ssp-factores-humanos.png" alt="Factores humanos en operación" data-i18n-alt="slide20.s5Alt">
           </button>
           <h3 class="normativa-name" data-i18n="slide20.s5Name">Factores humanos</h3>
-          <p class="normativa-desc" data-i18n="slide20.s5Desc">Errores de operación, mantenimiento o uso del pendant.</p>
+          <p class="normativa-desc" data-i18n="slide20.s5Desc">Errores al operar, mantener o usar el pendant: accesos indebidos, modos incorrectos o mala interpretación del estado de la célula.</p>
         </div>
       </div>
       <div class="normativa-card">
@@ -1323,7 +1294,7 @@
         <div class="normativa-content">
           <div class="stat-number-giant" style="font-size: clamp(2rem, 3.5vw, 2.8rem); color: var(--accent-yellow);">≥50%</div>
           <h3 class="normativa-name" data-i18n="slide20.s6Name">Fallos técnicos</h3>
-          <p class="normativa-desc" data-i18n="slide20.s6Desc">Accidentes atribuibles a circuitos electrónicos y sistemas de control (&lt;20% error humano).</p>
+          <p class="normativa-desc" data-i18n="slide20.s6Desc">Más de la mitad de los accidentes se atribuyen a circuitos y sistemas de control; el error humano puro queda por debajo del 20%.</p>
         </div>
       </div>
     </div>
