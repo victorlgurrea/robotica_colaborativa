@@ -3,10 +3,8 @@
  */
 (function (global) {
   'use strict';
-
   var STORAGE_KEY = 'seguridad-presentacion-lang';
   var DEFAULT_LANG = 'es';
-
   var slidesNav = {
     es: [
       { id: '1', title: 'Portada principal', tag: 'Intro', level: 1 },
@@ -18,6 +16,8 @@
       { id: '2.5', title: '1967 Kawasaki y Bedford (PLC)', tag: 'Hito', level: 2 },
       { id: '2.6', title: '1973 KUKA FAMULUS (6 ejes)', tag: 'GIF', level: 2 },
       { id: '2.7', title: '1974 ASEA IRB 6 y SEAT', tag: 'GIF', level: 2 },
+      { id: '2.8', title: '2011 Industria 4.0 e IoT', tag: 'IIoT', level: 2 },
+      { id: '2.9', title: '2021 Industria 5.0 e IA', tag: 'IA', level: 2 },
       { id: '3', title: 'Marco legal y normativa', tag: 'Normas', level: 1 },
       { id: '4', title: '¿Dónde ocurren los accidentes?', tag: 'Datos', level: 1 },
       { id: '5', title: 'Seguridad', tag: 'Defensa', level: 1 },
@@ -43,6 +43,8 @@
       { id: '2.5', title: '1967 Kawasaki and Bedford (PLC)', tag: 'Milestone', level: 2 },
       { id: '2.6', title: '1973 KUKA FAMULUS (6 axes)', tag: 'GIF', level: 2 },
       { id: '2.7', title: '1974 ASEA IRB 6 and SEAT', tag: 'GIF', level: 2 },
+      { id: '2.8', title: '2011 Industry 4.0 and IoT', tag: 'IIoT', level: 2 },
+      { id: '2.9', title: '2021 Industry 5.0 and AI', tag: 'AI', level: 2 },
       { id: '3', title: 'Legal framework and standards', tag: 'Standards', level: 1 },
       { id: '4', title: 'Where do accidents really occur?', tag: 'Data', level: 1 },
       { id: '5', title: 'Safety', tag: 'Defense', level: 1 },
@@ -59,7 +61,6 @@
       { id: '7', title: 'Sources and bibliography', tag: 'Sources', level: 1 }
     ]
   };
-
   var es = {
     meta: {
       title: 'Prevención y Seguridad en la Automatización Industrial',
@@ -116,7 +117,13 @@
       r6Short: 'Primer robot eléctrico de seis ejes.',
       r7Title: 'Ir a ASEA IRB 6 y SEAT',
       r7Hito: 'ASEA IRB 6 y SEAT',
-      r7Short: 'IRB 6 y primeros robots en Zona Franca.'
+      r7Short: 'IRB 6 y primeros robots en Zona Franca.',
+      r8Title: 'Ir a Industria 4.0 e IoT',
+      r8Hito: 'Industria 4.0 e IoT',
+      r8Short: 'Fábrica conectada y ciberfísica.',
+      r9Title: 'Ir a Industria 5.0 e IA',
+      r9Hito: 'Industria 5.0 e IA',
+      r9Short: 'Humanos, cobots y decisiones con IA.'
     },
     slide3: {
       title: 'Patente de James Watt (nº 913)',
@@ -155,6 +162,8 @@
       tag: 'MIT',
       p1: 'Desarrollo de la fresadora de control numérico sobre un modelo Cincinnati Hydro-Tel de 3 ejes verticales.',
       p2: 'Sistema de programación automática APT (Automatically Programmed Tools).',
+      tapeAlt: 'Cinta perforada de 8 canales usada para programar APT / control numérico',
+      tapeCaption: 'Cinta perforada de 8 canales para programar el sistema APT',
       caption: 'Animación: MIT APT / control numérico (1959)'
     },
     slide7: {
@@ -184,6 +193,25 @@
       caption: 'Animación: ASEA IRB 6 (1974)'
     },
     slide10: {
+      title: 'Industria 4.0 e Internet de las Cosas (IoT)',
+      gifAlt: 'Animación Industria 4.0 e IoT / gemelo digital',
+      tag: 'CUARTA REVOLUCIÓN INDUSTRIAL',
+      p1: 'Industria 4.0 (concepto ~2011): sistemas ciberfísicos, datos en tiempo real y fábrica inteligente.',
+      p2: 'El IoT / IIoT conecta sensores, robots, PLCs y la nube para monitorizar y decidir.',
+      p3: 'En seguridad: más visibilidad del estado de la célula, pero también nuevos riesgos de ciberseguridad.',
+      caption: 'Animación: planta física ↔ edge ↔ nube/IA ↔ gemelo digital'
+    },
+    slide11: {
+      title: 'Industria 5.0: IA y colaboración humana',
+      gifAlt: 'Animación Industria 5.0: IA copiloto, operario y cobot',
+      tag: 'QUINTA REVOLUCIÓN INDUSTRIAL',
+      p1: 'IA que ayuda a las personas a tomar decisiones.',
+      p2: 'Robots colaborativos que trabajan junto a operarios.',
+      p3: 'Fabricación centrada en las necesidades humanas.',
+      p4: 'Eficiencia energética y producción sostenible.',
+      caption: 'Animación: IA copiloto · operario · cobot · producto personalizado'
+    },
+    slide12: {
       title: 'Marco legal y normativa',
       intro: 'La normativa de seguridad en automatización industrial busca disminuir los riesgos y la gravedad de los accidentes, estableciendo requisitos comunes para el diseño, uso y mantenimiento de robots y sistemas automatizados.',
       intName: 'Normativa Internacional',
@@ -199,7 +227,7 @@
       missing: 'EN 775 / AENOR — no disponible',
       missingTitle: 'Documento no disponible'
     },
-    slide11: {
+    slide13: {
       yearTag: 'Estadística',
       title: '¿Dónde ocurren realmente los accidentes?',
       subtitle: 'Datos del Instituto de Seguridad del Trabajador de Tokio revelan una estadística vital:',
@@ -209,7 +237,7 @@
       minorTitle: 'Operaciones normales de producción',
       minorExpl: '(El humano está fuera del perímetro activo).'
     },
-    slide13: {
+    slide14: {
       title: 'Seguridad: defensa en profundidad',
       intro: 'La seguridad no es una barrera aislada: es una filosofía de diseño. Fabricante e integrador se reparte responsabilidades bajo el marco UNE-EN 775; la protección real nace al alinear robot, célula y operario.',
       fabTag: 'Fabricante · Seguridad intrínseca',
@@ -234,7 +262,7 @@
       quote: 'Si falla el software, actúa el hardware. Si el humano comete un error, el perímetro lo protege. La seguridad es la alineación de todas las capas.',
       link54: '5.4 Arquitectura del entorno seguro →'
     },
-    slide14: {
+    slide15: {
       title: 'El robot: seguridad intrínseca',
       intro: 'Primera capa del ciclo de protección: el propio robot vigila su comportamiento, se autocomprueba antes de arrancar y restringe quién puede modificar el control.',
       wName: 'El Watchdog',
@@ -248,7 +276,7 @@
       cDesc: 'Bloqueo de la unidad de control, del arranque y de la modificación de programas mediante llaves físicas o códigos de seguridad.',
       note: 'En la práctica, esta capa se completa con límites de velocidad (p. ej. < 0,3 m/s en modos de enseñanza) y detección de colisión: si falla el software, el hardware debe actuar.'
     },
-    slide15: {
+    slide16: {
       title: 'La célula: perímetro y sensores',
       intro: 'Segunda capa: aislar el riesgo con barreras físicas, zonas de interacción controladas y un ecosistema de sensores del fabricante.',
       barriersTag: 'Barreras físicas de acceso',
@@ -281,7 +309,7 @@
       sensor3Strong: 'Interbloqueos y paradas',
       sensor3Span: 'Accesos codificados y setas de emergencia.'
     },
-    slide16: {
+    slide17: {
       title: 'El operario: protocolos y factor humano',
       intro: 'Tercera capa: procedimientos, señalización y disciplina operativa. La señalización no sustituye la prevención; la formación continua es obligatoria.',
       ruleName: 'Regla de oro',
@@ -318,7 +346,7 @@
       teach3: 'Nunca detener el robot con el cuerpo.',
       teach4: 'No asumir que el programa ha terminado solo porque el robot no se mueve.'
     },
-    slide17: {
+    slide18: {
       title: 'Arquitectura del entorno seguro',
       intro: 'El entorno de la célula debe diseñarse para que el riesgo residual sea controlable: zonas marcadas, suelo despejado, rutas de escape y aislamiento remoto del robot.',
       planAlt: 'Plano de entorno seguro: zona máxima de movimiento, rutas de escape y consola de control exterior',
@@ -341,7 +369,7 @@
       z4Tag: 'Aislamiento remoto',
       z4Text: 'Aislar al robot de señales de control remoto que puedan provocar un movimiento inesperado mientras hay personal a su alcance.'
     },
-    slide18: {
+    slide19: {
       title: 'Sistemas de seguridad',
       intro: 'Los robots modernos operan a alta velocidad en instalaciones complejas: la integración multiplica los riesgos y exige medidas técnicas de seguridad, no solo prevención basada en el comportamiento.',
       thApartado: 'Apartado',
@@ -364,7 +392,7 @@
       r5Desc: 'Síntesis: perímetro, malla, hueco inferior y cerebro SSP en una sola célula.',
       quote: 'La prevención basada en el comportamiento es insuficiente: los peligros por fallos del sistema exigen medidas técnicas de seguridad.'
     },
-    slide19: {
+    slide20: {
       title: 'Peligros inherentes y el dato técnico',
       intro: 'Cinco familias de peligro caracterizan la automatización moderna. Más de la mitad de los accidentes se atribuyen a fallos técnicos de circuitos y control.',
       s1Title: 'Ampliar solapamiento',
@@ -390,7 +418,7 @@
       s6Name: 'Fallos técnicos',
       s6Desc: 'Accidentes atribuibles a circuitos electrónicos y sistemas de control (<20% error humano).'
     },
-    slide20: {
+    slide21: {
       title: 'Principios operativos y Sistema SSP',
       intro: 'Dos estados absolutos rigen la célula; el Sistema de Seguridad Personal (SSP) media entre el cerebro del robot y la frontera física.',
       autoTag: 'Funcionamiento automático',
@@ -405,7 +433,7 @@
       sspTitle: 'Ampliar SSP',
       sspCaption: 'SSP: mediador del circuito de desconexión'
     },
-    slide21: {
+    slide22: {
       title: 'Cerramiento físico y marco normativo',
       formula: 'Eficiencia del Resguardo = Altura + Distancia',
       intro: 'El objetivo principal es proteger al trabajador frente a disfunciones del sistema de control mediante guardas.',
@@ -426,7 +454,7 @@
       n953Text: 'Diseño y construcción de resguardos fijos y móviles.',
       alert: 'Si el perímetro es violado físicamente, el SSP entra en acción provocando la parada inmediata de la instalación.'
     },
-    slide22: {
+    slide23: {
       title: 'Microdiseño de distancias de seguridad',
       intro: 'El dimensionado de resguardos se basa en tablas normativas: si un valor cae entre dos tabulados, se elige siempre el de mayor seguridad (prohibido interpolar).',
       elevH: 'Elevación (alcance arriba)',
@@ -464,14 +492,14 @@
       accessAlt: 'Acceso inferior: relación entre hueco h y distancia de seguridad ds',
       accessAlertHtml: '<strong>Mandato de diseño:</strong> los resguardos deben extenderse lo más cerca posible del nivel de suelo para minimizar la variable «h», reduciendo drásticamente la distancia de seguridad requerida en la instalación.'
     },
-    slide23: {
+    slide24: {
       title: 'La célula robótica unificada',
       intro: 'Un diseño técnico riguroso convierte el peligro inherente en seguridad matemática: perímetro, malla, hueco inferior y lógica SSP trabajan juntos.',
       imgAlt: 'Dossier de diseño: célula robótica unificada con altura perimetral, geometría de aberturas, acceso inferior y SSP',
       imgTitle: 'Ampliar',
       caption: 'El Dossier de Diseño: La Célula Robótica Unificada'
     },
-    slide12: {
+    slide25: {
       title: 'Fuentes Oficiales y Documentación de Referencia',
       s1Html: '<strong>1. Science Museum Group (2019):</strong> James Watt and the separate condenser.',
       s2Html: '<strong>2. Virginia Tech Archives:</strong> Report on MIT Demonstration of Numerically Controlled Milling Machine (1952).',
@@ -482,7 +510,8 @@
       s7Html: '<strong>7. ISO (1992):</strong> ISO 10218:1992 — Manipulating industrial robots — Safety.',
       s8Html: '<strong>8. ISO (2025):</strong> ISO 10218-1:2025 &amp; ISO 10218-2:2025 Robotics Safety.',
       s9Html: '<strong>9. SEAT S.A.:</strong> Historia de los 70 años de SEAT: Robots en Zona Franca (1974).',
-      s10Html: '<strong>10. AENOR / CEN:</strong> UNE-EN 775 — Robots manipuladores industriales. Seguridad (adaptación europea de ISO 10218).'
+      s10Html: '<strong>10. AENOR / CEN:</strong> UNE-EN 775 — Robots manipuladores industriales. Seguridad (adaptación europea de ISO 10218).',
+      s11Html: '<strong>11. LottieFiles:</strong> Industrial IoT Platform Data Flow (animación).'
     }
   };
 
@@ -542,7 +571,13 @@
       r6Short: 'First six-axis electric industrial robot.',
       r7Title: 'Go to ASEA IRB 6 and SEAT',
       r7Hito: 'ASEA IRB 6 & SEAT',
-      r7Short: 'IRB 6 and first robots at Zona Franca.'
+      r7Short: 'IRB 6 and first robots at Zona Franca.',
+      r8Title: 'Go to Industry 4.0 and IoT',
+      r8Hito: 'Industry 4.0 & IoT',
+      r8Short: 'Connected cyber-physical factory.',
+      r9Title: 'Go to Industry 5.0 and AI',
+      r9Hito: 'Industry 5.0 & AI',
+      r9Short: 'Humans, cobots and AI-assisted decisions.'
     },
     slide3: {
       title: 'James Watt Patent (No. 913)',
@@ -581,6 +616,8 @@
       tag: 'MIT',
       p1: 'Development of the numerically controlled milling machine on a Cincinnati Hydro-Tel 3-axis vertical model.',
       p2: 'APT (Automatically Programmed Tools) automatic programming system.',
+      tapeAlt: '8-channel punched paper tape used to program APT / numerical control',
+      tapeCaption: '8-channel punched paper tape for programming the APT system',
       caption: 'Animation: MIT APT / numerical control (1959)'
     },
     slide7: {
@@ -610,6 +647,25 @@
       caption: 'Animation: ASEA IRB 6 (1974)'
     },
     slide10: {
+      title: 'Industry 4.0 and the Internet of Things (IoT)',
+      gifAlt: 'Industry 4.0 and IoT / digital twin animation',
+      tag: 'FOURTH INDUSTRIAL REVOLUTION',
+      p1: 'Industry 4.0 (concept ~2011): cyber-physical systems, real-time data and the smart factory.',
+      p2: 'IoT / IIoT connects sensors, robots, PLCs and the cloud to monitor and decide.',
+      p3: 'For safety: more visibility of cell status, but also new cybersecurity risks.',
+      caption: 'Animation: physical plant ↔ edge ↔ cloud/AI ↔ digital twin'
+    },
+    slide11: {
+      title: 'Industry 5.0: AI and human collaboration',
+      gifAlt: 'Industry 5.0 animation: AI copilot, operator and cobot',
+      tag: 'FIFTH INDUSTRIAL REVOLUTION',
+      p1: 'AI that helps people make decisions.',
+      p2: 'Collaborative robots working alongside operators.',
+      p3: 'Manufacturing centered on human needs.',
+      p4: 'Energy efficiency and sustainable production.',
+      caption: 'Animation: AI copilot · operator · cobot · personalized product'
+    },
+    slide12: {
       title: 'Legal framework and standards',
       intro: 'Industrial automation safety standards aim to reduce accident risk and severity by establishing common requirements for the design, use and maintenance of robots and automated systems.',
       intName: 'International Standards',
@@ -625,7 +681,7 @@
       missing: 'EN 775 / AENOR — not available',
       missingTitle: 'Document not available'
     },
-    slide11: {
+    slide13: {
       yearTag: 'Statistics',
       title: 'Where do accidents really occur?',
       subtitle: 'Data from the Tokyo Institute for Worker Safety reveal a vital statistic:',
@@ -635,7 +691,7 @@
       minorTitle: 'Normal production operations',
       minorExpl: '(The human remains outside the active perimeter).'
     },
-    slide13: {
+    slide14: {
       title: 'Safety: defense in depth',
       intro: 'Safety is not an isolated barrier: it is a design philosophy. Manufacturer and integrator share responsibilities under UNE-EN 775; real protection comes from aligning robot, cell and operator.',
       fabTag: 'Manufacturer · Intrinsic safety',
@@ -660,7 +716,7 @@
       quote: 'If software fails, hardware acts. If the human makes an error, the perimeter protects them. Safety is the alignment of every layer.',
       link54: '5.4 Safe environment architecture →'
     },
-    slide14: {
+    slide15: {
       title: 'The robot: intrinsic safety',
       intro: 'First layer of the protection cycle: the robot itself monitors its behavior, self-checks before start-up and restricts who can modify the control.',
       wName: 'The Watchdog',
@@ -674,7 +730,7 @@
       cDesc: 'Locking of the control unit, start-up and program modification via physical keys or security codes.',
       note: 'In practice, this layer is completed with speed limits (e.g. < 0.3 m/s in teaching modes) and collision detection: if software fails, hardware must act.'
     },
-    slide15: {
+    slide16: {
       title: 'The cell: perimeter and sensors',
       intro: 'Second layer: isolate risk with physical barriers, controlled interaction zones and a manufacturer sensor ecosystem.',
       barriersTag: 'Physical access barriers',
@@ -707,7 +763,7 @@
       sensor3Strong: 'Interlocks and stops',
       sensor3Span: 'Coded access and emergency stop mushrooms.'
     },
-    slide16: {
+    slide17: {
       title: 'The operator: protocols and human factors',
       intro: 'Third layer: procedures, signalling and operational discipline. Signalling does not replace prevention; continuous training is mandatory.',
       ruleName: 'Golden rule',
@@ -744,7 +800,7 @@
       teach3: 'Never stop the robot with your body.',
       teach4: 'Do not assume the program has finished just because the robot is not moving.'
     },
-    slide17: {
+    slide18: {
       title: 'Safe environment architecture',
       intro: 'The cell environment must be designed so residual risk is controllable: marked zones, clear floor, escape routes and remote isolation of the robot.',
       planAlt: 'Safe environment plan: maximum motion zone, escape routes and external control console',
@@ -767,7 +823,7 @@
       z4Tag: 'Remote isolation',
       z4Text: 'Isolate the robot from remote control signals that could cause unexpected motion while personnel are within reach.'
     },
-    slide18: {
+    slide19: {
       title: 'Safety systems',
       intro: 'Modern robots operate at high speed in complex installations: integration multiplies risks and demands technical safety measures, not only behavior-based prevention.',
       thApartado: 'Section',
@@ -790,7 +846,7 @@
       r5Desc: 'Synthesis: perimeter, mesh, lower gap and SSP brain in a single cell.',
       quote: 'Behavior-based prevention is insufficient: hazards from system faults demand technical safety measures.'
     },
-    slide19: {
+    slide20: {
       title: 'Inherent hazards and the technical statistic',
       intro: 'Five hazard families characterize modern automation. More than half of accidents are attributed to technical faults in circuits and control.',
       s1Title: 'Enlarge overlap',
@@ -816,7 +872,7 @@
       s6Name: 'Technical faults',
       s6Desc: 'Accidents attributable to electronic circuits and control systems (<20% human error).'
     },
-    slide20: {
+    slide21: {
       title: 'Operating principles and SSP system',
       intro: 'Two absolute states govern the cell; the Personal Safety System (SSP) mediates between the robot brain and the physical boundary.',
       autoTag: 'Automatic operation',
@@ -831,7 +887,7 @@
       sspTitle: 'Enlarge SSP',
       sspCaption: 'SSP: mediator of the disconnection circuit'
     },
-    slide21: {
+    slide22: {
       title: 'Physical enclosure and regulatory framework',
       formula: 'Guard Efficiency = Height + Distance',
       intro: 'The main objective is to protect the worker against control-system malfunctions by means of guards.',
@@ -852,7 +908,7 @@
       n953Text: 'Design and construction of fixed and movable guards.',
       alert: 'If the perimeter is physically breached, the SSP acts by causing an immediate stop of the installation.'
     },
-    slide22: {
+    slide23: {
       title: 'Safety distance micro-design',
       intro: 'Guard sizing is based on normative tables: if a value falls between two tabulated values, always choose the safer one (interpolation is prohibited).',
       elevH: 'Elevation (upward reach)',
@@ -890,14 +946,14 @@
       accessAlt: 'Lower access: relationship between gap h and safety distance ds',
       accessAlertHtml: '<strong>Design mandate:</strong> guards must extend as close as possible to floor level to minimize variable “h”, drastically reducing the safety distance required on the installation.'
     },
-    slide23: {
+    slide24: {
       title: 'The unified robotic cell',
       intro: 'Rigorous technical design turns inherent hazard into mathematical safety: perimeter, mesh, lower gap and SSP logic work together.',
       imgAlt: 'Design dossier: unified robotic cell with perimeter height, opening geometry, lower access and SSP',
       imgTitle: 'Enlarge',
       caption: 'The Design Dossier: The Unified Robotic Cell'
     },
-    slide12: {
+    slide25: {
       title: 'Official Sources and Reference Documentation',
       s1Html: '<strong>1. Science Museum Group (2019):</strong> James Watt and the separate condenser.',
       s2Html: '<strong>2. Virginia Tech Archives:</strong> Report on MIT Demonstration of Numerically Controlled Milling Machine (1952).',
@@ -908,16 +964,15 @@
       s7Html: '<strong>7. ISO (1992):</strong> ISO 10218:1992 — Manipulating industrial robots — Safety.',
       s8Html: '<strong>8. ISO (2025):</strong> ISO 10218-1:2025 &amp; ISO 10218-2:2025 Robotics Safety.',
       s9Html: '<strong>9. SEAT S.A.:</strong> History of SEAT’s 70 years: Robots at Zona Franca (1974).',
-      s10Html: '<strong>10. AENOR / CEN:</strong> UNE-EN 775 — Manipulating industrial robots. Safety (European adaptation of ISO 10218).'
+      s10Html: '<strong>10. AENOR / CEN:</strong> UNE-EN 775 — Manipulating industrial robots. Safety (European adaptation of ISO 10218).',
+      s11Html: '<strong>11. LottieFiles:</strong> Industrial IoT Platform Data Flow (animation).'
     }
   };
 
   var dictionaries = { es: es, en: en };
-
   function normalizeLang(lang) {
     return lang === 'en' ? 'en' : 'es';
   }
-
   function getLang() {
     try {
       var stored = localStorage.getItem(STORAGE_KEY);
@@ -925,7 +980,6 @@
     } catch (_) { /* private mode */ }
     return DEFAULT_LANG;
   }
-
   function lookup(dict, key) {
     var parts = String(key).split('.');
     var cur = dict;
@@ -935,77 +989,63 @@
     }
     return cur;
   }
-
   function t(key) {
     var lang = getLang();
     var val = lookup(dictionaries[lang], key);
     if (val == null) val = lookup(dictionaries.es, key);
     return typeof val === 'string' ? val : key;
   }
-
   function apply(lang) {
     lang = normalizeLang(lang || getLang());
     try {
       localStorage.setItem(STORAGE_KEY, lang);
     } catch (_) { /* ignore */ }
-
     document.documentElement.lang = lang;
-
     var titleEl = document.querySelector('title');
     if (titleEl) titleEl.textContent = t('meta.title');
-
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var key = el.getAttribute('data-i18n');
       if (!key) return;
       el.textContent = t(key);
     });
-
     document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
       var key = el.getAttribute('data-i18n-html');
       if (!key) return;
       el.innerHTML = t(key);
     });
-
     document.querySelectorAll('[data-i18n-title]').forEach(function (el) {
       var key = el.getAttribute('data-i18n-title');
       if (!key) return;
       el.setAttribute('title', t(key));
     });
-
     document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
       var key = el.getAttribute('data-i18n-alt');
       if (!key) return;
       el.setAttribute('alt', t(key));
     });
-
     document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
       var key = el.getAttribute('data-i18n-aria');
       if (!key) return;
       el.setAttribute('aria-label', t(key));
     });
-
     document.querySelectorAll('.lang-option').forEach(function (btn) {
       var isActive = btn.getAttribute('data-lang') === lang;
       btn.classList.toggle('active', isActive);
       btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
     });
-
     var flagCurrent = document.getElementById('lang-flag-current');
     if (flagCurrent) {
       flagCurrent.innerHTML = lang === 'en'
         ? '<svg viewBox="0 0 24 16" width="20" height="13"><rect width="24" height="16" rx="2" fill="#012169"/><path d="M0 0 L24 16 M24 0 L0 16" stroke="#fff" stroke-width="3.2"/><path d="M0 0 L24 16 M24 0 L0 16" stroke="#c8102e" stroke-width="1.6"/><path d="M12 0 V16 M0 8 H24" stroke="#fff" stroke-width="5.2"/><path d="M12 0 V16 M0 8 H24" stroke="#c8102e" stroke-width="2.6"/></svg>'
         : '<svg viewBox="0 0 24 16" width="20" height="13"><rect width="24" height="16" rx="2" fill="#c60b1e"/><rect y="4" width="24" height="8" fill="#ffc400"/></svg>';
     }
-
     return lang;
   }
-
   function setLang(lang) {
     lang = apply(normalizeLang(lang));
     document.dispatchEvent(new CustomEvent('i18n:langchange', { detail: { lang: lang } }));
     return lang;
   }
-
   function getSlides(lang) {
     lang = normalizeLang(lang || getLang());
     var list = slidesNav[lang] || slidesNav.es;
@@ -1013,7 +1053,6 @@
       return { id: item.id, title: item.title, tag: item.tag, level: item.level };
     });
   }
-
   global.I18N = {
     defaultLang: DEFAULT_LANG,
     storageKey: STORAGE_KEY,

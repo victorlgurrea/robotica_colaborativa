@@ -12,6 +12,8 @@ const SLIDES_FALLBACK = [
   { id: '2.5', title: '1967 Kawasaki y Bedford (PLC)', tag: 'Hito', level: 2 },
   { id: '2.6', title: '1973 KUKA FAMULUS (6 ejes)', tag: 'GIF', level: 2 },
   { id: '2.7', title: '1974 ASEA IRB 6 y SEAT', tag: 'GIF', level: 2 },
+  { id: '2.8', title: '2011 Industria 4.0 e IoT', tag: 'IIoT', level: 2 },
+  { id: '2.9', title: '2021 Industria 5.0 e IA', tag: 'IA', level: 2 },
   { id: '3', title: 'Marco legal y normativa', tag: 'Normas', level: 1 },
   { id: '4', title: '¿Dónde ocurren los accidentes?', tag: 'Datos', level: 1 },
   { id: '5', title: 'Seguridad', tag: 'Defensa', level: 1 },
