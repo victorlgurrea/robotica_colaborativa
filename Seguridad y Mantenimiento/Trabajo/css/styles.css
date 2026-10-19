@@ -580,8 +580,10 @@ body::before {
   line-height: 1.2;
   letter-spacing: -0.3px;
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
-  gap: 1.2rem;
+  gap: 0.55rem 1.2rem;
+  min-width: 0;
 }
 
 .slide-title .year-tag {
@@ -589,10 +591,28 @@ body::before {
   font-weight: 800;
   letter-spacing: 0.5px;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .slide-title .title-text {
   color: var(--text-white);
+  min-width: 0;
+  flex: 1 1 12rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Imágenes y medios: nunca desbordan su contenedor */
+.slide img,
+.slide video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.slide.active {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* Slide Content Layout: Two-Column Split (Media + Info) */
@@ -1086,6 +1106,8 @@ body::before {
   font-size: clamp(0.58rem, 0.72vmin + 0.28rem, 0.88rem);
   line-height: 1.2;
   max-width: 100%;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
 .htimeline-desc {
@@ -1093,6 +1115,7 @@ body::before {
   font-size: clamp(0.52rem, 0.62vmin + 0.22rem, 0.74rem);
   line-height: 1.28;
   max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .htimeline-node {
@@ -1124,10 +1147,12 @@ body::before {
    ========================================================================== */
 .timeline-table-card {
   flex: 1;
+  min-height: 0;
   background: rgba(11, 31, 70, 0.92);
   border: 1.75px solid var(--border-blue);
   border-radius: 10px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   box-shadow: var(--shadow-card);
@@ -1408,7 +1433,8 @@ body::before {
   padding: clamp(1.25rem, 2.2vw, 2.5rem);
   align-items: center;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   height: 100%;
   min-height: 0;
 }
@@ -1435,10 +1461,10 @@ body::before {
 
 .pie-chart-wrapper {
   position: relative;
-  width: min(92%, clamp(220px, 28vmin, 520px));
+  width: min(92%, clamp(160px, 26vmin, 520px));
   aspect-ratio: 1 / 1;
   height: auto;
-  max-height: min(70%, 58vmin);
+  max-height: min(100%, 52vmin);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1719,7 +1745,8 @@ body::before {
   flex-direction: column;
   gap: 0.75rem;
   min-height: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .seguridad-top-split {
@@ -1815,6 +1842,7 @@ body::before {
   align-items: center;
   justify-content: center;
   min-height: 0;
+  height: 100%;
   background:
     linear-gradient(rgba(79, 134, 214, 0.07) 1px, transparent 1px),
     linear-gradient(90deg, rgba(79, 134, 214, 0.07) 1px, transparent 1px),
@@ -1824,6 +1852,7 @@ body::before {
   border-radius: 12px;
   box-shadow: var(--shadow-card);
   overflow: hidden;
+  container-type: size;
 }
 
 .onion-layer {
@@ -1842,8 +1871,11 @@ body::before {
 }
 
 .onion-humano {
-  width: min(100%, 52vh);
+  width: min(100%, 52vh, 100cqmin);
+  max-width: 100%;
+  max-height: 100%;
   aspect-ratio: 1;
+  height: auto;
   background: radial-gradient(circle at 40% 35%, #5a7fa8 0%, #3d5a7a 45%, #2a4060 100%);
   box-shadow: inset 0 0 0 2px rgba(181, 201, 236, 0.35), 0 8px 28px rgba(2, 8, 20, 0.45);
 }
@@ -1990,7 +2022,8 @@ body::before {
   flex-direction: column;
   gap: 0.75rem;
   min-height: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .seguridad-cell-hero {
@@ -2042,7 +2075,8 @@ body::before {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 #slide-16 .slide16-point {
@@ -2493,12 +2527,14 @@ body::before {
 
 .seguridad-signal-layout {
   display: grid;
-  grid-template-columns: 1.35fr 1fr;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
   gap: 1rem;
   flex: 1;
   min-height: 0;
   margin-top: 0.25rem;
   align-items: stretch;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .seguridad-signal-cards {
@@ -2515,7 +2551,8 @@ body::before {
   justify-content: space-between;
   min-height: 0;
   padding: 1rem 1.15rem;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .seguridad-card-vertical-centered {
@@ -2626,10 +2663,11 @@ body::before {
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
-  gap: clamp(0.45rem, 1vh, 0.75rem);
+  gap: clamp(0.35rem, 0.8vh, 0.75rem);
   flex: 1;
   min-height: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .seguridad-baliza-top {
@@ -2868,7 +2906,8 @@ body::before {
   gap: 0.55rem;
   flex: 1;
   min-height: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .ssp-microdiseno-grid,
@@ -2891,7 +2930,8 @@ body::before {
 .ssp-microdiseno-layout > .seguridad-zones-grid > .seguridad-zone-card {
   min-height: 0;
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   padding: 0.55rem 0.65rem;
   display: flex;
   flex-direction: column;
@@ -3185,7 +3225,8 @@ body::before {
 .ssp-celula-layout {
   flex: 1;
   min-height: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .ssp-celula-media {
@@ -3665,7 +3706,9 @@ body::before {
   justify-content: space-between;
   height: 100%;
   padding: 1.5rem 1.6rem;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 0;
 }
 
 .info-card-integrated .card-points {
@@ -3866,6 +3909,269 @@ body::before {
   .baliza-color-table th,
   .baliza-color-table td {
     font-size: clamp(1.05rem, 1.15vw, 1.3rem);
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE POR CONTENEDOR DE SLIDE (TV / laptop / altura corta)
+   El canvas 16:9 usa container-type:size — reacciona al área útil real
+   ========================================================================== */
+@container slide (max-height: 640px) {
+  .slide {
+    padding: 1rem 1.25rem;
+  }
+
+  .slide-header {
+    margin-bottom: 0.55rem;
+  }
+
+  .slide-title {
+    font-size: clamp(1.15rem, 2.4cqi + 0.4rem, 1.85rem);
+  }
+
+  .normativa-intro,
+  .accidents-subtitle {
+    margin-bottom: 0.45rem;
+    font-size: clamp(0.72rem, 1.4cqi + 0.35rem, 0.95rem);
+  }
+
+  .normativa-content {
+    padding: 0.85rem 0.75rem;
+  }
+
+  .normativa-icon-box {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.55rem;
+  }
+
+  .normativa-name {
+    font-size: clamp(0.85rem, 1.6cqi, 1.05rem);
+  }
+
+  .normativa-code {
+    margin-bottom: 0.45rem;
+    padding-bottom: 0.35rem;
+    font-size: clamp(0.75rem, 1.4cqi, 0.95rem);
+  }
+
+  .normativa-desc {
+    font-size: clamp(0.7rem, 1.3cqi, 0.88rem);
+  }
+
+  .seguridad-cards-compact .normativa-content {
+    padding: 0.7rem 0.65rem;
+  }
+
+  .seguridad-baliza-thumb-horizontal {
+    width: clamp(3.4rem, 8cqi, 5.2rem);
+  }
+
+  .baliza-color-table th,
+  .baliza-color-table td {
+    padding: 0.18rem 0.4rem;
+    font-size: clamp(0.62rem, 1.2cqi, 0.82rem);
+  }
+
+  #slide-17 .seguridad-thumb-adaptive {
+    width: clamp(3.8rem, 8cqi, 5.5rem);
+    height: clamp(3.8rem, 8cqi, 5.5rem);
+  }
+
+  .card-embedded-media {
+    min-height: 140px;
+  }
+
+  .info-card,
+  .info-card-integrated {
+    padding: 1rem 1.1rem;
+  }
+
+  .ssp-formula-heading {
+    font-size: clamp(0.9rem, 1.8cqi, 1.25rem);
+    padding: 0.35rem 0.65rem;
+  }
+}
+
+@container slide (max-width: 980px) {
+  .slide-split,
+  .slide-split-dual,
+  .accident-card-single,
+  .accident-card.accident-card-single,
+  .seguridad-top-split,
+  .seguridad-cell-hero,
+  .seguridad-zones-block,
+  .seguridad-signal-layout,
+  .seguridad-signal-cards,
+  .seguridad-entorno-layout,
+  .seguridad-human-footer,
+  .seguridad-resp-grid,
+  .seguridad-zones-grid,
+  .seguridad-sensors-row,
+  .ssp-microdiseno-grid,
+  .ssp-aberturas-row,
+  .ssp-aberturas-thumbs,
+  #slide-16 .slide16-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .normativas-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    overflow-y: auto;
+  }
+
+  .seguridad-cell-media,
+  .seguridad-zones-media,
+  .seguridad-entorno-media {
+    min-height: 180px;
+    max-height: 240px;
+  }
+
+  .seguridad-layers-visual {
+    min-height: min(260px, 48cqh);
+    height: auto;
+    width: min(100%, 320px);
+    aspect-ratio: 1;
+    margin-inline: auto;
+    flex-shrink: 0;
+  }
+
+  .onion-humano {
+    width: min(100%, 100cqmin);
+  }
+
+  .pie-chart-section {
+    min-height: 0;
+    max-height: 42cqh;
+  }
+
+  .pie-chart-wrapper {
+    width: min(70%, 220px);
+    max-height: 100%;
+  }
+
+  .pie-legend-section {
+    gap: 0.75rem;
+  }
+
+  .pie-legend-card {
+    padding: 0.75rem 1rem;
+  }
+
+  .htimeline-card {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .htimeline {
+    min-width: 920px;
+    height: 100%;
+  }
+
+  .media-card {
+    min-height: 200px;
+  }
+}
+
+@container slide (max-height: 520px) {
+  .slide {
+    padding: 0.7rem 0.9rem;
+  }
+
+  .normativas-grid.seguridad-cards-compact {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.45rem;
+  }
+
+  .seguridad-signal-layout {
+    gap: 0.55rem;
+  }
+
+  .seguridad-baliza-thumb-horizontal {
+    width: clamp(2.8rem, 6cqi, 4rem);
+  }
+
+  .onion-humano {
+    width: min(100%, 42vh);
+  }
+}
+
+/* Altura de ventana baja (laptop + barra del SO / navegador) */
+@media (max-height: 800px) {
+  .slide {
+    padding: 1.25rem 1.6rem;
+  }
+
+  .slide-header {
+    margin-bottom: 0.65rem;
+  }
+
+  .top-bar {
+    height: 44px;
+  }
+
+  .copyright-bar {
+    height: 28px;
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 769px) {
+  .normativas-grid:not(.seguridad-cards-compact) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow-y: auto;
+  }
+
+  .slide-split {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  }
+
+  #slide-16 .slide16-cols {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto auto;
+  }
+
+  #slide-16 .slide16-col-sensors {
+    grid-column: 1 / -1;
+  }
+
+  .ssp-microdiseno-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .slide.active {
+    overflow-y: auto;
+  }
+
+  #slide-16 .slide16-cols {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+  }
+
+  .ssp-microdiseno-grid,
+  .ssp-aberturas-row,
+  .ssp-aberturas-thumbs {
+    grid-template-columns: 1fr;
+  }
+
+  .htimeline-card {
+    overflow-x: auto;
+  }
+
+  .htimeline {
+    min-width: 860px;
+  }
+
+  .cover-overlay-content {
+    max-width: 94%;
+  }
+
+  .cover-actions {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
