@@ -502,17 +502,21 @@
     },
     slide25: {
       title: 'Fuentes Oficiales y Documentación de Referencia',
-      s1Html: '<strong>1. Science Museum Group (2019):</strong> James Watt and the separate condenser.',
-      s2Html: '<strong>2. Virginia Tech Archives:</strong> Report on MIT Demonstration of Numerically Controlled Milling Machine (1952).',
-      s3Html: '<strong>3. Computer History Museum (1961):</strong> Unimate: First programmable robot in GM.',
-      s4Html: '<strong>4. Kawasaki Heavy Industries:</strong> History of the robot business (1968–1969).',
-      s5Html: '<strong>5. KUKA Robotics:</strong> Historia de la robótica industrial: robot FAMULUS (1973).',
-      s6Html: '<strong>6. ABB (2023):</strong> 140 years of ASEA: Presentación del IRB 6 (1974).',
-      s7Html: '<strong>7. ISO (1992):</strong> ISO 10218:1992 — Manipulating industrial robots — Safety.',
-      s8Html: '<strong>8. ISO (2025):</strong> ISO 10218-1:2025 &amp; ISO 10218-2:2025 Robotics Safety.',
-      s9Html: '<strong>9. SEAT S.A.:</strong> Historia de los 70 años de SEAT: Robots en Zona Franca (1974).',
-      s10Html: '<strong>10. AENOR / CEN:</strong> UNE-EN 775 — Robots manipuladores industriales. Seguridad (adaptación europea de ISO 10218).',
-      s11Html: '<strong>11. LottieFiles:</strong> Industrial IoT Platform Data Flow (animación).'
+      s1Html: '<strong>1. Science Museum Group (2019):</strong> James Watt and the separate condenser. Patente A.D. 1769 Nº 913 (PDF en assets/docs).',
+      s2Html: '<strong>2. Virginia Tech Archives:</strong> Report on MIT Demonstration of Numerically Controlled Milling Machine (1952) — control numérico y APT.',
+      s3Html: '<strong>3. Computer History Museum (1961):</strong> Unimate — primer robot industrial programable en General Motors.',
+      s4Html: '<strong>4. Kawasaki Heavy Industries:</strong> Historia del negocio de robots (Unimate 2000 en Japón, 1968–1969).',
+      s5Html: '<strong>5. KUKA Robotics:</strong> Robot FAMULUS (1973), primer robot industrial eléctrico de seis ejes.',
+      s6Html: '<strong>6. ABB (2023):</strong> 140 years of ASEA — presentación del IRB 6 (1974).',
+      s7Html: '<strong>7. SEAT S.A.:</strong> Historia de los 70 años de SEAT — robots en Zona Franca (1974).',
+      s8Html: '<strong>8. Comisión Europea (2021):</strong> Industry 5.0 — Towards a sustainable, human-centric and resilient European industry.',
+      s9Html: '<strong>9. ISO:</strong> ISO 10218:1992; ISO 10218-2:2011; ISO 10218-1:2025 (seguridad de robots industriales). PDFs en assets/docs.',
+      s10Html: '<strong>10. ANSI / RIA:</strong> ANSI/RIA R15.06 — Industrial Robots and Robot Systems — Safety Requirements (norma americana).',
+      s11Html: '<strong>11. AENOR / CEN:</strong> UNE-EN 775 — Robots manipuladores industriales. Seguridad (adaptación europea de ISO 10218).',
+      s12Html: '<strong>12. CEN / AENOR (resguardos):</strong> UNE-EN 292 (conceptos), UNE-EN 294 (miembros superiores), UNE-EN 811 (miembros inferiores), UNE-EN 953 (diseño de resguardos).',
+      s13Html: '<strong>13. IEC 60204-1:</strong> Safety of machinery — Electrical equipment of machines — colores de balizas / señalización de estado.',
+      s14Html: '<strong>14. Material del módulo:</strong> apuntes «Seguridad» y «Sistemas de seguridad» (Punto 7 y Punto 8) — base del contenido SSP, célula y distancias.',
+      s15Html: '<strong>15. LottieFiles:</strong> Industrial IoT Platform Data Flow (animación Industria 4.0 / IIoT).'
     }
   };
 
@@ -957,17 +961,21 @@
     },
     slide25: {
       title: 'Official Sources and Reference Documentation',
-      s1Html: '<strong>1. Science Museum Group (2019):</strong> James Watt and the separate condenser.',
-      s2Html: '<strong>2. Virginia Tech Archives:</strong> Report on MIT Demonstration of Numerically Controlled Milling Machine (1952).',
-      s3Html: '<strong>3. Computer History Museum (1961):</strong> Unimate: First programmable robot in GM.',
-      s4Html: '<strong>4. Kawasaki Heavy Industries:</strong> History of the robot business (1968–1969).',
-      s5Html: '<strong>5. KUKA Robotics:</strong> History of industrial robotics: FAMULUS robot (1973).',
-      s6Html: '<strong>6. ABB (2023):</strong> 140 years of ASEA: Presentation of the IRB 6 (1974).',
-      s7Html: '<strong>7. ISO (1992):</strong> ISO 10218:1992 — Manipulating industrial robots — Safety.',
-      s8Html: '<strong>8. ISO (2025):</strong> ISO 10218-1:2025 &amp; ISO 10218-2:2025 Robotics Safety.',
-      s9Html: '<strong>9. SEAT S.A.:</strong> History of SEAT’s 70 years: Robots at Zona Franca (1974).',
-      s10Html: '<strong>10. AENOR / CEN:</strong> UNE-EN 775 — Manipulating industrial robots. Safety (European adaptation of ISO 10218).',
-      s11Html: '<strong>11. LottieFiles:</strong> Industrial IoT Platform Data Flow (animation).'
+      s1Html: '<strong>1. Science Museum Group (2019):</strong> James Watt and the separate condenser. Patent A.D. 1769 No. 913 (PDF in assets/docs).',
+      s2Html: '<strong>2. Virginia Tech Archives:</strong> Report on MIT Demonstration of Numerically Controlled Milling Machine (1952) — NC and APT.',
+      s3Html: '<strong>3. Computer History Museum (1961):</strong> Unimate — first programmable industrial robot at General Motors.',
+      s4Html: '<strong>4. Kawasaki Heavy Industries:</strong> History of the robot business (Unimate 2000 in Japan, 1968–1969).',
+      s5Html: '<strong>5. KUKA Robotics:</strong> FAMULUS robot (1973), first six-axis electric industrial robot.',
+      s6Html: '<strong>6. ABB (2023):</strong> 140 years of ASEA — presentation of the IRB 6 (1974).',
+      s7Html: '<strong>7. SEAT S.A.:</strong> SEAT’s 70-year history — robots at Zona Franca (1974).',
+      s8Html: '<strong>8. European Commission (2021):</strong> Industry 5.0 — Towards a sustainable, human-centric and resilient European industry.',
+      s9Html: '<strong>9. ISO:</strong> ISO 10218:1992; ISO 10218-2:2011; ISO 10218-1:2025 (industrial robot safety). PDFs in assets/docs.',
+      s10Html: '<strong>10. ANSI / RIA:</strong> ANSI/RIA R15.06 — Industrial Robots and Robot Systems — Safety Requirements (US standard).',
+      s11Html: '<strong>11. AENOR / CEN:</strong> UNE-EN 775 — Manipulating industrial robots. Safety (European adaptation of ISO 10218).',
+      s12Html: '<strong>12. CEN / AENOR (guards):</strong> UNE-EN 292 (concepts), UNE-EN 294 (upper limbs), UNE-EN 811 (lower limbs), UNE-EN 953 (guard design).',
+      s13Html: '<strong>13. IEC 60204-1:</strong> Safety of machinery — Electrical equipment of machines — beacon / status signalling colours.',
+      s14Html: '<strong>14. Course materials:</strong> “Safety” and “Safety systems” notes (Points 7 and 8) — basis for SSP, cell and distance content.',
+      s15Html: '<strong>15. LottieFiles:</strong> Industrial IoT Platform Data Flow (Industry 4.0 / IIoT animation).'
     }
   };
 
