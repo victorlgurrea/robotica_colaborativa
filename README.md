@@ -53,7 +53,7 @@ Documentación completa de la entrega (controles, pruebas e interfaz):
 
 ## 2. Seguridad y Mantenimiento — Presentación web
 
-Presentación interactiva sobre **Prevención y Seguridad en la Automatización Industrial**: hitos históricos (Watt, Ford, Unimate, KUKA, ASEA…), marco normativo (ISO 10218, ANSI/RIA) y fuentes.
+Presentación interactiva sobre **Prevención y Seguridad en la Automatización Industrial**: hitos históricos (Watt, Ford, Unimate, KUKA, ASEA, Industria 4.0/5.0…), seguridad en profundidad, sistemas SSP, marco normativo (ISO 10218, ANSI/RIA) y fuentes. Multidioma ES/EN.
 
 No requiere backend: HTML + CSS + JavaScript.
 
