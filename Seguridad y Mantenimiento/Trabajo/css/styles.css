@@ -1461,13 +1461,15 @@ body::before {
 
 .pie-chart-wrapper {
   position: relative;
-  width: min(92%, clamp(160px, 26vmin, 520px));
+  width: min(92%, clamp(180px, 26vmin, 480px));
   aspect-ratio: 1 / 1;
   height: auto;
   max-height: min(100%, 52vmin);
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  container-type: inline-size;
 }
 
 .pie-chart-svg {
@@ -1479,7 +1481,7 @@ body::before {
 
 .pie-segment {
   fill: transparent;
-  stroke-width: 24;
+  stroke-width: 14;
   transition: stroke-width 0.3s ease, filter 0.3s ease;
   cursor: pointer;
 }
@@ -1490,7 +1492,7 @@ body::before {
 }
 
 .pie-segment-90:hover {
-  stroke-width: 27;
+  stroke-width: 16;
   filter: drop-shadow(0 0 18px rgba(255, 212, 0, 0.8));
 }
 
@@ -1500,35 +1502,44 @@ body::before {
 }
 
 .pie-segment-10:hover {
-  stroke-width: 27;
+  stroke-width: 16;
   filter: drop-shadow(0 0 16px rgba(76, 194, 255, 0.85));
 }
 
 .pie-chart-center-badge {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -52%);
+  width: 44%;
+  max-width: 44%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.45rem;
   pointer-events: none;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .pie-center-val {
-  font-size: clamp(3rem, 5.5vw, 5rem);
+  font-size: clamp(1.45rem, 14cqi, 2.45rem);
   font-weight: 900;
   color: var(--accent-yellow);
-  line-height: 1;
-  text-shadow: 0 0 25px rgba(255, 212, 0, 0.6);
+  line-height: 0.92;
+  text-shadow: 0 0 18px rgba(255, 212, 0, 0.5);
 }
 
 .pie-center-sub {
-  font-size: clamp(0.78rem, 1.05vw, 1rem);
+  font-size: clamp(0.52rem, 3.6cqi, 0.72rem);
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 1.2px;
+  letter-spacing: 0.06em;
   font-weight: 700;
-  margin-top: 0.35rem;
+  margin-top: 0;
+  line-height: 1.2;
+  max-width: 100%;
 }
 
 /* Sección derecha: Leyendas y detalles */
@@ -3859,7 +3870,11 @@ body::before {
   }
 
   .pie-center-val {
-    font-size: clamp(3.5rem, 5vw, 5.5rem);
+    font-size: clamp(1.6rem, 14cqi, 2.6rem);
+  }
+
+  .pie-center-sub {
+    font-size: clamp(0.58rem, 3.6cqi, 0.78rem);
   }
 
   .pie-percent-badge {
@@ -4042,13 +4057,13 @@ body::before {
   }
 
   .pie-chart-section {
-    min-height: 0;
-    max-height: 42cqh;
+    min-height: 200px;
+    padding: 0.5rem 0;
   }
 
   .pie-chart-wrapper {
-    width: min(70%, 220px);
-    max-height: 100%;
+    width: min(72%, 240px);
+    max-height: none;
   }
 
   .pie-legend-section {
