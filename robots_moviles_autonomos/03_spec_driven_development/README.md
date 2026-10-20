@@ -1,38 +1,29 @@
-# Conversor de unidades de longitud (Spec-Driven Development)
+# Conversor de longitudes — Sesión 2 (SDD)
 
-Implementación según [gemini-code-specs-drive.md](./gemini-code-specs-drive.md): conversión precisa y validada entre **mm**, **cm** y **m**.
+Programa según [SPEC.md](./SPEC.md) y la presentación [Sesion_2_Presentacion_Alumnos.html](./Sesion_2_Presentacion_Alumnos.html).
 
 ## Estructura
 
 ```
 03_spec_driven_development/
-├── gemini-code-specs-drive.md   # Especificación de requisitos
-├── main.py                      # Punto de entrada (CLI / GUI)
-├── converter/
-│   ├── core.py                  # Lógica + validación
-│   ├── cli.py                   # Interfaz de consola
-│   └── gui.py                   # Interfaz Tkinter
-├── tests/
-│   └── test_converter.py
-└── requirements.txt
+├── SPEC.md
+├── app.py              # Ventana CustomTkinter
+├── logica.py           # Conversión y validación
+├── requirements.txt
+├── run.bat
+└── tests/
+    ├── test_logica.py
+    └── test_mejora.py  # Botón Intercambiar
 ```
 
-## Ejecución
-
-Un solo comando (abre la interfaz gráfica):
+## Arranque
 
 ```powershell
+pip install -r requirements.txt
 .\run.bat
 ```
 
-Equivalente: `python main.py`  
-Consola: `python main.py --cli`
-
-### Menú CLI
-
-1. **Convertir** — pide valor, unidad origen y destino  
-2. **Limpiar pantalla** — reinicia la vista para una nueva conversión  
-3. **Salir**
+Equivalente: `python app.py`
 
 ## Pruebas
 
@@ -40,15 +31,12 @@ Consola: `python main.py --cli`
 python -m unittest discover -s tests -v
 ```
 
-## Criterios de la spec cubiertos
+## Controles
 
-| Requisito | Implementación |
+| Control | Acción |
 |---|---|
-| Conversión mm ↔ cm ↔ m vía metros | `converter/core.py` → `convert()` |
-| Misma unidad origen/destino | Devuelve el valor (redondeado) |
-| Decimales configurables (defecto 4) | Parámetro `decimals` |
-| Sanitización float / try-except | `parse_value()` |
-| Rechazo de negativos, NaN, Infinity | `parse_value()` |
-| Unidades estrictas `{mm, cm, m}` | `validate_unit()` |
-| Convertir + Limpiar | CLI y GUI |
-| Pruebas unitarias | `tests/test_converter.py` |
+| Valor | Número (coma o punto) |
+| Origen / Destino | `mm`, `cm`, `m` |
+| Convertir | Calcula y muestra el resultado |
+| Limpiar | Reinicia campos; resultado → `—` |
+| Intercambiar | Origen ↔ Destino; conserva Valor; resultado → `—` (no convierte) |
