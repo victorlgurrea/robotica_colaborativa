@@ -27,9 +27,10 @@ Ventana con CustomTkinter (modo oscuro):
 | R3 | Origen y destino se eligen entre `{mm, cm, m}`. |
 | R4 | Convertir muestra el resultado con unidades; por defecto 4 decimales. |
 | R5 | Limpiar reinicia valor, unidades por defecto y resultado a `—`. |
-| R6 | Entradas vacías, letras o no numéricas muestran un error visible (sin cerrar la app). |
+| R6 | Entradas vacías muestran un error visible al convertir (sin cerrar la app). |
 | R7 | No se admiten valores negativos, `NaN` ni infinito. |
 | R8 | Intercambiar unidades: cambia Origen ↔ Destino, conserva el texto de Valor, borra el resultado a `—` y **no** convierte automáticamente. |
+| R9 | El campo Valor **no admite** caracteres no numéricos: al teclearlos o pegarlos, no se escriben (solo dígitos y un separador `,`/`.`). |
 
 ## Criterios de aceptación
 
@@ -37,10 +38,11 @@ Ventana con CustomTkinter (modo oscuro):
 |---|---|
 | A1 | `1000 mm → m` = `1 m` |
 | A2 | `2,5 m → cm` = `250 cm` |
-| A3 | Campo vacío o letras → error visible |
+| A3 | Campo vacío → error visible al convertir |
 | A4 | Misma unidad origen/destino → mismo valor |
 | A5 | Intercambiar con `mm → m` pasa a `m → mm`; el Valor no cambia; resultado = `—` |
 | A6 | Intercambiar dos veces restaura las unidades originales |
+| A7 | Teclear o pegar `12a` en Valor deja solo `12` (no escribe la `a`) |
 
 ## Fuera de alcance
 - Otras unidades (km, pulgadas, etc.).

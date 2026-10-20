@@ -52,6 +52,25 @@ def validar_unidad(unidad: str) -> str:
     return normalizada
 
 
+def filtrar_entrada_numerica(texto: str) -> str:
+    """
+    Deja solo dígitos y, como máximo, un separador decimal (coma o punto).
+
+    Los caracteres no numéricos no se conservan (issue #1: no escribirlos).
+    """
+    if not texto:
+        return ""
+    limpio: list[str] = []
+    separador_visto = False
+    for caracter in str(texto):
+        if caracter.isdigit():
+            limpio.append(caracter)
+        elif caracter in ".," and not separador_visto:
+            limpio.append(caracter)
+            separador_visto = True
+    return "".join(limpio)
+
+
 def parsear_valor(bruto: NumberLike) -> float:
     """
     Convierte la entrada a float de forma segura.

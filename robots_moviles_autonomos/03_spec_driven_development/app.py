@@ -17,6 +17,7 @@ from logica import (
     UNIDADES_ORDENADAS,
     ConversionError,
     convertir,
+    filtrar_entrada_numerica,
     formatear_resultado,
     intercambiar_unidades,
 )
@@ -69,6 +70,8 @@ class ConversorApp(ctk.CTk):
         self.origen_var = ctk.StringVar(value=ORIGEN_POR_DEFECTO)
         self.destino_var = ctk.StringVar(value=DESTINO_POR_DEFECTO)
         self.resultado_var = ctk.StringVar(value=RESULTADO_VACIO)
+        self._filtrando_valor = False
+        self.valor_var.trace_add("write", self._bloquear_no_numericos)
 
     # -- UI ----------------------------------------------------------------
 
@@ -180,6 +183,17 @@ class ConversorApp(ctk.CTk):
         ).grid(row=1, column=1, sticky="ew", padx=(6, 0))
 
     # -- helpers de UI -----------------------------------------------------
+
+    def _bloquear_no_numericos(self, *_args) -> None:
+        """Impide que se escriban letras u otros símbolos en Valor (issue #1)."""
+        if self._filtrando_valor:
+            return
+        bruto = self.valor_var.get()
+        limpio = filtrar_entrada_numerica(bruto)
+        if limpio != bruto:
+            self._filtrando_valor = True
+            self.valor_var.set(limpio)
+            self._filtrando_valor = False
 
     def _etiqueta(self, texto: str, pady_top: int = 8) -> None:
         ctk.CTkLabel(
