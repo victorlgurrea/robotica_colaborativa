@@ -1,5 +1,7 @@
 # SPEC · Conversor de longitudes (mm / cm / m)
 
+> Material de sesión: [`docs/Sesion_2_Presentacion_Alumnos.html`](./docs/Sesion_2_Presentacion_Alumnos.html)
+
 ## Objetivo
 Aplicación de escritorio para convertir magnitudes entre milímetros (mm), centímetros (cm) y metros (m).
 

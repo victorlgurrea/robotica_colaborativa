@@ -1,20 +1,31 @@
 # Conversor de longitudes — Sesión 2 (SDD)
 
-Programa según [SPEC.md](./SPEC.md) y la presentación [Sesion_2_Presentacion_Alumnos.html](./Sesion_2_Presentacion_Alumnos.html).
+Conversor **mm / cm / m** según [SPEC.md](./SPEC.md).
 
 ## Estructura
 
 ```
 03_spec_driven_development/
-├── SPEC.md
-├── app.py              # Ventana CustomTkinter
-├── logica.py           # Conversión y validación
+├── SPEC.md                 # Especificación de requisitos
+├── app.py                  # Interfaz CustomTkinter (entrada)
+├── logica.py               # Validación y conversión
 ├── requirements.txt
-├── run.bat
+├── run.bat                 # Arranque en un comando
+├── .gitignore
+├── docs/                   # Materiales de la sesión
+│   ├── Sesion_2_Presentacion_Alumnos.html
+│   └── Grabación.m4a
 └── tests/
-    ├── test_logica.py
-    └── test_mejora.py  # Botón Intercambiar
+    ├── test_logica.py      # A1–A4 (conversión y errores)
+    └── test_mejora.py      # A5–A6 (intercambiar)
 ```
+
+| Capa | Archivo | Responsabilidad |
+|---|---|---|
+| Dominio | `logica.py` | Parseo, validación, conversión, intercambiar |
+| Presentación | `app.py` | Ventana, botones, mensajes de error |
+| Pruebas | `tests/` | Criterios de aceptación A1–A6 |
+| Spec | `SPEC.md` | Contrato de lo implementado |
 
 ## Arranque
 
@@ -22,8 +33,6 @@ Programa según [SPEC.md](./SPEC.md) y la presentación [Sesion_2_Presentacion_A
 pip install -r requirements.txt
 .\run.bat
 ```
-
-Equivalente: `python app.py`
 
 ## Pruebas
 
@@ -39,4 +48,4 @@ python -m unittest discover -s tests -v
 | Origen / Destino | `mm`, `cm`, `m` |
 | Convertir | Calcula y muestra el resultado |
 | Limpiar | Reinicia campos; resultado → `—` |
-| Intercambiar | Origen ↔ Destino; conserva Valor; resultado → `—` (no convierte) |
+| Intercambiar | Origen ↔ Destino; conserva Valor; resultado → `—` |
