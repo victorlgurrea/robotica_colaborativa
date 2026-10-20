@@ -4190,3 +4190,760 @@ body::before {
   }
 }
 
+/* ==========================================================================
+   TEMA CLARO PREMIUM: WARM TECH EDITORIAL
+   Basado en la Guía de Diseño (Regla 60-30-10, Alto Contraste y Espacio Negativo):
+   - 60% Dominante (Lienzo): Fondo cálido marfil/porcelana suave (#FAF9F6 / #FFFFFF),
+     mucho más agradable y descansado para la vista que el blanco puro estridente.
+   - 30% Soporte (Estructura y Tipografía): Pizarra profundo de alta legibilidad (#0F172A / #1E293B / #475569)
+     con tipografías Sans Serif modernas y limpias ('Plus Jakarta Sans' y 'Inter').
+   - 10% Acento con Personalidad: Azul Cobalto de Precisión (#0284C7 / #0369A1) 
+     y Ámbar Industrial Cálido (#D97706) para destacar puntos clave sin fatiga visual.
+   ========================================================================== */
+[data-theme="light"] {
+  --font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Paleta cromática calibrada */
+  --bg-dark: #f4f3ef;            /* Lienzo exterior cálido y elegante (tono lino/papel fino) */
+  --bg-canvas: #ffffff;          /* Lienzo de la diapositiva en blanco nítido */
+  --bg-card-media: #faf9f6;      /* Fondo de tarjeta multimedia cálido */
+  --bg-card-text: #ffffff;       /* Fondo de tarjeta de texto */
+  --bg-card-normativa: #ffffff;  /* Fondo de normativas */
+  
+  --border-blue: #0284c7;        /* Acento azul cobalto de precisión */
+  --border-blue-subtle: #e2e0d8; /* Borde cálido neutro, limpio y descansado */
+  --border-glow: rgba(2, 132, 199, 0.12);
+  
+  --accent-yellow: #d97706;      /* Ámbar industrial cálido (para avisos y números clave) */
+  --accent-cyan: #0284c7;        /* Cobalto tecnológico */
+  --accent-orange: #ea580c;      /* Naranja seguridad */
+  
+  --text-white: #0f172a;         /* Títulos principales en pizarra casi negro */
+  --text-body: #1e293b;          /* Texto de lectura de máximo contraste */
+  --text-muted: #475569;         /* Subtítulos y metadatos legibles */
+  --text-dim: #64748b;           /* Notas secundarias */
+  
+  --shadow-card: 0 4px 16px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);
+  --shadow-glow: 0 0 18px rgba(2, 132, 199, 0.12);
+}
+
+[data-theme="light"] body {
+  background-color: var(--bg-dark);
+  color: var(--text-body);
+  font-family: var(--font-family);
+}
+
+/* Sutil patrón técnico con tono arena/lino */
+[data-theme="light"] body::before {
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* --------------------------------------------------------------------------
+   SIDEBAR: Diseño minimalista de catálogo editorial
+   -------------------------------------------------------------------------- */
+[data-theme="light"] .sidebar {
+  background: #ffffff;
+  border-right: 1.5px solid var(--border-blue-subtle);
+  box-shadow: 2px 0 16px rgba(15, 23, 42, 0.03);
+}
+
+[data-theme="light"] .sidebar-header {
+  background: #faf9f6;
+  border-bottom: 1px solid var(--border-blue-subtle);
+}
+
+[data-theme="light"] .sidebar-title {
+  color: #0f172a;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+
+[data-theme="light"] .sidebar-subtitle {
+  color: var(--border-blue);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+[data-theme="light"] .sidebar-logo-icon {
+  background: #e0f2fe;
+  border: 1.5px solid var(--border-blue);
+  color: var(--border-blue);
+}
+
+[data-theme="light"] .nav-item {
+  color: #334155;
+  font-weight: 500;
+  border-radius: 8px;
+  margin-inline: 0.2rem;
+}
+
+[data-theme="light"] .nav-item:hover {
+  background: #f4f3ef;
+  border-color: #e2e0d8;
+  color: #0f172a;
+}
+
+[data-theme="light"] .nav-item.active {
+  background: #e0f2fe;
+  border-color: var(--border-blue);
+  border-left: 4px solid var(--border-blue);
+  color: #0369a1;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.12);
+}
+
+[data-theme="light"] .nav-num {
+  background: #f4f3ef;
+  border: 1px solid #dcdad0;
+  color: #0284c7;
+  font-weight: 800;
+  border-radius: 6px;
+}
+
+[data-theme="light"] .nav-item.active .nav-num {
+  background: var(--border-blue);
+  color: #ffffff;
+  border-color: var(--border-blue);
+}
+
+[data-theme="light"] .nav-item.nav-level-2 {
+  background: #fafaf8;
+  border-left: 2px solid #e2e0d8;
+}
+
+[data-theme="light"] .nav-item.nav-level-2.active {
+  background: #e0f2fe;
+  border-left: 3px solid var(--border-blue);
+}
+
+/* --------------------------------------------------------------------------
+   TOP BAR & COPYRIGHT
+   -------------------------------------------------------------------------- */
+[data-theme="light"] .top-bar {
+  background: #ffffff;
+  border-bottom: 1.5px solid var(--border-blue-subtle);
+  box-shadow: 0 1px 6px rgba(15, 23, 42, 0.02);
+}
+
+[data-theme="light"] .current-slide-heading {
+  color: #475569;
+}
+
+[data-theme="light"] .current-slide-heading .current-title-badge {
+  color: #0f172a;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+}
+
+[data-theme="light"] .copyright-bar {
+  background: #ffffff;
+  border-top: 1.5px solid var(--border-blue-subtle);
+  color: #64748b;
+}
+
+[data-theme="light"] .copyright-bar strong {
+  color: #1e293b;
+}
+
+/* --------------------------------------------------------------------------
+   EL LIENZO DE LA DIAPOSITIVA (SLIDES VIEWPORT)
+   -------------------------------------------------------------------------- */
+[data-theme="light"] .slides-viewport {
+  background-color: #ffffff;
+  background-image: radial-gradient(circle at 50% 0%, #faf9f6 0%, #ffffff 80%);
+  border: 1.5px solid #dcdad0;
+  border-radius: 14px;
+  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08), 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+/* --------------------------------------------------------------------------
+   ENCABEZADOS DE DIAPOSITIVA (Jerarquía clara: Regla 2 del estudio)
+   -------------------------------------------------------------------------- */
+[data-theme="light"] .slide-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.4px;
+}
+
+[data-theme="light"] .slide-title .year-tag {
+  color: var(--border-blue);
+  background: #e0f2fe;
+  border: 1.5px solid rgba(2, 132, 199, 0.35);
+  padding: 0.15rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.08);
+}
+
+[data-theme="light"] .slide-title .title-text {
+  color: #0f172a;
+  font-weight: 800;
+}
+
+/* --------------------------------------------------------------------------
+   TARJETAS Y CONTENEDORES (Espacio en blanco y lectura rápida)
+   -------------------------------------------------------------------------- */
+[data-theme="light"] .media-card {
+  background: #ffffff;
+  border: 1.5px solid #dcdad0;
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+}
+
+[data-theme="light"] .media-gif-wrapper {
+  background: #faf9f6;
+  border: 1px solid #e2e0d8;
+  border-radius: 8px;
+}
+
+[data-theme="light"] .info-card {
+  background: #ffffff;
+  border: 1.5px solid #dcdad0;
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+}
+
+[data-theme="light"] .card-tag {
+  color: var(--border-blue);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  border-bottom: 2px solid #e0f2fe;
+}
+
+[data-theme="light"] .card-point-item {
+  color: #1e293b;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+
+[data-theme="light"] .card-point-item::before {
+  color: var(--border-blue);
+  font-size: 1.15rem;
+}
+
+[data-theme="light"] .card-source-caption {
+  border-top: 1px solid #e2e0d8;
+  color: #64748b;
+}
+
+[data-theme="light"] .card-source-caption svg {
+  color: var(--border-blue);
+}
+
+/* --------------------------------------------------------------------------
+   BOTONES E INTERACCIONES
+   -------------------------------------------------------------------------- */
+[data-theme="light"] .btn-icon {
+  background: #ffffff;
+  border: 1.5px solid #dcdad0;
+  border-radius: 8px;
+  color: #334155;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+[data-theme="light"] .btn-icon:hover {
+  background: #e0f2fe;
+  color: var(--border-blue);
+  border-color: var(--border-blue);
+}
+
+[data-theme="light"] .btn-patent {
+  background: #e0f2fe;
+  border: 1.5px solid var(--border-blue);
+  color: var(--border-blue);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.08);
+}
+
+[data-theme="light"] .btn-patent:hover {
+  background: var(--border-blue);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   LÍNEA DE TIEMPO (CRONOGRAMA HITOS)
+   -------------------------------------------------------------------------- */
+[data-theme="light"] .htimeline-card {
+  background: #ffffff;
+  border: 1.5px solid #dcdad0;
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+}
+
+[data-theme="light"] .htimeline::before {
+  background: linear-gradient(90deg, transparent, #0284c7 6%, #0284c7 94%, transparent);
+}
+
+[data-theme="light"] .htimeline-title {
+  color: #0f172a;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 750;
+}
+
+[data-theme="light"] .htimeline-desc {
+  color: #475569;
+  font-family: 'Inter', sans-serif;
+}
+
+[data-theme="light"] .htimeline-node {
+  background: #ffffff;
+  border-color: var(--border-blue);
+  color: var(--border-blue);
+  box-shadow: 0 0 0 4px #e0f2fe, 0 3px 8px rgba(2, 132, 199, 0.15);
+}
+
+[data-theme="light"] .htimeline-btn:hover .htimeline-node {
+  background: var(--border-blue);
+  color: #ffffff;
+  box-shadow: 0 0 0 5px #bae6fd;
+}
+
+[data-theme="light"] .htimeline-btn:hover .htimeline-panel:not(.htimeline-panel--empty) {
+  background: #faf9f6;
+  border-color: #dcdad0;
+}
+
+[data-theme="light"] .htimeline-year {
+  background: #e0f2fe;
+  color: var(--border-blue);
+  border: 1.5px solid rgba(2, 132, 199, 0.35);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  border-radius: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   TABLA DE HITOS HISTÓRICOS
+   -------------------------------------------------------------------------- */
+[data-theme="light"] .timeline-table-card {
+  background: #ffffff;
+  border: 1.5px solid #dcdad0;
+  border-radius: 12px;
+}
+
+[data-theme="light"] .timeline-table th {
+  background: #faf9f6;
+  color: #0f172a;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  border-bottom: 2px solid #dcdad0;
+}
+
+[data-theme="light"] .timeline-table td {
+  color: #1e293b;
+  border-bottom: 1px solid #e2e0d8;
+}
+
+[data-theme="light"] .timeline-table tr.clickable-row:hover {
+  background: #f4f3ef;
+}
+
+[data-theme="light"] .timeline-table tr.clickable-row:hover td {
+  color: #0f172a;
+}
+
+[data-theme="light"] .year-badge {
+  background: #e0f2fe;
+  color: var(--border-blue);
+  border: 1.5px solid rgba(2, 132, 199, 0.3);
+  font-weight: 800;
+  border-radius: 6px;
+}
+
+[data-theme="light"] .hito-title {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   NORMATIVAS Y ESTÁNDARES INTERNACIONALES
+   -------------------------------------------------------------------------- */
+[data-theme="light"] .normativa-card {
+  background: #ffffff;
+  border: 1.5px solid #dcdad0;
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+}
+
+[data-theme="light"] .normativa-card:hover {
+  border-color: var(--border-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.12);
+}
+
+[data-theme="light"] .normativa-icon-box {
+  background: #e0f2fe;
+  border: 1.5px solid var(--border-blue);
+  color: var(--border-blue);
+}
+
+[data-theme="light"] .normativa-name {
+  color: #0f172a;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+}
+
+[data-theme="light"] .normativa-code {
+  color: var(--border-blue);
+  border-bottom: 1.5px solid #e0f2fe;
+  font-weight: 800;
+}
+
+[data-theme="light"] .normativa-desc {
+  color: #334155;
+  line-height: 1.5;
+}
+
+[data-theme="light"] .btn-doc-download {
+  background: #e0f2fe;
+  border: 1.5px solid var(--border-blue);
+  color: var(--border-blue);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+[data-theme="light"] .btn-doc-download:hover {
+  background: var(--border-blue);
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   ESTADÍSTICA DE ACCIDENTES (90% VS 10%)
+   -------------------------------------------------------------------------- */
+[data-theme="light"] .accident-card {
+  background: #ffffff;
+  border: 1.5px solid #dcdad0;
+  border-radius: 12px;
+}
+
+[data-theme="light"] .accident-card-major {
+  background: #ffffff;
+  border: 2px solid #d97706;
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.1);
+}
+
+[data-theme="light"] .accident-card-minor {
+  background: #faf9f6;
+  border: 1.5px solid #dcdad0;
+}
+
+[data-theme="light"] .stat-title {
+  color: #0f172a;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+}
+
+[data-theme="light"] .stat-explanation {
+  color: #475569;
+}
+
+[data-theme="light"] .stat-number-giant {
+  color: #d97706;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-shadow: none;
+}
+
+[data-theme="light"] .pie-legend-card {
+  background: #ffffff;
+  border: 1.5px solid #dcdad0;
+  border-radius: 10px;
+}
+
+[data-theme="light"] .pie-legend-card.legend-major {
+  background: #fffbeb;
+  border-color: #f59e0b;
+}
+
+[data-theme="light"] .pie-legend-card.legend-minor {
+  background: #f0f9ff;
+  border-color: #0284c7;
+}
+
+/* --------------------------------------------------------------------------
+   SISTEMAS DE SEGURIDAD (SSP), CAPAS Y ZONAS
+   -------------------------------------------------------------------------- */
+[data-theme="light"] .seguridad-resp-card,
+[data-theme="light"] .seguridad-signal-card,
+[data-theme="light"] .seguridad-zone-card,
+[data-theme="light"] .ssp-estado-card {
+  background: #ffffff;
+  border: 1.5px solid #dcdad0;
+  border-radius: 10px;
+  box-shadow: var(--shadow-card);
+}
+
+[data-theme="light"] .seguridad-zone-card h3 {
+  color: #0f172a;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+}
+
+[data-theme="light"] .seguridad-zone-card p {
+  color: #334155;
+}
+
+[data-theme="light"] .seguridad-sensors-row span {
+  background: #faf9f6;
+  border: 1px solid #dcdad0;
+  color: #1e293b;
+  border-radius: 8px;
+}
+
+[data-theme="light"] .seguridad-sensor-card {
+  background: #ffffff;
+  border: 1.5px solid #dcdad0;
+  border-radius: 8px;
+}
+
+[data-theme="light"] .seguridad-sensor-text strong {
+  color: #0f172a;
+  font-weight: 750;
+}
+
+[data-theme="light"] .seguridad-sensor-text span {
+  color: #475569;
+}
+
+[data-theme="light"] .seguridad-icon-item {
+  color: #1e293b;
+}
+
+[data-theme="light"] .seguridad-icon-box {
+  background: #e0f2fe;
+  border: 1.5px solid var(--border-blue);
+  color: var(--border-blue);
+}
+
+[data-theme="light"] .seguridad-layers-visual {
+  background: #faf9f6;
+  border: 1.5px solid #dcdad0;
+  border-radius: 12px;
+}
+
+[data-theme="light"] .ssp-formula-heading {
+  background: #e0f2fe;
+  border: 1.5px solid var(--border-blue);
+  color: var(--border-blue);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+[data-theme="light"] .ssp-alert-banner {
+  background: #fffbeb;
+  border: 1.5px solid #f59e0b;
+  border-radius: 10px;
+}
+
+[data-theme="light"] .ssp-alert-banner p {
+  color: #92400e;
+  font-weight: 600;
+}
+
+[data-theme="light"] .ssp-alert-icon {
+  color: #d97706;
+}
+
+/* --------------------------------------------------------------------------
+   PORTADA PRINCIPAL (SLIDE 1)
+   -------------------------------------------------------------------------- */
+[data-theme="light"] .cover-wrapper {
+  background: #ffffff;
+}
+
+[data-theme="light"] .cover-title {
+  color: #0f172a;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 900;
+  text-shadow: none;
+}
+
+[data-theme="light"] .cover-subtitle {
+  color: #475569;
+  font-family: 'Inter', sans-serif;
+  text-shadow: none;
+}
+
+[data-theme="light"] .btn-cover-start {
+  background: var(--accent-yellow);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.35);
+}
+
+[data-theme="light"] .btn-cover-secondary {
+  background: #ffffff;
+  color: var(--border-blue);
+  border: 1.5px solid var(--border-blue);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+[data-theme="light"] .btn-cover-secondary:hover {
+  background: #e0f2fe;
+}
+
+/* --------------------------------------------------------------------------
+   DESPLEGABLE DE IDIOMAS
+   -------------------------------------------------------------------------- */
+[data-theme="light"] .lang-dropdown-menu {
+  background: #ffffff;
+  border: 1.5px solid #dcdad0;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  border-radius: 10px;
+}
+
+[data-theme="light"] .lang-option {
+  color: #1e293b;
+  border-radius: 6px;
+}
+
+[data-theme="light"] .lang-option:hover {
+  background: #f4f3ef;
+  color: var(--border-blue);
+}
+
+[data-theme="light"] .lang-option.active {
+  background: #e0f2fe;
+  border-color: var(--border-blue);
+  color: var(--border-blue);
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   BIBLIOGRAFÍA Y FUENTES OFICIALES (SLIDE 7 / 25)
+   -------------------------------------------------------------------------- */
+[data-theme="light"] .sources-card {
+  background: #ffffff;
+  border: 1.5px solid #dcdad0;
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+}
+
+[data-theme="light"] .source-item {
+  background: #faf9f6;
+  border: 1px solid #e2e0d8;
+  border-radius: 8px;
+  color: #1e293b;
+  font-family: 'Inter', sans-serif;
+}
+
+[data-theme="light"] .source-item:hover {
+  background: #f4f3ef;
+  border-color: #cbd5e1;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+[data-theme="light"] .source-item strong {
+  color: #0f172a;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+}
+
+[data-theme="light"] .source-item a {
+  color: var(--border-blue);
+  font-weight: 600;
+}
+
+[data-theme="light"] .source-item a:hover {
+  color: #0369a1;
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   SLIDE 16 (5.2 LA CÉLULA: PERÍMETRO Y SENSORES)
+   -------------------------------------------------------------------------- */
+[data-theme="light"] #slide-16 .slide16-col {
+  background: #ffffff;
+  border: 1.5px solid #dcdad0;
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+}
+
+[data-theme="light"] #slide-16 .slide16-col-title {
+  color: var(--border-blue);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+[data-theme="light"] #slide-16 .slide16-point {
+  color: #1e293b;
+  font-family: 'Inter', sans-serif;
+}
+
+[data-theme="light"] #slide-16 .slide16-point::before {
+  background: var(--border-blue);
+}
+
+[data-theme="light"] #slide-16 .slide16-subhead {
+  color: var(--border-blue);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 750;
+}
+
+[data-theme="light"] #slide-16 .slide16-caption {
+  color: #64748b;
+}
+
+[data-theme="light"] #slide-16 .slide16-media {
+  background: #faf9f6;
+  border: 1.5px solid #e2e0d8;
+  border-radius: 10px;
+}
+
+[data-theme="light"] #slide-16 .slide16-zone {
+  background: #faf9f6;
+  border: 1px solid #e2e0d8;
+  border-top-width: 3px;
+  border-radius: 8px;
+}
+
+[data-theme="light"] #slide-16 .slide16-zone h4 {
+  color: #0f172a;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 750;
+}
+
+[data-theme="light"] #slide-16 .slide16-zone p {
+  color: #334155;
+  font-family: 'Inter', sans-serif;
+}
+
+[data-theme="light"] #slide-16 .slide16-sensor {
+  background: #faf9f6;
+  border: 1px solid #e2e0d8;
+  border-radius: 8px;
+}
+
+[data-theme="light"] #slide-16 .slide16-sensor-thumb {
+  background: #ffffff;
+  border: 1.5px solid #e2e0d8;
+  border-radius: 8px;
+}
+
+[data-theme="light"] #slide-16 .slide16-sensor-thumb:hover {
+  border-color: var(--border-blue);
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.15);
+}
+
+[data-theme="light"] #slide-16 .slide16-sensor-text strong {
+  color: #0f172a;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 750;
+}
+
+[data-theme="light"] #slide-16 .slide16-sensor-text span {
+  color: #475569;
+  font-family: 'Inter', sans-serif;
+}
+
+[data-theme="light"] .seguridad-note {
+  background: #faf9f6;
+  border-color: #cbd5e1;
+  color: #334155;
+}

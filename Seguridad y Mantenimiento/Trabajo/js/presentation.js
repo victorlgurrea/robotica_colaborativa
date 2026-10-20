@@ -58,6 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnCloseLightbox = document.getElementById('btn-close-lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const btnFullscreen = document.getElementById('btn-fullscreen');
+  const btnThemeToggle = document.getElementById('btn-theme-toggle');
+  const themeIconSun = document.getElementById('theme-icon-sun');
+  const themeIconMoon = document.getElementById('theme-icon-moon');
 
   if (!slideMount || slideEls.length === 0) {
     console.error('No se encontraron diapositivas en #slide-mount');
@@ -337,8 +340,50 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         sidebar?.classList.toggle('collapsed');
         break;
+      case 't':
+      case 'T':
+        e.preventDefault();
+        toggleTheme();
+        break;
     }
   });
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+      if (themeIconSun) themeIconSun.style.display = 'none';
+      if (themeIconMoon) themeIconMoon.style.display = 'block';
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      if (themeIconSun) themeIconSun.style.display = 'block';
+      if (themeIconMoon) themeIconMoon.style.display = 'none';
+    }
+    try {
+      localStorage.setItem('presentation-theme', theme);
+    } catch (_) {}
+  }
+
+  function toggleTheme() {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    applyTheme(isLight ? 'dark' : 'light');
+  }
+
+  btnThemeToggle?.addEventListener('click', toggleTheme);
+
+  // Tema inicial guardado o por defecto
+  const savedTheme = (() => {
+    try {
+      return localStorage.getItem('presentation-theme');
+    } catch (_) {
+      return null;
+    }
+  })();
+  if (savedTheme === 'light' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+    applyTheme('light');
+  } else {
+    // Si el usuario quiere tema claro por defecto:
+    applyTheme('light');
+  }
 
   let touchStartX = 0;
   let touchStartY = 0;
