@@ -1,0 +1,3 @@
+# Sin dependencias externas obligatorias (stdlib: tkinter, unittest).
+# Opcional para ejecutar tests con pytest:
+pytest>=8.0.0
