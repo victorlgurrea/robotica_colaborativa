@@ -1,0 +1,43 @@
+# Se lanza cada minuto (GitHub puede retrasarlo hasta ~5 min bajo carga).
+# También al abrir/reabrir un issue, o a mano (workflow_dispatch).
+name: Vigilar issues
+
+on:
+  schedule:
+    - cron: "* * * * *"
+  issues:
+    types: [opened, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: vigilar-issues
+  cancel-in-progress: false
+
+jobs:
+  corregir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Corregir un issue abierto
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          ALLOWED_AUTHORS: victorlgurrea,GonzaloSanchis
+        run: python scripts/ci_corregir_issue.py

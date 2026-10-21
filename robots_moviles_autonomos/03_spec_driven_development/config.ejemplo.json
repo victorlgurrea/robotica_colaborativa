@@ -1,0 +1,15 @@
+{
+  "repo": "victorlgurrea/conversor",
+  "local_repo": "C:/laragon/www/robotica_colaborativa/robots_moviles_autonomos/03_spec_driven_development",
+  "state_dir": "C:/CursoIA/worker-estado",
+  "python_exe": "C:/CursoIA/entorno-pruebas/Scripts/python.exe",
+  "git_exe": "C:/Program Files/Git/cmd/git.exe",
+  "gh_exe": "C:/Program Files/GitHub CLI/gh.exe",
+  "agent_exe": "C:/Users/victo/AppData/Local/Microsoft/WinGet/Packages/Google.AntigravityCLI_Microsoft.Winget.Source_8wekyb3d8bbwe/agy.exe",
+  "agent_model": "claude-sonnet-4-6",
+  "base_branch": "main",
+  "allowed_authors": [
+    "victorlgurrea",
+    "GonzaloSanchis"
+  ]
+}

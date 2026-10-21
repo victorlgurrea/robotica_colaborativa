@@ -9,7 +9,7 @@ Aplicación de escritorio para convertir magnitudes entre milímetros (mm), cent
 Alumnado de FP de Robótica colaborativa y móvil que necesita una conversión rápida y comprobable.
 
 ## Interfaz
-Ventana con CustomTkinter (modo oscuro):
+Ventana con CustomTkinter (fondo rojo):
 1. Campo **Valor** (texto numérico).
 2. Selector **Origen** (`mm`, `cm`, `m`).
 3. Selector **Destino** (`mm`, `cm`, `m`).

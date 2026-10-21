@@ -513,10 +513,9 @@
       s9Html: '<strong>9. ISO:</strong> ISO 10218:1992; ISO 10218-2:2011; ISO 10218-1:2025 (seguridad de robots industriales). PDFs en assets/docs.',
       s10Html: '<strong>10. ANSI / RIA:</strong> ANSI/RIA R15.06 — Industrial Robots and Robot Systems — Safety Requirements (norma americana).',
       s11Html: '<strong>11. AENOR / CEN:</strong> UNE-EN 775 — Robots manipuladores industriales. Seguridad (adaptación europea de ISO 10218).',
-      s12Html: '<strong>12. CEN / AENOR (resguardos):</strong> UNE-EN 292 (conceptos), UNE-EN 294 (miembros superiores), UNE-EN 811 (miembros inferiores), UNE-EN 953 (diseño de resguardos).',
+      s12Html: '<strong>12. CEN / AENOR (resguardos):</strong> UNE-EN 292 (conceptos), UNE-EN 294 (miembros superiores), UNE-EN 811 (miembros inferiores), UNE-EN 953 (diseño de resguardos). Sucesoras vigentes: ISO 12100, ISO 13857, ISO 14120.',
       s13Html: '<strong>13. IEC 60204-1:</strong> Safety of machinery — Electrical equipment of machines — colores de balizas / señalización de estado.',
-      s14Html: '<strong>14. Material del módulo:</strong> apuntes «Seguridad» y «Sistemas de seguridad» (Punto 7 y Punto 8) — base del contenido SSP, célula y distancias.',
-      s15Html: '<strong>15. LottieFiles:</strong> Industrial IoT Platform Data Flow (animación Industria 4.0 / IIoT).'
+      s14Html: '<strong>14. Material del módulo:</strong> apuntes «Seguridad» y «Sistemas de seguridad» (Punto 7 y Punto 8) — base del contenido SSP, célula y distancias.'
     }
   };
 
@@ -972,10 +971,9 @@
       s9Html: '<strong>9. ISO:</strong> ISO 10218:1992; ISO 10218-2:2011; ISO 10218-1:2025 (industrial robot safety). PDFs in assets/docs.',
       s10Html: '<strong>10. ANSI / RIA:</strong> ANSI/RIA R15.06 — Industrial Robots and Robot Systems — Safety Requirements (US standard).',
       s11Html: '<strong>11. AENOR / CEN:</strong> UNE-EN 775 — Manipulating industrial robots. Safety (European adaptation of ISO 10218).',
-      s12Html: '<strong>12. CEN / AENOR (guards):</strong> UNE-EN 292 (concepts), UNE-EN 294 (upper limbs), UNE-EN 811 (lower limbs), UNE-EN 953 (guard design).',
+      s12Html: '<strong>12. CEN / AENOR (guards):</strong> UNE-EN 292 (concepts), UNE-EN 294 (upper limbs), UNE-EN 811 (lower limbs), UNE-EN 953 (guard design). Current successors: ISO 12100, ISO 13857, ISO 14120.',
       s13Html: '<strong>13. IEC 60204-1:</strong> Safety of machinery — Electrical equipment of machines — beacon / status signalling colours.',
-      s14Html: '<strong>14. Course materials:</strong> “Safety” and “Safety systems” notes (Points 7 and 8) — basis for SSP, cell and distance content.',
-      s15Html: '<strong>15. LottieFiles:</strong> Industrial IoT Platform Data Flow (Industry 4.0 / IIoT animation).'
+      s14Html: '<strong>14. Course materials:</strong> “Safety” and “Safety systems” notes (Points 7 and 8) — basis for SSP, cell and distance content.'
     }
   };
 

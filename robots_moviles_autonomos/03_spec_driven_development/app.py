@@ -1,5 +1,5 @@
 """
-Punto de entrada e interfaz gráfica del conversor (CustomTkinter).
+Punto de entrada e interfaz grafica del conversor (CustomTkinter).
 
 Ejecutar:
     python app.py
@@ -24,20 +24,20 @@ from logica import (
 
 
 # ---------------------------------------------------------------------------
-# Tema visual (estilo Calculadora Windows 11)
+# Tema visual (Rojo intenso)
 # ---------------------------------------------------------------------------
 
 class Tema:
-    FONDO = "#202020"
-    SUPERFICIE = "#3b3b3b"
-    BOTON = "#323232"
-    BOTON_HOVER = "#3f3f3f"
-    ACENTO = "#4cc2ff"
-    ACENTO_HOVER = "#40b0e8"
+    FONDO = "#ff0000"
+    SUPERFICIE = "#cc0000"
+    BOTON = "#aa0000"
+    BOTON_HOVER = "#880000"
+    ACENTO = "#ffffff"
+    ACENTO_HOVER = "#eeeeee"
     TEXTO = "#ffffff"
-    TEXTO_SUAVE = "#a0a0a0"
-    ERROR = "#ff6b7a"
-    TEXTO_EN_ACENTO = "#000000"
+    TEXTO_SUAVE = "#f0f0f0"
+    ERROR = "#ffff00"
+    TEXTO_EN_ACENTO = "#ff0000"
     FUENTE = "Segoe UI"
 
 
@@ -54,11 +54,11 @@ class ConversorApp(ctk.CTk):
         self._crear_estado()
         self._construir_interfaz()
 
-    # -- configuración -----------------------------------------------------
+    # -- configuracion -----------------------------------------------------
 
     def _configurar_ventana(self) -> None:
-        ctk.set_appearance_mode("dark")
-        ctk.set_default_color_theme("dark-blue")
+        ctk.set_appearance_mode("light")
+        ctk.set_default_color_theme("blue")
         self.title("Conversor de longitudes")
         self.geometry("420x520")
         self.minsize(380, 480)
@@ -94,7 +94,7 @@ class ConversorApp(ctk.CTk):
 
         ctk.CTkLabel(
             self,
-            text="mm  ·  cm  ·  m",
+            text="mm  \u00b7  cm  \u00b7  m",
             font=ctk.CTkFont(family=Tema.FUENTE, size=13),
             text_color=Tema.TEXTO_SUAVE,
         ).pack(anchor="w", padx=24, pady=(0, 16))
@@ -109,7 +109,7 @@ class ConversorApp(ctk.CTk):
             fg_color=Tema.SUPERFICIE,
             border_color=Tema.BOTON,
             text_color=Tema.TEXTO,
-            placeholder_text="Escribe un número…",
+            placeholder_text="Escribe un numero\u2026",
         )
         self.entry_valor.pack(fill="x", padx=24, pady=(0, 12))
 
@@ -158,6 +158,7 @@ class ConversorApp(ctk.CTk):
             height=42,
             fg_color=Tema.BOTON,
             hover_color=Tema.BOTON_HOVER,
+            text_color=Tema.TEXTO,
             font=ctk.CTkFont(size=13, weight="bold"),
         ).grid(row=0, column=0, columnspan=2, sticky="ew", pady=(0, 8))
 
@@ -168,6 +169,7 @@ class ConversorApp(ctk.CTk):
             height=44,
             fg_color=Tema.BOTON,
             hover_color=Tema.BOTON_HOVER,
+            text_color=Tema.TEXTO,
             font=ctk.CTkFont(size=14, weight="bold"),
         ).grid(row=1, column=0, sticky="ew", padx=(0, 6))
 
@@ -185,7 +187,7 @@ class ConversorApp(ctk.CTk):
     # -- helpers de UI -----------------------------------------------------
 
     def _bloquear_no_numericos(self, *_args) -> None:
-        """Impide que se escriban letras u otros símbolos en Valor (issue #1)."""
+        """Impide que se escriban letras u otros simbolos en Valor (issue #1)."""
         if self._filtrando_valor:
             return
         bruto = self.valor_var.get()
@@ -212,7 +214,8 @@ class ConversorApp(ctk.CTk):
             fg_color=Tema.BOTON,
             button_color=Tema.SUPERFICIE,
             button_hover_color=Tema.ACENTO,
-            dropdown_fg_color="#2b2b2b",
+            dropdown_fg_color=Tema.SUPERFICIE,
+            dropdown_text_color=Tema.TEXTO,
             font=ctk.CTkFont(size=14, weight="bold"),
         )
 
@@ -245,7 +248,7 @@ class ConversorApp(ctk.CTk):
         self.entry_valor.focus()
 
     def intercambiar(self) -> None:
-        """Conserva el Valor, limpia el resultado a — y no convierte."""
+        """Conserva el Valor, limpia el resultado a \u2014 y no convierte."""
         nuevo_origen, nuevo_destino = intercambiar_unidades(
             self.origen_var.get(),
             self.destino_var.get(),
