@@ -31,7 +31,9 @@
       { id: '6.3', title: 'Cerramiento y normativa', tag: 'Resguardos', level: 2 },
       { id: '6.4', title: 'Microdiseño de distancias', tag: 'Distancias', level: 2 },
       { id: '6.5', title: 'Célula robótica unificada', tag: 'Síntesis', level: 2 },
-      { id: '7', title: 'Fuentes y bibliografía', tag: 'Fuentes', level: 1 }
+      { id: '7', title: 'Precios de elementos de seguridad', tag: 'Precios', level: 1 },
+      { id: '7.1', title: 'Presupuesto jaula: mínimo vs máximo', tag: 'Presupuesto', level: 2 },
+      { id: '8', title: 'Fuentes y bibliografía', tag: 'Fuentes', level: 1 }
     ],
     en: [
       { id: '1', title: 'Main cover', tag: 'Intro', level: 1 },
@@ -58,7 +60,9 @@
       { id: '6.3', title: 'Guarding and standards', tag: 'Guards', level: 2 },
       { id: '6.4', title: 'Safety distance micro-design', tag: 'Distances', level: 2 },
       { id: '6.5', title: 'Unified robotic cell', tag: 'Synthesis', level: 2 },
-      { id: '7', title: 'Sources and bibliography', tag: 'Sources', level: 1 }
+      { id: '7', title: 'Safety component prices', tag: 'Prices', level: 1 },
+      { id: '7.1', title: 'Cage budget: minimum vs maximum', tag: 'Budget', level: 2 },
+      { id: '8', title: 'Sources and bibliography', tag: 'Sources', level: 1 }
     ]
   };
   var es = {
@@ -501,6 +505,65 @@
       caption: 'El Dossier de Diseño: La Célula Robótica Unificada'
     },
     slide25: {
+      title: 'Precios de elementos de seguridad',
+      intro: 'Referencias orientativas (sin IVA). Cada tarjeta indica para qué sirve, precio aproximado y enlace al fabricante o distribuidor.',
+      axName: 'Axelent X-Guard',
+      axAlt: 'Panel de malla Axelent X-Guard',
+      axUse: 'Jaula / perímetro físico: impide el acceso al robot en automático y soporta puertas con enclavamiento.',
+      axDesc: 'Sistema modular (malla, chapa o plástico) conforme a la Directiva 2006/42/CE; postes, puertas y cerraduras estandarizados.',
+      axP1: '<strong>Kit puerta:</strong> ≈ 157 € s/IVA',
+      axP2: '<strong>Panel ≈1300×900:</strong> ≈ 97,50 £',
+      axP3: 'Jaula completa: varios miles € (cotizar)',
+      msName: 'SICK microScan3',
+      msAlt: 'SICK microScan3',
+      msUse: 'Escáner láser de seguridad: vigila el suelo alrededor del robot y ralentiza o para si hay presencia.',
+      msDesc: 'Campos de aviso y protección (zonas verde / amarilla / roja). Alcances típicos 5,5 m y 9 m; variantes PROFINET.',
+      msP1: '<strong>5,5 m:</strong> ≈ 4.845 € s/IVA',
+      msP2: '<strong>9 m:</strong> ≈ 5.427 € s/IVA',
+      msP3: '<strong>PROFINET:</strong> ≈ 7.461 € s/IVA',
+      dtName: 'SICK deTec4',
+      dtAlt: 'SICK deTec4',
+      dtUse: 'Cortina de luz: protege un acceso abierto (carga o paso) y corta el ciclo automático al interrumpir el haz.',
+      dtDesc: 'Tipo 4 (SIL 3 / PL e). Emisor y receptor separados; kits habituales 14/600 y 30/1200.',
+      dtP1: '<strong>Receptor 30 mm:</strong> ≈ 1.194 £',
+      dtP2: '<strong>Kit 14/600:</strong> ≈ 3.112 $',
+      dtP3: '<strong>Kit 30/1200:</strong> ≈ 3.837 $',
+      pilzName: 'Pilz PNOZ',
+      pilzAlt: 'Pilz PNOZ X4',
+      pilzUse: 'Relé de seguridad (cerebro del SSP): recibe E-stop, puertas y barreras y desconecta el robot de forma segura.',
+      pilzDesc: 'Familia PNOZ / PSENcode para paradas e enclavamientos; el PNOZ s3 o X4 es típico en células industriales.',
+      pilzP1: '<strong>PNOZ s3 / X4:</strong> pedir a distribuidor',
+      pilzP2: 'Sin tarifa pública fiable online',
+      patName: 'Patlite LR6',
+      patAlt: 'Patlite LR6',
+      patUse: 'Baliza de estado: comunica a simple vista si se puede acercar a la célula (emergencia, aviso, normal…).',
+      patDesc: 'Torre modular según IEC 60204-1; variantes de 5 colores y opcional con zumbador de rearranque.',
+      patP1: '<strong>5 colores:</strong> ≈ 159,70 £',
+      patP2: '<strong>Con zumbador:</strong> ≈ 266,56 £'
+    },
+    slide26: {
+      title: 'Presupuesto de jaula: mínimo vs máximo',
+      intro: 'Estimación orientativa (sin IVA ni montaje) para una célula con un robot industrial: el kit más austero que sigue siendo seguro frente a una configuración “todo lo último” con los elementos del apartado 7.',
+      imgAlt: 'Célula robótica industrial con jaula y cortinas de seguridad',
+      caption: 'Ejemplo real: célula de soldadura con perímetro, cortinas y mando de seguridad (Wikimedia Commons)',
+      cheapTitle: 'Presupuesto más barato',
+      cheapTotal: '≈ 4.800 €',
+      cheapUse: 'Solo lo imprescindible: jaula pequeña, una puerta enclavada, un relé PNOZ y baliza básica. Sin escáner ni cortina de luz.',
+      cheap1: '<strong>Axelent X-Guard (≈4×3 m, 1 puerta):</strong> ≈ 3.200 €',
+      cheap2: '<strong>Pilz PNOZ + enclavamiento puerta:</strong> ≈ 650 €',
+      cheap3: '<strong>Patlite 3 colores (básica):</strong> ≈ 160 €',
+      cheap4: 'Sin microScan3 / deTec4 (acceso solo por puerta)',
+      expTitle: 'Presupuesto más caro',
+      expTotal: '≈ 42.000 €',
+      expUse: 'Lo más potente: jaula grande, 2 puertas, 2 escáneres PROFINET, 2 cortinas deTec4, lógica Pilz completa y baliza LR6 con zumbador.',
+      exp1: '<strong>X-Guard 2200 mm, 2 puertas + accesorios:</strong> ≈ 12.000 €',
+      exp2: '<strong>2× microScan3 PROFINET:</strong> ≈ 14.900 €',
+      exp3: '<strong>2× deTec4 (kits acceso):</strong> ≈ 7.200 €',
+      exp4: '<strong>Pilz PNOZ + PSENcode ×2:</strong> ≈ 2.500 €',
+      exp5: '<strong>Patlite LR6 + zumbador / bollards:</strong> ≈ 2.400 €',
+      note: 'Cifras orientativas con precios de catálogo del apartado 7. Falta instalación, cableado, validación CE y robot. Pide siempre cotización a Axelent / SICK / Pilz España.'
+    },
+    slide27: {
       title: 'Fuentes Oficiales y Documentación de Referencia',
       s1Html: '<strong>1. Science Museum Group (2019):</strong> James Watt and the separate condenser. Patente A.D. 1769 Nº 913 (PDF en assets/docs).',
       s2Html: '<strong>2. Virginia Tech Archives:</strong> Report on MIT Demonstration of Numerically Controlled Milling Machine (1952) — control numérico y APT.',
@@ -515,7 +578,8 @@
       s11Html: '<strong>11. AENOR / CEN:</strong> UNE-EN 775 — Robots manipuladores industriales. Seguridad (adaptación europea de ISO 10218).',
       s12Html: '<strong>12. CEN / AENOR (resguardos):</strong> UNE-EN 292 (conceptos), UNE-EN 294 (miembros superiores), UNE-EN 811 (miembros inferiores), UNE-EN 953 (diseño de resguardos). Sucesoras vigentes: ISO 12100, ISO 13857, ISO 14120.',
       s13Html: '<strong>13. IEC 60204-1:</strong> Safety of machinery — Electrical equipment of machines — colores de balizas / señalización de estado.',
-      s14Html: '<strong>14. Material del módulo:</strong> apuntes «Seguridad» y «Sistemas de seguridad» (Punto 7 y Punto 8) — base del contenido SSP, célula y distancias.'
+      s14Html: '<strong>14. Material del módulo:</strong> apuntes «Seguridad» y «Sistemas de seguridad» (Punto 7 y Punto 8) — base del contenido SSP, célula y distancias.',
+      s15Html: '<strong>15. Precios (orientativos, sin IVA):</strong> Axelent X-Guard, SICK microScan3 / deTec4, Pilz PNOZ y Patlite LR6 — catálogos y distribuidores (Kaiserkraft, RS, AJ Products, AdjDitec).'
     }
   };
 
@@ -959,6 +1023,65 @@
       caption: 'The Design Dossier: The Unified Robotic Cell'
     },
     slide25: {
+      title: 'Safety component prices',
+      intro: 'Indicative prices (excl. VAT). Each card shows purpose, approx. price and a link to the manufacturer or distributor.',
+      axName: 'Axelent X-Guard',
+      axAlt: 'Axelent X-Guard mesh panel',
+      axUse: 'Cage / physical perimeter: blocks robot access in automatic mode and supports interlocked doors.',
+      axDesc: 'Modular system (mesh, sheet or plastic) under Directive 2006/42/EC; standardised posts, doors and locks.',
+      axP1: '<strong>Door kit:</strong> ≈ €157 excl. VAT',
+      axP2: '<strong>Panel ≈1300×900:</strong> ≈ £97.50',
+      axP3: 'Full cage: several thousand € (quote)',
+      msName: 'SICK microScan3',
+      msAlt: 'SICK microScan3',
+      msUse: 'Safety laser scanner: monitors the floor around the robot and slows or stops if someone is present.',
+      msDesc: 'Warning and protective fields (green / yellow / red zones). Typical ranges 5.5 m and 9 m; PROFINET variants.',
+      msP1: '<strong>5.5 m:</strong> ≈ €4,845 excl. VAT',
+      msP2: '<strong>9 m:</strong> ≈ €5,427 excl. VAT',
+      msP3: '<strong>PROFINET:</strong> ≈ €7,461 excl. VAT',
+      dtName: 'SICK deTec4',
+      dtAlt: 'SICK deTec4',
+      dtUse: 'Light curtain: protects an open access (load or walkway) and cuts the automatic cycle if the beam is broken.',
+      dtDesc: 'Type 4 (SIL 3 / PL e). Separate transmitter and receiver; common kits 14/600 and 30/1200.',
+      dtP1: '<strong>30 mm receiver:</strong> ≈ £1,194',
+      dtP2: '<strong>Kit 14/600:</strong> ≈ $3,112',
+      dtP3: '<strong>Kit 30/1200:</strong> ≈ $3,837',
+      pilzName: 'Pilz PNOZ',
+      pilzAlt: 'Pilz PNOZ X4',
+      pilzUse: 'Safety relay (SSP brain): takes E-stop, doors and barriers and disconnects the robot safely.',
+      pilzDesc: 'PNOZ / PSENcode family for stops and interlocking; PNOZ s3 or X4 is typical in industrial cells.',
+      pilzP1: '<strong>PNOZ s3 / X4:</strong> ask distributor',
+      pilzP2: 'No reliable public online list price',
+      patName: 'Patlite LR6',
+      patAlt: 'Patlite LR6',
+      patUse: 'Status beacon: shows at a glance whether it is safe to approach the cell (emergency, warning, normal…).',
+      patDesc: 'Modular tower per IEC 60204-1; 5-colour variants and optional restart buzzer.',
+      patP1: '<strong>5 colours:</strong> ≈ £159.70',
+      patP2: '<strong>With buzzer:</strong> ≈ £266.56'
+    },
+    slide26: {
+      title: 'Cage budget: minimum vs maximum',
+      intro: 'Indicative estimate (excl. VAT and installation) for a single industrial-robot cell: the leanest kit that remains safe versus an “all top-of-the-line” setup using the section 7 components.',
+      imgAlt: 'Industrial robotic cell with safety cage and curtains',
+      caption: 'Real example: welding cell with perimeter, curtains and safety controls (Wikimedia Commons)',
+      cheapTitle: 'Cheapest budget',
+      cheapTotal: '≈ €4,800',
+      cheapUse: 'Essentials only: small cage, one interlocked door, one PNOZ relay and a basic beacon. No scanner or light curtain.',
+      cheap1: '<strong>Axelent X-Guard (≈4×3 m, 1 door):</strong> ≈ €3,200',
+      cheap2: '<strong>Pilz PNOZ + door interlocking:</strong> ≈ €650',
+      cheap3: '<strong>Patlite 3 colours (basic):</strong> ≈ €160',
+      cheap4: 'No microScan3 / deTec4 (door-only access)',
+      expTitle: 'Most expensive budget',
+      expTotal: '≈ €42,000',
+      expUse: 'Top setup: large cage, 2 doors, 2 PROFINET scanners, 2 deTec4 curtains, full Pilz logic and LR6 beacon with buzzer.',
+      exp1: '<strong>X-Guard 2200 mm, 2 doors + accessories:</strong> ≈ €12,000',
+      exp2: '<strong>2× microScan3 PROFINET:</strong> ≈ €14,900',
+      exp3: '<strong>2× deTec4 (access kits):</strong> ≈ €7,200',
+      exp4: '<strong>Pilz PNOZ + PSENcode ×2:</strong> ≈ €2,500',
+      exp5: '<strong>Patlite LR6 + buzzer / bollards:</strong> ≈ €2,400',
+      note: 'Figures are indicative from section 7 catalogue prices. Installation, cabling, CE validation and the robot itself are not included. Always request quotes from Axelent / SICK / Pilz Spain.'
+    },
+    slide27: {
       title: 'Official Sources and Reference Documentation',
       s1Html: '<strong>1. Science Museum Group (2019):</strong> James Watt and the separate condenser. Patent A.D. 1769 No. 913 (PDF in assets/docs).',
       s2Html: '<strong>2. Virginia Tech Archives:</strong> Report on MIT Demonstration of Numerically Controlled Milling Machine (1952) — NC and APT.',
@@ -973,7 +1096,8 @@
       s11Html: '<strong>11. AENOR / CEN:</strong> UNE-EN 775 — Manipulating industrial robots. Safety (European adaptation of ISO 10218).',
       s12Html: '<strong>12. CEN / AENOR (guards):</strong> UNE-EN 292 (concepts), UNE-EN 294 (upper limbs), UNE-EN 811 (lower limbs), UNE-EN 953 (guard design). Current successors: ISO 12100, ISO 13857, ISO 14120.',
       s13Html: '<strong>13. IEC 60204-1:</strong> Safety of machinery — Electrical equipment of machines — beacon / status signalling colours.',
-      s14Html: '<strong>14. Course materials:</strong> “Safety” and “Safety systems” notes (Points 7 and 8) — basis for SSP, cell and distance content.'
+      s14Html: '<strong>14. Course materials:</strong> “Safety” and “Safety systems” notes (Points 7 and 8) — basis for SSP, cell and distance content.',
+      s15Html: '<strong>15. Prices (indicative, excl. VAT):</strong> Axelent X-Guard, SICK microScan3 / deTec4, Pilz PNOZ and Patlite LR6 — catalogues and distributors (Kaiserkraft, RS, AJ Products, AdjDitec).'
     }
   };
 
