@@ -69,6 +69,13 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
+  if (SLIDES.length !== slideEls.length) {
+    console.warn(
+      `[presentation] Menú (${SLIDES.length}) ≠ diapositivas HTML (${slideEls.length}). ` +
+        'Suele ser caché de i18n.js antiguo: fuerza recarga (Ctrl+F5) o vuelve a desplegar.'
+    );
+  }
+
   const sectionChildIndexes = {};
   const sectionExpanded = {};
   COLLAPSIBLE_SECTION_IDS.forEach((parentId) => {

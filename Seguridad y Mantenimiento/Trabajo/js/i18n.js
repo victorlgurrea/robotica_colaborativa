@@ -1138,27 +1138,38 @@
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var key = el.getAttribute('data-i18n');
       if (!key) return;
-      el.textContent = t(key);
+      var val = t(key);
+      // Si falta la clave (JS antiguo en caché), no pisar el HTML.
+      if (val === key) return;
+      el.textContent = val;
     });
     document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
       var key = el.getAttribute('data-i18n-html');
       if (!key) return;
-      el.innerHTML = t(key);
+      var val = t(key);
+      if (val === key) return;
+      el.innerHTML = val;
     });
     document.querySelectorAll('[data-i18n-title]').forEach(function (el) {
       var key = el.getAttribute('data-i18n-title');
       if (!key) return;
-      el.setAttribute('title', t(key));
+      var val = t(key);
+      if (val === key) return;
+      el.setAttribute('title', val);
     });
     document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
       var key = el.getAttribute('data-i18n-alt');
       if (!key) return;
-      el.setAttribute('alt', t(key));
+      var val = t(key);
+      if (val === key) return;
+      el.setAttribute('alt', val);
     });
     document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
       var key = el.getAttribute('data-i18n-aria');
       if (!key) return;
-      el.setAttribute('aria-label', t(key));
+      var val = t(key);
+      if (val === key) return;
+      el.setAttribute('aria-label', val);
     });
     document.querySelectorAll('.lang-option').forEach(function (btn) {
       var isActive = btn.getAttribute('data-lang') === lang;
