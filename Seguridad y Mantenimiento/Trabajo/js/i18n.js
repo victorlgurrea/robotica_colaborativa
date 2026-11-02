@@ -542,9 +542,8 @@
     },
     slide26: {
       title: 'Presupuesto de jaula: mínimo vs máximo',
-      intro: 'Estimación orientativa (sin IVA ni montaje) para una célula con un robot industrial: el kit más austero que sigue siendo seguro frente a una configuración “todo lo último” con los elementos del apartado 7.',
       imgAlt: 'Célula robótica industrial con jaula y cortinas de seguridad',
-      caption: 'Ejemplo real: célula de soldadura con perímetro, cortinas y mando de seguridad (Wikimedia Commons)',
+      caption: 'Ejemplo real: célula de soldadura con perímetro, cortinas y mando de seguridad',
       cheapTitle: 'Presupuesto más barato',
       cheapTotal: '≈ 4.800 €',
       cheapUse: 'Solo lo imprescindible: jaula pequeña, una puerta enclavada, un relé PNOZ y baliza básica. Sin escáner ni cortina de luz.',
@@ -559,8 +558,7 @@
       exp2: '<strong>2× microScan3 PROFINET:</strong> ≈ 14.900 €',
       exp3: '<strong>2× deTec4 (kits acceso):</strong> ≈ 7.200 €',
       exp4: '<strong>Pilz PNOZ + PSENcode ×2:</strong> ≈ 2.500 €',
-      exp5: '<strong>Patlite LR6 + zumbador / bollards:</strong> ≈ 2.400 €',
-      note: 'Cifras orientativas con precios de catálogo del apartado 7. Falta instalación, cableado, validación CE y robot. Pide siempre cotización a Axelent / SICK / Pilz España.'
+      exp5: '<strong>Patlite LR6 + zumbador / bollards:</strong> ≈ 2.400 €'
     },
     slide27: {
       title: 'Fuentes Oficiales y Documentación de Referencia',
@@ -1059,9 +1057,8 @@
     },
     slide26: {
       title: 'Cage budget: minimum vs maximum',
-      intro: 'Indicative estimate (excl. VAT and installation) for a single industrial-robot cell: the leanest kit that remains safe versus an “all top-of-the-line” setup using the section 7 components.',
       imgAlt: 'Industrial robotic cell with safety cage and curtains',
-      caption: 'Real example: welding cell with perimeter, curtains and safety controls (Wikimedia Commons)',
+      caption: 'Real example: welding cell with perimeter, curtains and safety controls',
       cheapTitle: 'Cheapest budget',
       cheapTotal: '≈ €4,800',
       cheapUse: 'Essentials only: small cage, one interlocked door, one PNOZ relay and a basic beacon. No scanner or light curtain.',
@@ -1076,8 +1073,7 @@
       exp2: '<strong>2× microScan3 PROFINET:</strong> ≈ €14,900',
       exp3: '<strong>2× deTec4 (access kits):</strong> ≈ €7,200',
       exp4: '<strong>Pilz PNOZ + PSENcode ×2:</strong> ≈ €2,500',
-      exp5: '<strong>Patlite LR6 + buzzer / bollards:</strong> ≈ €2,400',
-      note: 'Figures are indicative from section 7 catalogue prices. Installation, cabling, CE validation and the robot itself are not included. Always request quotes from Axelent / SICK / Pilz Spain.'
+      exp5: '<strong>Patlite LR6 + buzzer / bollards:</strong> ≈ €2,400'
     },
     slide27: {
       title: 'Official Sources and Reference Documentation',
