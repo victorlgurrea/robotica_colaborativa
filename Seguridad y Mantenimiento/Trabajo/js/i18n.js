@@ -542,8 +542,8 @@
     },
     slide26: {
       title: 'Presupuesto de jaula: mínimo vs máximo',
-      imgAlt: 'Célula robótica industrial con jaula y cortinas de seguridad',
-      caption: 'Ejemplo real: célula de soldadura con perímetro, cortinas y mando de seguridad',
+      imgAlt: 'Célula robótica Yaskawa con jaula de seguridad amarilla',
+      caption: 'Ejemplo real: célula con robots industriales y perímetro de malla',
       cheapTitle: 'Presupuesto más barato',
       cheapTotal: '≈ 4.800 €',
       cheapUse: 'Solo lo imprescindible: jaula pequeña, una puerta enclavada, un relé PNOZ y baliza básica. Sin escáner ni cortina de luz.',
@@ -1057,8 +1057,8 @@
     },
     slide26: {
       title: 'Cage budget: minimum vs maximum',
-      imgAlt: 'Industrial robotic cell with safety cage and curtains',
-      caption: 'Real example: welding cell with perimeter, curtains and safety controls',
+      imgAlt: 'Yaskawa robotic cell with yellow safety fencing',
+      caption: 'Real example: industrial robots cell with mesh perimeter',
       cheapTitle: 'Cheapest budget',
       cheapTotal: '≈ €4,800',
       cheapUse: 'Essentials only: small cage, one interlocked door, one PNOZ relay and a basic beacon. No scanner or light curtain.',
